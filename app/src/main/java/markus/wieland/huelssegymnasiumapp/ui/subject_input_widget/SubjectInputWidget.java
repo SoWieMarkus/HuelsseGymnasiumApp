@@ -48,8 +48,8 @@ public class SubjectInputWidget extends InputWidget<Subject, String> {
     }
 
     @Override
-    protected String getTitle() {
-        return getContext().getString(R.string.input_widget_subject_title);
+    protected int getTitle() {
+        return R.string.input_widget_subject_title;
     }
 
     @Override

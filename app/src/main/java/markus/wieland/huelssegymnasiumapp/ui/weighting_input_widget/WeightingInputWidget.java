@@ -37,8 +37,8 @@ public class WeightingInputWidget extends InputWidget<Integer, String> {
     }
 
     @Override
-    protected String getTitle() {
-        return getContext().getString(R.string.input_widget_weighting_title);
+    protected int getTitle() {
+        return R.string.input_widget_weighting_title;
     }
 
     @Override

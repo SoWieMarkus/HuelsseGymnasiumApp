@@ -33,8 +33,8 @@ public class ColorInputWidget extends InputWidget<Color, Color> {
     }
 
     @Override
-    protected String getTitle() {
-        return getContext().getString(R.string.input_widget_color_title);
+    protected int getTitle() {
+        return R.string.input_widget_color_title;
     }
 
     @Override

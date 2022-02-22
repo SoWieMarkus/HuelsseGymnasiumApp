@@ -104,6 +104,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
+            <markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget
+                android:id="@+id/activity_create_subject_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

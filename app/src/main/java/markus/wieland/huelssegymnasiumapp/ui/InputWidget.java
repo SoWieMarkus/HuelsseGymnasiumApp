@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.StringRes;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -36,7 +37,8 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
 
     protected abstract InputWidgetHeader<G> getHeader();
 
-    protected abstract String getTitle();
+    @StringRes
+    protected abstract int getTitle();
 
     protected void initialize() {
         setOrientation(LinearLayout.VERTICAL);
@@ -50,7 +52,7 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
 
         inputWidgetBody.setValueChangeListener(this);
         inputWidgetBody.setLayoutTransition(new LayoutTransition());
-        inputWidgetHeader.setTitle(getTitle());
+        inputWidgetHeader.setTitle(getContext().getString(getTitle()));
 
         setExpanded(true);
         inputWidgetBody.setValue(inputWidgetBody.getDefaultValue());

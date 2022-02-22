@@ -17,4 +17,5 @@
     <string name="input_widget_weighting_exam">Exams</string>
     <string name="input_widget_subject_title">Subject</string>
     <string name="input_widget_subject_error_nothing_selected">You have to select a subject.</string>
+    <string name="input_widget_calendar_title">Date</string>
 </resources>

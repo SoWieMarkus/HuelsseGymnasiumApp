@@ -34,8 +34,8 @@ public class EnumInputWidget<T extends Type> extends InputWidget<T, String> {
     }
 
     @Override
-    protected String getTitle() {
-        return getContext().getString(R.string.input_widget_enum_title);
+    protected int getTitle() {
+        return R.string.input_widget_enum_title;
     }
 
     public void setList(T[] ts) {

@@ -18,4 +18,5 @@
     <string name="input_widget_weighting_exam">Klausuren</string>
     <string name="input_widget_subject_title">Fach</string>
     <string name="input_widget_subject_error_nothing_selected">Bitte wähle ein Fach aus.</string>
+    <string name="input_widget_calendar_title">Datum</string>
 </resources>
