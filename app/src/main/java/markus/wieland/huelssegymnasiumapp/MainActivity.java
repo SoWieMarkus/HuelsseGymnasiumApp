@@ -1,10 +1,18 @@
 package markus.wieland.huelssegymnasiumapp;
 
+import android.content.Intent;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
-import markus.wieland.huelssegymnasiumapp.ui.color_input_widget.Color;
-import markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget;
+import markus.wieland.huelssegymnasiumapp.grades.GradeType;
+import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget.WeightingInputWidget;
 
 public class MainActivity extends DefaultActivity {
 
@@ -21,8 +29,8 @@ public class MainActivity extends DefaultActivity {
 
     @Override
     public void initializeViews() {
-        ColorInputWidget colorInputWidget = findViewById(R.id.test_widget);
-        colorInputWidget.setValue(new Color(255,0,9));
+
+        startActivity(new Intent(this, CreateSubjectActivity.class));
     }
 
     @Override

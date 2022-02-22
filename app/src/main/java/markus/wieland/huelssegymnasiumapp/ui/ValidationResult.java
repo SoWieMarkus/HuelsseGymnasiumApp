@@ -12,4 +12,9 @@ public class ValidationResult {
     private String errorMessage;
     private boolean isValid;
 
+    public ValidationResult() {
+        this.isValid = true;
+        this.errorMessage = null;
+    }
+
 }

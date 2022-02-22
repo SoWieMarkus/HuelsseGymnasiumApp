@@ -32,5 +32,7 @@ public abstract class InputWidgetBody<T> extends InputWidgetComponent {
 
     public abstract ValidationResult check();
 
+    public abstract T getDefaultValue();
+
 
 }

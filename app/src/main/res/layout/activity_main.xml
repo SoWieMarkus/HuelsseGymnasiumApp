@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget
+    <markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget
         android:id="@+id/test_widget"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -6,4 +6,15 @@
     <string name="menu_substitutions">Substitutions</string>
     <string name="menu_time_table">Time table</string>
     <string name="input_widget_color_title">Color</string>
+    <string name="grade_type_test">Test</string>
+    <string name="grade_type_presentation">Presentation</string>
+    <string name="grade_type_project">Project</string>
+    <string name="grade_type_others">Others</string>
+    <string name="grade_type_exam">Exam</string>
+    <string name="input_widget_enum_title">Type</string>
+    <string name="input_widget_weighting_title">Weighting</string>
+    <string name="input_widget_weighting_others">Others</string>
+    <string name="input_widget_weighting_exam">Exams</string>
+    <string name="input_widget_subject_title">Subject</string>
+    <string name="input_widget_subject_error_nothing_selected">You have to select a subject.</string>
 </resources>

@@ -7,4 +7,15 @@
     <string name="menu_substitutions">Vertretungsplan</string>
     <string name="menu_time_table">Stundenplan</string>
     <string name="input_widget_color_title">Farbe</string>
+    <string name="grade_type_test">Test</string>
+    <string name="grade_type_presentation">Präsentation</string>
+    <string name="grade_type_project">Projekt</string>
+    <string name="grade_type_others">Sonstiges</string>
+    <string name="grade_type_exam">Klausur</string>
+    <string name="input_widget_enum_title">Art</string>
+    <string name="input_widget_weighting_title">Wichtung</string>
+    <string name="input_widget_weighting_others">Sonstige</string>
+    <string name="input_widget_weighting_exam">Klausuren</string>
+    <string name="input_widget_subject_title">Fach</string>
+    <string name="input_widget_subject_error_nothing_selected">Bitte wähle ein Fach aus.</string>
 </resources>

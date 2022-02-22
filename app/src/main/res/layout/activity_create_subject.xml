@@ -94,37 +94,17 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <LinearLayout
+            <markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget.WeightingInputWidget
+                android:id="@+id/activity_create_subject_weighting"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"/>
 
-                <SeekBar
-                    android:id="@+id/seekBar4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-
-            <LinearLayout
+            <markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget
+                android:id="@+id/activity_create_subject_color"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"/>
 
-                <SeekBar
-                    android:id="@+id/seekBar3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
 
-                <SeekBar
-                    android:id="@+id/seekBar2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <SeekBar
-                    android:id="@+id/seekBar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

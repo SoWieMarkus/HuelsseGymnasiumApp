@@ -14,7 +14,6 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
 
     private static final int MIN_COLOR_VALUE = 0;
     private static final int MAX_COLOR_VALUE = 255;
-    private static final int DEFAULT_COLOR_VALUE = 125;
 
     private SeekBar seekBarR;
     private SeekBar seekBarG;
@@ -42,7 +41,6 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
         for (SeekBar seekBar : getAllSeekBars()) {
             seekBar.setMin(MIN_COLOR_VALUE);
             seekBar.setMax(MAX_COLOR_VALUE);
-            seekBar.setProgress(DEFAULT_COLOR_VALUE);
             seekBar.setOnSeekBarChangeListener(this);
         }
 
@@ -57,6 +55,7 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
         seekBarR.setProgress(color.getR());
         seekBarG.setProgress(color.getG());
         seekBarB.setProgress(color.getB());
+        getValueChangeListener().onValueChanged(color);
     }
 
     @Override
@@ -66,7 +65,12 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
 
     @Override
     public ValidationResult check() {
-        return new ValidationResult(null, true);
+        return new ValidationResult();
+    }
+
+    @Override
+    public Color getDefaultValue() {
+        return new Color(127,127,127);
     }
 
     @Override
