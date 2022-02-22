@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">HuelsseGymnasiumApp</string>
+    <string name="menu_dashboard">Home</string>
+    <string name="menu_subjects">Subjects</string>
+    <string name="menu_calendar">Calendar</string>
+    <string name="menu_substitutions">Substitutions</string>
+    <string name="menu_time_table">Time table</string>
+    <string name="input_widget_color_title">Color</string>
+</resources>

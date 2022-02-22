@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">HuelsseGymnasiumApp</string>
+    <string name="menu_dashboard">Start</string>
+    <string name="menu_subjects">Fächer</string>
+    <string name="menu_calendar">Kalender</string>
+    <string name="menu_substitutions">Vertretungsplan</string>
+    <string name="menu_time_table">Stundenplan</string>
+    <string name="input_widget_color_title">Farbe</string>
+</resources>

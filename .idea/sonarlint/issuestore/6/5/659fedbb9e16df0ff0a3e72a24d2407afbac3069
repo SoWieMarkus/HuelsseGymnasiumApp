@@ -1,0 +1,9 @@
+
+U
+java:S1068	"8Remove this unused "bottomNavigationView" private field.(ê¥ÎÚ8ì€¨óñ/
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(îî¯Àÿÿÿÿÿ8‰î£óñ/
+€
+java:S1450	"cRemove the "bottomNavigationView" field and declare it as a local variable in the relevant methods.(ê¥ÎÚ8ì€¨óñ/
+£
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ä÷†Áþÿÿÿÿ8‰î£óñ/
