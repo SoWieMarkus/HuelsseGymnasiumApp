@@ -69,11 +69,6 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
     }
 
     @Override
-    public Color getDefaultValue() {
-        return new Color(127,127,127);
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_color_body;
     }

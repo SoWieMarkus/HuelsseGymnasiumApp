@@ -9,11 +9,12 @@ import androidx.room.PrimaryKey;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
+import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
 
 @Getter
 @Setter
 @Entity
-public class Subject implements DatabaseEntity {
+public class Subject implements DatabaseEntity, QueryableEntity<Long> {
 
     @PrimaryKey(autoGenerate = true)
     private long subjectId;
@@ -37,5 +38,15 @@ public class Subject implements DatabaseEntity {
     @Ignore
     public int getColor(){
         return Color.rgb(colorR, colorB, colorG);
+    }
+
+    @Override
+    public Long getId() {
+        return getSubjectId();
+    }
+
+    @Override
+    public String getStringToApplyQuery() {
+        return getName() + getAbbreviation();
     }
 }

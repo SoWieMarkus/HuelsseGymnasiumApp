@@ -49,11 +49,6 @@ public class InputWidgetCalendarBody extends InputWidgetBody<LocalDate> implemen
     }
 
     @Override
-    public LocalDate getDefaultValue() {
-        return getValue();
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_calendar_body;
     }

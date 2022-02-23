@@ -66,11 +66,6 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
     }
 
     @Override
-    public Subject getDefaultValue() {
-        return null;
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_subject_body;
     }

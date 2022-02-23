@@ -18,4 +18,11 @@
     <string name="input_widget_subject_title">Subject</string>
     <string name="input_widget_subject_error_nothing_selected">You have to select a subject.</string>
     <string name="input_widget_calendar_title">Date</string>
+    <string name="menu_add_item">Add</string>
+    <string name="activity_create_calendar_entry_title">Calendar entry</string>
+    <string name="calendar_entry_type_others">Others</string>
+    <string name="calendar_entry_type_homework">Homework</string>
+    <string name="calendar_entry_type_hand_in">Hand in</string>
+    <string name="calendar_entry_type_test">Test</string>
+    <string name="calendar_entry_type_exam">Exam</string>
 </resources>

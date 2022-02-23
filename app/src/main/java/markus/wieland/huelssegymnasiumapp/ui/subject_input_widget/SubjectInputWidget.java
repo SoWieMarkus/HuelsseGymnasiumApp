@@ -45,6 +45,7 @@ public class SubjectInputWidget extends InputWidget<Subject, String> {
 
     public void setList(List<Subject> subjects) {
         getInputWidgetBody().setList(subjects);
+        setVisibility(subjects.isEmpty() ? GONE : VISIBLE);
     }
 
     @Override

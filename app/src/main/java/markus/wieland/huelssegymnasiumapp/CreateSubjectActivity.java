@@ -28,7 +28,7 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> {
     }
 
     @Override
-    public void initializeWidgets() {
+    public void initializeWidgets(Subject subject) {
 
     }
 

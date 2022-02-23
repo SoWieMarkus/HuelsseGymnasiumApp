@@ -19,4 +19,11 @@
     <string name="input_widget_subject_title">Fach</string>
     <string name="input_widget_subject_error_nothing_selected">Bitte wähle ein Fach aus.</string>
     <string name="input_widget_calendar_title">Datum</string>
+    <string name="menu_add_item">Hinzufügen</string>
+    <string name="activity_create_calendar_entry_title">Kalendereintrag</string>
+    <string name="calendar_entry_type_others">Sonstiges</string>
+    <string name="calendar_entry_type_homework">Hausaufgabe</string>
+    <string name="calendar_entry_type_hand_in">Abgabe</string>
+    <string name="calendar_entry_type_test">Test</string>
+    <string name="calendar_entry_type_exam">Klausur</string>
 </resources>

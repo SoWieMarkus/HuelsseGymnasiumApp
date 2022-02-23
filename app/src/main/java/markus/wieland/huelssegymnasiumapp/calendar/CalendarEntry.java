@@ -8,18 +8,20 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
+import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 
 @Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId",
         childColumns = "subjectId", onDelete = ForeignKey.CASCADE))
 @Getter
 @Setter
-public class CalendarEntry implements DatabaseEntity {
+public class CalendarEntry implements DatabaseEntity, QueryableEntity<Long>, Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private long eventId;
@@ -40,5 +42,15 @@ public class CalendarEntry implements DatabaseEntity {
     @Override
     public long getUniqueId() {
         return getEventId();
+    }
+
+    @Override
+    public Long getId() {
+        return getEventId();
+    }
+
+    @Override
+    public String getStringToApplyQuery() {
+        return getTitle();
     }
 }

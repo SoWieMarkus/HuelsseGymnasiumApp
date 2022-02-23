@@ -55,7 +55,6 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
         inputWidgetHeader.setTitle(getContext().getString(getTitle()));
 
         setExpanded(true);
-        inputWidgetBody.setValue(inputWidgetBody.getDefaultValue());
     }
 
     @Override

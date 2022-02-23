@@ -11,7 +11,6 @@ public class InputWidgetWeightingBody extends InputWidgetBody<Integer> implement
 
     private static final int MIN_EXAM_WEIGHTING = 0;
     public static final int MAX_EXAM_WEIGHTING = 100;
-    private static final int DEFAULT_EXAM_WEIGHTING = 50;
     private static final int STEP_SIZE = 5;
 
     private SeekBar seekBar;
@@ -44,11 +43,6 @@ public class InputWidgetWeightingBody extends InputWidgetBody<Integer> implement
     @Override
     public ValidationResult check() {
         return new ValidationResult();
-    }
-
-    @Override
-    public Integer getDefaultValue() {
-        return DEFAULT_EXAM_WEIGHTING;
     }
 
     @Override

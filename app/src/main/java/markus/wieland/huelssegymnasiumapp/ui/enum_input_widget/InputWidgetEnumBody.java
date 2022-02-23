@@ -51,11 +51,6 @@ public class InputWidgetEnumBody<T extends Type> extends InputWidgetBody<T> impl
         return new ValidationResult();
     }
 
-    @Override
-    public T getDefaultValue() {
-        return null;
-    }
-
     public void setList(T[] ts) {
         this.ts = ts;
         this.numberPicker.setMinValue(0);

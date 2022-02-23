@@ -67,7 +67,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
 
         }
 
-        initializeWidgets();
+        initializeWidgets(item);
 
     }
 
@@ -91,7 +91,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
         Toast.makeText(this, validationResult.getErrorMessage(), Toast.LENGTH_SHORT).show();
     }
 
-    public abstract void initializeWidgets();
+    public abstract void initializeWidgets(T item);
 
     public abstract ValidationResult validate();
 
