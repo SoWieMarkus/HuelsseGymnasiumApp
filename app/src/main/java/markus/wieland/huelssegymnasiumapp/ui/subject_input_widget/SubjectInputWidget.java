@@ -48,6 +48,10 @@ public class SubjectInputWidget extends InputWidget<Subject, String> {
         setVisibility(subjects.isEmpty() ? GONE : VISIBLE);
     }
 
+    public void select(Long id) {
+        getInputWidgetBody().select(id);
+    }
+
     @Override
     protected int getTitle() {
         return R.string.input_widget_subject_title;

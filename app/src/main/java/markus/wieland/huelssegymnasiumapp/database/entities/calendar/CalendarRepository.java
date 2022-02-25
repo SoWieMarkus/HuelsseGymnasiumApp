@@ -9,6 +9,7 @@ import java.util.List;
 
 import markus.wieland.databases.BaseRepository;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.SchoolDatabase;
 
 public class CalendarRepository extends BaseRepository<CalendarEntry, CalendarEntryDataAccessObject> {
@@ -25,4 +26,11 @@ public class CalendarRepository extends BaseRepository<CalendarEntry, CalendarEn
     public LiveData<List<CalendarEntry>> getAllCalendarEntries() {
         return getDataAccessObject().getAllCalendarEntries();
     }
+
+    public LiveData<List<CalendarEntryWithSubject>> getCalendarEntryWithSubjects() {
+        return getDataAccessObject().getCalendarEntryWithSubjects();
+    }
+
+
+
 }

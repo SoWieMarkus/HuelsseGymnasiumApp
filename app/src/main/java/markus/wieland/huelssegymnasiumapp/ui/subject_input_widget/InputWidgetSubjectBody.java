@@ -31,6 +31,14 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
         super(context, attrs, defStyleAttr);
     }
 
+    public void select(Long id) {
+        if (id == null) {
+            subjectInputWidgetAdapter.select(null);
+            return;
+        }
+        subjectInputWidgetAdapter.select(getSubjectById(id));
+    }
+
     @Override
     protected void initialize() {
         super.initialize();
@@ -50,6 +58,15 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
     public void setValue(Subject subject) {
         subjectInputWidgetAdapter.select(subject);
         getValueChangeListener().onValueChanged(subject);
+    }
+
+    public Subject getSubjectById(long id){
+        for (Subject subject : subjectInputWidgetAdapter.getList()) {
+            if (subject.getSubjectId() == id) {
+                return subject;
+            }
+        }
+        return null;
     }
 
     @Override

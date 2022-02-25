@@ -3,11 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_create_calendar_entry.xml" value="0.1" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/drawable/circle_check_box.xml" value="0.1421875" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/drawable/circle_progress_bar.xml" value="0.1421875" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/drawable/circle_shape.xml" value="0.1421875" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_create_calendar_entry.xml" value="0.264" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_create_grade.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_create_subject.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_create_time_table.xml" value="0.23007246376811594" />
         <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/activity_subject_detail.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/fragment_calendar.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/fragment_dashboard.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/fragment_subjects.xml" value="0.12604166666666666" />
         <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/fragment_substitutions.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/item_calendar_entry.xml" value="0.1234375" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/item_calendar_entry.xml" value="0.264" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/item_subject.xml" value="0.4" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/item_substitutions.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/layout_input_widget_color_body.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/layout_input_widget_color_header.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/layout/layout_input_widget_header_text.xml" value="0.23596014492753623" />
         <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/menu/menu_add_item.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/Markus/Repos/Privat/HuelsseGymnasiumApp/app/src/main/res/menu/menu_bottom_navigation_view.xml" value="0.12708333333333333" />
       </map>

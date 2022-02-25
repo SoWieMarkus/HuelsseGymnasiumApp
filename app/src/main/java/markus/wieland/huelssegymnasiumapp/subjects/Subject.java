@@ -37,7 +37,7 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long> {
 
     @Ignore
     public int getColor(){
-        return Color.rgb(colorR, colorB, colorG);
+        return Color.rgb(colorR, colorG, colorB);
     }
 
     @Override

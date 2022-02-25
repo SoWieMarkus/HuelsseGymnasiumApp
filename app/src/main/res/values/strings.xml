@@ -25,4 +25,14 @@
     <string name="calendar_entry_type_hand_in">Hand in</string>
     <string name="calendar_entry_type_test">Test</string>
     <string name="calendar_entry_type_exam">Exam</string>
+    <string name="activity_create_calendar_entry_name">Title</string>
+    <string name="activity_create_calendar_entry_description">Description</string>
+    <string name="calendar_date_tomorrow">Tomorrow</string>
+    <string name="calendar_date_today">Today</string>
+    <string name="activity_create_grade_title">Grade</string>
+    <string name="validation_argument_error_min_length">The %1$s should at least %2$d characters long!</string>
+    <string name="activity_create_calendar_entry_title_argument_name">title</string>
+    <string name="activity_create_calendar_entry_description_argument_name">description</string>
+    <string name="validation_argument_error_max_length">The %1$s can\'t be longer than %2$d characters!</string>
+    <string name="validation_argument_error_non_null">Please enter a %1$s</string>
 </resources>

@@ -11,15 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HuelsseGymnasiumApp">
-        <activity android:name=".CreateTimeTableActivity"
-            android:exported="true"></activity>
-        <activity android:name=".CreateGradeActivity"
-            android:exported="true"/>
-        <activity android:name=".CreateCalendarEntryActivity"
-            android:exported="true"/>
-        <activity android:name=".CreateSubjectActivity"
-            android:exported="true"/>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".SubjectDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateTimeTableActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateCalendarEntryActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CreateSubjectActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

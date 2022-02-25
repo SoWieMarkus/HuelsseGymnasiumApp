@@ -13,10 +13,11 @@ import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
 
-public class CalendarFragment extends ListFragment<CalendarEntry, CalendarAdapter.CalendarViewHolder, CalendarAdapter>
-        implements OnItemClickListener<CalendarEntry>, Observer<List<CalendarEntry>> {
+public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarAdapter.CalendarViewHolder, CalendarAdapter>
+        implements OnItemClickListener<CalendarEntry>, Observer<List<CalendarEntryWithSubject>> {
 
     private CalendarViewModel calendarViewModel;
 
@@ -38,12 +39,12 @@ public class CalendarFragment extends ListFragment<CalendarEntry, CalendarAdapte
 
     @Override
     public CalendarAdapter createAdapter() {
-        return new CalendarAdapter(this);
+        return new CalendarAdapter(null);
     }
 
     @Override
     public void execute() {
-        calendarViewModel.getAllCalendarEntries().observe(this, this);
+        calendarViewModel.getCalendarEntryWithSubjects().observe(this, this);
     }
 
     @Override
@@ -65,7 +66,7 @@ public class CalendarFragment extends ListFragment<CalendarEntry, CalendarAdapte
     }
 
     @Override
-    public void onChanged(List<CalendarEntry> calendarEntries) {
+    public void onChanged(List<CalendarEntryWithSubject> calendarEntries) {
         getAdapter().submitList(calendarEntries);
     }
 }

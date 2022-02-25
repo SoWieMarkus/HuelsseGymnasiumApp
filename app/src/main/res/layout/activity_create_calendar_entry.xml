@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background_color"
     tools:context=".CreateCalendarEntryActivity">
 
     <androidx.core.widget.NestedScrollView
@@ -14,7 +15,47 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/activity_create_calendar_entry_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="10"
+                        android:hint="@string/activity_create_calendar_entry_name"
+                        android:inputType="textPersonName"
+                        android:nextFocusDown="@id/activity_create_calendar_entry_description"
+                        android:padding="8dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/activity_create_calendar_entry_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="10"
+                        android:gravity="start"
+                        android:hint="@string/activity_create_calendar_entry_description"
+                        android:inputType="textAutoCorrect|textMultiLine|textCapSentences"
+                        android:minLines="4"
+                        android:padding="8dp"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget
                 android:id="@+id/activity_create_calendar_entry_subject_widget"

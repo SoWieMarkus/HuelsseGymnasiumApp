@@ -1,5 +1,6 @@
 package markus.wieland.huelssegymnasiumapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,11 +10,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.StringRes;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.BaseViewModel;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
+import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 
 @Getter
@@ -59,6 +63,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_activity_create_item_close);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(titleString);
+        getSupportActionBar().setElevation(0);
 
         item = (T) getIntent().getSerializableExtra(OBJECT_TO_EDIT);
         if (item == null) {
@@ -74,6 +79,10 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
     @Override
     public void execute() {
         // isn't used that often in the CreateItemActivities
+    }
+
+    public List<Validation> getValidations() {
+        return new ArrayList<>();
     }
 
     public void check(){
@@ -93,7 +102,15 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
 
     public abstract void initializeWidgets(T item);
 
-    public abstract ValidationResult validate();
+    public ValidationResult validate(){
+        for (Validation validation : getValidations()) {
+            ValidationResult result = validation.check(this);
+            if (!result.isValid()) {
+                return result;
+            }
+        }
+        return new ValidationResult();
+    }
 
     public abstract T getDefaultItem();
 

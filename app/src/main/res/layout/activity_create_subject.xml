@@ -4,17 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background_color"
     tools:context=".CreateSubjectActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/activity_create_subject_name"
@@ -97,17 +102,12 @@
             <markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget.WeightingInputWidget
                 android:id="@+id/activity_create_subject_weighting"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget
                 android:id="@+id/activity_create_subject_color"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-            <markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget
-                android:id="@+id/activity_create_subject_calendar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>

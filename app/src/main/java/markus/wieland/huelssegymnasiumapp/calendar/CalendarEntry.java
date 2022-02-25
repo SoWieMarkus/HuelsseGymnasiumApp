@@ -34,6 +34,8 @@ public class CalendarEntry implements DatabaseEntity, QueryableEntity<Long>, Ser
     private CalendarEntryType calendarEntryType;
 
     private String title;
+    private String description;
+    private boolean done;
 
     @TypeConverters(LocalDateConverter.class)
     private LocalDate localDate;

@@ -26,4 +26,14 @@
     <string name="calendar_entry_type_hand_in">Abgabe</string>
     <string name="calendar_entry_type_test">Test</string>
     <string name="calendar_entry_type_exam">Klausur</string>
+    <string name="activity_create_calendar_entry_name">Titel</string>
+    <string name="activity_create_calendar_entry_description">Beschreibung</string>
+    <string name="calendar_date_tomorrow">Morgen</string>
+    <string name="calendar_date_today">Heute</string>
+    <string name="activity_create_grade_title">Note</string>
+    <string name="validation_argument_error_min_length">%1$s muss mindestens %2$d Zeichen lang sein!</string>
+    <string name="activity_create_calendar_entry_title_argument_name">Der Titel</string>
+    <string name="activity_create_calendar_entry_description_argument_name">Die Beschreibung</string>
+    <string name="validation_argument_error_max_length">%1$s darf nicht länger als %2$d Zeichen lang sein!</string>
+    <string name="validation_argument_error_non_null">%1$s darf nicht leer sein.</string>
 </resources>

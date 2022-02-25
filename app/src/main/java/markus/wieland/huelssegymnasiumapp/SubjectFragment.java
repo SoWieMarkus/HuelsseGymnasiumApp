@@ -6,7 +6,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+
+import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
@@ -14,7 +17,7 @@ import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewM
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 
 public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.SubjectViewHolder, SubjectAdapter>
-        implements OnItemClickListener<Subject> {
+        implements OnItemClickListener<Subject>, Observer<List<Subject>> {
 
     private SubjectViewModel subjectViewModel;
 
@@ -41,12 +44,12 @@ public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.Subjec
 
     @Override
     public void onClick(Subject subject) {
-
+        startActivity(new Intent(getActivity(), SubjectDetailActivity.class).putExtra(SubjectDetailActivity.SUBJECT_ID, subject.getSubjectId()));
     }
 
     @Override
     public void execute() {
-
+        subjectViewModel.getAllSubjects().observe(this,this);
     }
 
     @Override
@@ -60,5 +63,10 @@ public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.Subjec
             startActivity(new Intent(getActivity(), CreateSubjectActivity.class));
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onChanged(List<Subject> subjects) {
+        getAdapter().submitList(subjects);
     }
 }

@@ -1,6 +1,11 @@
 package markus.wieland.huelssegymnasiumapp;
 
+import androidx.lifecycle.ViewModelProviders;
+
+import java.util.List;
+
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 import markus.wieland.huelssegymnasiumapp.ui.color_input_widget.Color;
@@ -19,30 +24,31 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> {
 
     @Override
     public void bindViews() {
-
-    }
-
-    @Override
-    public void execute() {
-
-    }
-
-    @Override
-    public void initializeWidgets(Subject subject) {
-
-    }
-
-    @Override
-    public ValidationResult validate() {
-        // Don't have to check color and weighting because by default they always return valid
-
-
-        return new ValidationResult();
+        weightingInputWidget = findViewById(R.id.activity_create_subject_weighting);
+        colorInputWidget = findViewById(R.id.activity_create_subject_color);
+        subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
     }
 
     @Override
     public Subject getDefaultItem() {
-        return new Subject();
+        Subject subject = new Subject();
+        subject.setColorR(127);
+        subject.setColorG(127);
+        subject.setColorB(127);
+        subject.setExamWeight(50);
+        return subject;
+    }
+
+    @Override
+    public void initializeWidgets(Subject item) {
+        colorInputWidget.setValue(new Color(item.getColorR(), item.getColorG(), item.getColorB()));
+        weightingInputWidget.setValue(item.getExamWeight());
+    }
+
+    // TODO
+    @Override
+    public List<Validation> getValidations() {
+        return super.getValidations();
     }
 
     @Override
@@ -67,6 +73,7 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> {
     public void update(Subject subject) {
         subjectViewModel.update(subject);
     }
+
 
 
 }

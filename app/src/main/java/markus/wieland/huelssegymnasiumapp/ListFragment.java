@@ -16,7 +16,7 @@ public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends 
     private RecyclerView recyclerView;
     private A adapter;
 
-    protected ListFragment(int layout) {
+    public ListFragment(int layout) {
         super(layout);
     }
 

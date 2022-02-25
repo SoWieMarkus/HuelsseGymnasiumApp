@@ -9,6 +9,7 @@ import java.util.List;
 
 import markus.wieland.databases.BaseDataAccessObject;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
 @Dao
 public interface SubjectDataAccessObject extends BaseDataAccessObject<Subject> {
@@ -18,11 +19,11 @@ public interface SubjectDataAccessObject extends BaseDataAccessObject<Subject> {
 
     @Transaction
     @Query("SELECT * FROM Subject WHERE subjectId = :subjectId")
-    LiveData<Subject> getSubjectsWithGradesAndEvents(long subjectId);
+    LiveData<SubjectWithGradesAndCalendar> getSubjectWithGradesAndEvents(long subjectId);
 
     @Transaction
     @Query("SELECT * FROM Subject ORDER BY name ASC")
-    LiveData<List<Subject>> getAllSubjectsWithGradesAndEvents();
+    LiveData<List<SubjectWithGradesAndCalendar>> getAllSubjectsWithGradesAndEvents();
 
 
 }

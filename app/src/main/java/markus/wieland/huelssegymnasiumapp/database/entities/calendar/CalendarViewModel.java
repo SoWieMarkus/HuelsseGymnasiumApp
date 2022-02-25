@@ -9,6 +9,7 @@ import java.util.List;
 
 import markus.wieland.databases.BaseViewModel;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 
 public class CalendarViewModel extends BaseViewModel<CalendarEntry, CalendarEntryDataAccessObject, CalendarRepository> {
     public CalendarViewModel(@NonNull Application application) {
@@ -22,5 +23,9 @@ public class CalendarViewModel extends BaseViewModel<CalendarEntry, CalendarEntr
 
     public LiveData<List<CalendarEntry>> getAllCalendarEntries() {
         return getRepository().getAllCalendarEntries();
+    }
+
+    public LiveData<List<CalendarEntryWithSubject>> getCalendarEntryWithSubjects() {
+        return getRepository().getCalendarEntryWithSubjects();
     }
 }

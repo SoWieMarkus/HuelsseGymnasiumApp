@@ -24,6 +24,8 @@ public class SubjectInputWidgetAdapter extends DefaultAdapter<Subject, SubjectIn
 
     }
 
+
+
     @NonNull
     @Override
     public SubjectInputWidgetViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -1,5 +1,6 @@
 package markus.wieland.huelssegymnasiumapp.database.entities.grade;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Query;
 
