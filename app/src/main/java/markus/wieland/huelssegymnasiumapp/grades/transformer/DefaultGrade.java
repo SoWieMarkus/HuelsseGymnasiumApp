@@ -15,12 +15,12 @@ public abstract class DefaultGrade {
     private boolean isExam;
     private int value;
 
-    public DefaultGrade(boolean isExam, int value) {
+    protected DefaultGrade(boolean isExam, int value) {
         this.isExam = isExam;
         this.value = value;
     }
 
-    public DefaultGrade(boolean isExam) {
+    protected DefaultGrade(boolean isExam) {
         this.isExam = isExam;
         this.value = 0;
     }

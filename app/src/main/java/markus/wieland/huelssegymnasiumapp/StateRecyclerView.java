@@ -24,7 +24,7 @@ import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 
 @Getter
 @Setter
-public class StateRecyclerView<T, VH extends DefaultViewHolder<T>, A extends DefaultAdapter<T, VH>> extends ConstraintLayout {
+public class StateRecyclerView<T, V extends DefaultViewHolder<T>, A extends DefaultAdapter<T,V>> extends ConstraintLayout {
 
     private RecyclerView recyclerView;
     private LinearLayout emptyView;

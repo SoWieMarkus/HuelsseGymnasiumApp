@@ -28,7 +28,7 @@ public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGra
         sign.setMinValue(SecondaryOneGrade.SIGN_PLUS);
         sign.setMaxValue(SecondaryOneGrade.SIGN_MINUS);
         sign.setWrapSelectorWheel(false);
-        sign.setDisplayedValues(SecondaryOneGrade.DISPLAY_VALUES);
+        sign.setDisplayedValues(SecondaryOneGrade.getDisplayValues());
         sign.setOnValueChangedListener(this);
 
         value.setMinValue(1);

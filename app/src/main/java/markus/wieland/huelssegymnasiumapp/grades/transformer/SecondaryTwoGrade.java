@@ -36,16 +36,16 @@ public class SecondaryTwoGrade extends DefaultGrade {
 
     @Override
     public Value getRawGradeValue() {
-        int value = getValue();
-        if (getValue() <= 15 && getValue() >= 13)
+        int valueOfGrade = getValue();
+        if (valueOfGrade <= 15 && valueOfGrade >= 13)
             return Value.VERY_GOOD;
-        if (getValue() <= 12 && getValue() >= 10)
+        if (valueOfGrade <= 12 && valueOfGrade >= 10)
             return Value.GOOD;
-        if (getValue() <= 9 && getValue() >= 7)
+        if (valueOfGrade <= 9 && valueOfGrade >= 7)
             return Value.SATISFACTORY;
-        if (getValue() <= 6 && getValue() >= 4)
+        if (valueOfGrade <= 6 && valueOfGrade >= 4)
             return Value.SUFFICIENT;
-        if (getValue() <= 3 && getValue() >= 1)
+        if (valueOfGrade <= 3 && valueOfGrade >= 1)
             return Value.POOR;
         return Value.DEFICIENT;
     }

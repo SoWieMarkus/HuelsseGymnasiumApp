@@ -3,11 +3,8 @@ package markus.wieland.huelssegymnasiumapp;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import androidx.lifecycle.ViewModelProviders;
-
 import com.google.gson.Gson;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
 import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
 
 public class Settings {
@@ -25,12 +22,11 @@ public class Settings {
         this.sharedPreferences = context.getSharedPreferences(SETTINGS_KEY, Context.MODE_PRIVATE);
     }
 
-    // TODO
-    public boolean doesExist(){
+    public boolean doesExist() {
         return getGradeFormat() != null;
     }
 
-    public GradeFormat getGradeFormat(){
+    public GradeFormat getGradeFormat() {
         return gson.fromJson(sharedPreferences.getString(GRADE_FORMAT_KEY, null), GradeFormat.class);
     }
 

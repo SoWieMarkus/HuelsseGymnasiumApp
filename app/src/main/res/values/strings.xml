@@ -49,4 +49,5 @@
     <string name="empty_message_grades">No grades</string>
     <string name="empty_message_subjects">No subjects</string>
     <string name="empty_message_calendar_entries">No homework</string>
+    <string name="menu_subsititution_refresh">Refresh</string>
 </resources>

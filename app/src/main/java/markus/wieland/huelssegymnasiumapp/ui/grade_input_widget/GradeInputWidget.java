@@ -8,20 +8,19 @@ import androidx.annotation.Nullable;
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
 
 public abstract class GradeInputWidget extends InputWidget<DefaultGrade, String> {
-    public GradeInputWidget(Context context) {
+    protected GradeInputWidget(Context context) {
         super(context);
     }
 
-    public GradeInputWidget(Context context, @Nullable AttributeSet attrs) {
+    protected GradeInputWidget(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public GradeInputWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected GradeInputWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

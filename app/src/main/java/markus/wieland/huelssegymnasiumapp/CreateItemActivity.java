@@ -36,7 +36,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
     @StringRes
     private final int titleString;
 
-    public CreateItemActivity(int layout, int title) {
+    protected CreateItemActivity(int layout, int title) {
         super(layout);
         this.titleString = title;
         this.isEditMode = true;

@@ -1,8 +1,5 @@
 package markus.wieland.huelssegymnasiumapp;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
 
 import lombok.Getter;
@@ -15,7 +12,7 @@ import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 @Setter
 public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends DefaultAdapter<T, V>> extends DefaultFragment {
 
-    private StateRecyclerView<T,V,A> recyclerView;
+    private StateRecyclerView<T, V, A> recyclerView;
     private A adapter;
 
     protected ListFragment(int layout) {

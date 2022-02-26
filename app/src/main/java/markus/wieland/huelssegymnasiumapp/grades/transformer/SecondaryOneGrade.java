@@ -9,9 +9,16 @@ import lombok.Setter;
 @Setter
 public class SecondaryOneGrade extends DefaultGrade {
 
+    // the lowest possible combination of the grade and the sign is ten
+    private static final int LOWEST_POSSIBLE_GRADE_COMBINATION_VALUE = 10;
+    private static final int HIGHEST_POSSIBLE_GRADE_COMBINATION_VALUE = 62;
+    private static final int HIGHEST_GRADE_VALUE = 6;
+    private static final int LOWEST_GRADE_VALUE = 1;
+    private static final float SIGN_VALUE = 0.3f;
+
     public static final int SIGN_PLUS = 0;
     public static final int SIGN_MINUS = 2;
-    public static final String[] DISPLAY_VALUES = new String[]{"+", " ", "-"};
+    protected static final String[] DISPLAY_VALUES = new String[]{"+", " ", "-"};
 
     private int sign;
 
@@ -20,12 +27,15 @@ public class SecondaryOneGrade extends DefaultGrade {
         this.sign = sign;
     }
 
+    public static String[] getDisplayValues() {
+        return DISPLAY_VALUES;
+    }
+
     public SecondaryOneGrade(boolean isExam) {
         super(isExam);
         this.sign = 0;
         setValue(0);
     }
-
 
     @NonNull
     @Override
@@ -35,13 +45,13 @@ public class SecondaryOneGrade extends DefaultGrade {
 
     @Override
     public float getValueToCalculateAverage() {
-        if (getValue() == 1 && sign == SIGN_PLUS) return 1;
-        if (getValue() == 6 && sign == SIGN_MINUS) return 6;
+        if (getValue() == LOWEST_GRADE_VALUE && sign == SIGN_PLUS) return LOWEST_GRADE_VALUE;
+        if (getValue() == HIGHEST_GRADE_VALUE && sign == SIGN_MINUS) return HIGHEST_GRADE_VALUE;
         switch (sign) {
             case SIGN_PLUS:
-                return (float) (getValue() - 0.3);
+                return getValue() - SIGN_VALUE;
             case SIGN_MINUS:
-                return (float) (getValue() + 0.3);
+                return getValue() + SIGN_VALUE;
             default:
                 return getValue();
         }
@@ -56,14 +66,16 @@ public class SecondaryOneGrade extends DefaultGrade {
     public DefaultGrade setUpFromDatabaseValue(int databaseValue) {
         IllegalArgumentException exception = new IllegalArgumentException("Database value isn't valid " + databaseValue);
         String[] splits = String.valueOf(databaseValue).split("");
-        if (databaseValue < 10 || databaseValue > 62 || splits.length != 2)
+        if (databaseValue < LOWEST_POSSIBLE_GRADE_COMBINATION_VALUE
+                || databaseValue > HIGHEST_POSSIBLE_GRADE_COMBINATION_VALUE
+                || splits.length != 2)
             throw exception;
 
         int valueFromDatabase = Integer.parseInt(splits[0]);
         int signFromDatabase = Integer.parseInt(splits[1]);
 
-        if (valueFromDatabase < 1
-                || valueFromDatabase > 6
+        if (valueFromDatabase < LOWEST_GRADE_VALUE
+                || valueFromDatabase > HIGHEST_GRADE_VALUE
                 || signFromDatabase < SIGN_PLUS
                 || signFromDatabase > SIGN_MINUS) throw exception;
 

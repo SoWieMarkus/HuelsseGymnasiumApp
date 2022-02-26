@@ -48,4 +48,5 @@
     <string name="empty_message_grades">Keine Noten</string>
     <string name="empty_message_subjects">Keine Fächer</string>
     <string name="empty_message_calendar_entries">Keiner Hausaufgaben</string>
+    <string name="menu_subsititution_refresh">Aktualisieren</string>
 </resources>

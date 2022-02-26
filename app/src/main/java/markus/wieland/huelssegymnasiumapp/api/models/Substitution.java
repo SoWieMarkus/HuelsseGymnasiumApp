@@ -2,7 +2,6 @@ package markus.wieland.huelssegymnasiumapp.api.models;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 
 @Getter
 @Setter

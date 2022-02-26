@@ -11,7 +11,6 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.grades.Grade;
 import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
@@ -56,7 +55,7 @@ public class SubjectWithGradesAndCalendar implements QueryableEntity<Long> {
                 continue;
             }
 
-            sumOthers+= grade.getValueToCalculateAverage();
+            sumOthers += grade.getValueToCalculateAverage();
             amountOthers++;
         }
 
@@ -70,7 +69,7 @@ public class SubjectWithGradesAndCalendar implements QueryableEntity<Long> {
     }
 
     @Ignore
-    public String getAverageAsString(GradeFormat gradeFormat){
+    public String getAverageAsString(GradeFormat gradeFormat) {
         Float average = calculateAverage(gradeFormat);
         DecimalFormat decimalFormat = new DecimalFormat("#.00");
         return "Ø " + (average == null ? "-" : decimalFormat.format(average));

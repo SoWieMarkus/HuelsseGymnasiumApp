@@ -47,9 +47,8 @@ public class AverageView extends ConstraintLayout {
         progressBar = findViewById(R.id.average_view_progress_bar);
         average = findViewById(R.id.average_view_text_view);
 
-        progressBar.setMax(gradeFormat == GradeFormat.ABITUR ? 1500 : 500);
-        progressBar.setMin(gradeFormat == GradeFormat.ABITUR ? 0 : 0);
-
+        progressBar.setMax(gradeFormat.getMaximum());
+        progressBar.setMin(gradeFormat.getMinimum());
     }
 
     public void calculateAverage(List<SubjectWithGradesAndCalendar> subjectWithGradesAndCalendars) {

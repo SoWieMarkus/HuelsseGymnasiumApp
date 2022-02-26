@@ -1,10 +1,5 @@
 package markus.wieland.huelssegymnasiumapp;
 
-import android.view.Menu;
-import android.view.MenuInflater;
-
-import androidx.annotation.NonNull;
-
 import markus.wieland.defaultappelements.api.APIResult;
 import markus.wieland.huelssegymnasiumapp.api.SubstitutionAPI;
 import markus.wieland.huelssegymnasiumapp.api.models.Substitution;
@@ -27,6 +22,12 @@ public class SubstitutionFragment extends ListFragment<Substitution, Substitutio
     public void execute() {
         if (getActivity() == null) return;
         substitutionAPI = new SubstitutionAPI(getActivity());
+        load();
+
+    }
+
+    private void load(){
+        getRecyclerView().setState(StateRecyclerView.State.LOADING);
         substitutionAPI.queryLatest(this);
     }
 

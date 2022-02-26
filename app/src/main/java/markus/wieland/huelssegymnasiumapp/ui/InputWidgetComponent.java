@@ -9,15 +9,15 @@ import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 
 public abstract class InputWidgetComponent extends LinearLayout {
-    public InputWidgetComponent(Context context) {
+    protected InputWidgetComponent(Context context) {
         this(context, null);
     }
 
-    public InputWidgetComponent(Context context, @Nullable AttributeSet attrs) {
+    protected InputWidgetComponent(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public InputWidgetComponent(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected InputWidgetComponent(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialize();
     }

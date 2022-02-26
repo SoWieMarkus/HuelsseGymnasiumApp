@@ -1,7 +1,6 @@
 package markus.wieland.huelssegymnasiumapp.database.entities.grade;
 
 import android.app.Application;
-import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
 
@@ -20,6 +19,6 @@ public class GradeRepository extends BaseRepository<Grade, GradeDataAccessObject
     }
 
     public void deleteAll() {
-       new DeleteAllGradesTask(getDataAccessObject()).execute();
+        new DeleteAllGradesTask(getDataAccessObject()).execute();
     }
 }

@@ -14,15 +14,15 @@ public abstract class InputWidgetHeader<T> extends InputWidgetComponent {
 
     private TextView titleTextView;
 
-    public InputWidgetHeader(Context context) {
+    protected InputWidgetHeader(Context context) {
         super(context);
     }
 
-    public InputWidgetHeader(Context context, @Nullable AttributeSet attrs) {
+    protected InputWidgetHeader(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public InputWidgetHeader(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected InputWidgetHeader(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

@@ -22,15 +22,15 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
     private InputWidgetBody<T> inputWidgetBody;
     private InputWidgetHeader<G> inputWidgetHeader;
 
-    public InputWidget(Context context) {
+    protected InputWidget(Context context) {
         this(context, null);
     }
 
-    public InputWidget(Context context, @Nullable AttributeSet attrs) {
+    protected InputWidget(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public InputWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected InputWidget(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         initialize();
     }

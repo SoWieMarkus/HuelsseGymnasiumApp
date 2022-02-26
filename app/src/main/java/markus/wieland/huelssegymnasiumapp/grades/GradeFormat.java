@@ -12,8 +12,8 @@ import markus.wieland.huelssegymnasiumapp.helper.Type;
 @Getter
 public enum GradeFormat implements Type {
 
-    NORMAL(6, 1, 0, R.string.grade_format_normal),
-    ABITUR(0, 15, 1, R.string.grade_format_abitur);
+    NORMAL(0, 500, 0, R.string.grade_format_normal),
+    ABITUR(0, 1500, 1, R.string.grade_format_abitur);
 
     private final int minimum;
     private final int maximum;

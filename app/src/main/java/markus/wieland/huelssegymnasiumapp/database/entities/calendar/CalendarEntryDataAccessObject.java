@@ -10,8 +10,6 @@ import java.util.List;
 import markus.wieland.databases.BaseDataAccessObject;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
 @Dao
 public interface CalendarEntryDataAccessObject extends BaseDataAccessObject<CalendarEntry> {

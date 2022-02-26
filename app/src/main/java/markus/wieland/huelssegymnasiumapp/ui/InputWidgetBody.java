@@ -14,15 +14,15 @@ public abstract class InputWidgetBody<T> extends InputWidgetComponent {
 
     private ValueChangeListener<T> valueChangeListener;
 
-    public InputWidgetBody(Context context) {
+    protected InputWidgetBody(Context context) {
         this(context, null);
     }
 
-    public InputWidgetBody(Context context, @Nullable AttributeSet attrs) {
+    protected InputWidgetBody(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs, 0);
     }
 
-    public InputWidgetBody(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    protected InputWidgetBody(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
