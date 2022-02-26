@@ -7,13 +7,47 @@
     android:background="?attr/background_color"
     tools:context=".CreateGradeActivity">
 
-    <NumberPicker
-        android:id="@+id/activity_create_mark_value_school_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <markus.wieland.huelssegymnasiumapp.ui.grade_input_widget.SecondaryOneGradeInputWidget
+                android:id="@+id/activity_create_grade_secondary_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.grade_input_widget.SecondaryTwoGradeInputWidget
+                android:id="@+id/activity_create_grade_secondary_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget
+                android:id="@+id/activity_create_grade_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget
+                android:id="@+id/activity_create_grade_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget
+                android:id="@+id/activity_create_grade_calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

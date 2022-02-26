@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <markus.wieland.huelssegymnasiumapp.StateRecyclerView
         android:id="@+id/fragment_calendar_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:empty_message="@string/empty_message_calendar_entries"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

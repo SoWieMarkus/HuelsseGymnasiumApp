@@ -3,6 +3,7 @@ package markus.wieland.huelssegymnasiumapp.ui;
 import android.animation.LayoutTransition;
 import android.content.Context;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -11,6 +12,7 @@ import androidx.annotation.StringRes;
 
 import lombok.Getter;
 import lombok.Setter;
+import markus.wieland.huelssegymnasiumapp.R;
 
 
 @Getter
@@ -41,14 +43,16 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
     protected abstract int getTitle();
 
     protected void initialize() {
+        LayoutInflater.from(getContext()).inflate(R.layout.layout_input_widget, this);
         setOrientation(LinearLayout.VERTICAL);
         inputWidgetBody = getBody();
         inputWidgetHeader = getHeader();
 
         inputWidgetHeader.setOnClickListener(this);
 
-        this.addView(inputWidgetHeader);
-        this.addView(inputWidgetBody);
+        LinearLayout linearLayout = findViewById(R.id.layout_input_widget_layout);
+        linearLayout.addView(inputWidgetHeader);
+        linearLayout.addView(inputWidgetBody);
 
         inputWidgetBody.setValueChangeListener(this);
         inputWidgetBody.setLayoutTransition(new LayoutTransition());

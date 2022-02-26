@@ -16,7 +16,7 @@ import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
 
-public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarAdapter.CalendarViewHolder, CalendarAdapter>
+public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
         implements OnItemClickListener<CalendarEntry>, Observer<List<CalendarEntryWithSubject>> {
 
     private CalendarViewModel calendarViewModel;
@@ -38,8 +38,8 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
     }
 
     @Override
-    public CalendarAdapter createAdapter() {
-        return new CalendarAdapter(null);
+    public CalendarWithSubjectAdapter createAdapter() {
+        return new CalendarWithSubjectAdapter(null);
     }
 
     @Override
@@ -67,6 +67,6 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
 
     @Override
     public void onChanged(List<CalendarEntryWithSubject> calendarEntries) {
-        getAdapter().submitList(calendarEntries);
+       submitList(calendarEntries);
     }
 }

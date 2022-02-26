@@ -29,4 +29,8 @@ public class SubjectViewModel extends BaseViewModel<Subject, SubjectDataAccessOb
     public LiveData<SubjectWithGradesAndCalendar> getSubjectWithGradesAndEvents(long subjectId){
         return getRepository().getSubjectWithGradesAndEvents(subjectId);
     }
+
+    public LiveData<List<SubjectWithGradesAndCalendar>> getAllSubjectsWithGradesAndEvents(){
+        return getRepository().getAllSubjectsWithGradesAndEvents();
+    }
 }

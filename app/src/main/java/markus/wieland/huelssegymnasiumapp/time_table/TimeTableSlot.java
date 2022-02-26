@@ -18,7 +18,10 @@ public class TimeTableSlot implements DatabaseEntity {
 
     private int week;
     private int day;
-    private int lesson;
+    private int startHour;
+    private int startMinute;
+    private int endHour;
+    private int endMinute;
 
     @Nullable
     private Long subjectId;

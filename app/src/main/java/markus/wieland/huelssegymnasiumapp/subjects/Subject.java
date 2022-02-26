@@ -16,6 +16,9 @@ import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
 @Entity
 public class Subject implements DatabaseEntity, QueryableEntity<Long> {
 
+    @Ignore
+    public static final long NO_SUBJECT_ID = -1;
+
     @PrimaryKey(autoGenerate = true)
     private long subjectId;
 

@@ -42,7 +42,7 @@ public class SubstitutionFragment extends ListFragment<Substitution, Substitutio
 
     @Override
     public void onLoad(SubstitutionPlan substitutionPlan) {
-        getAdapter().submitList(substitutionPlan.getSubstitutions());
+        submitList(substitutionPlan.getSubstitutions());
     }
 
 }

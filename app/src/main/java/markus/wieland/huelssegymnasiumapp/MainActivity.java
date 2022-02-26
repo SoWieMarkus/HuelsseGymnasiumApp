@@ -1,5 +1,6 @@
 package markus.wieland.huelssegymnasiumapp;
 
+import android.content.Intent;
 import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,7 @@ import java.util.Objects;
 
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 
-public class MainActivity extends DefaultActivity implements NavigationBarView.OnItemSelectedListener {
+public class MainActivity extends DefaultActivity implements NavigationBarView.OnItemSelectedListener, OnFragmentSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
 
@@ -21,6 +22,7 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
     private CalendarFragment calendarFragment;
     private TimeTableFragment timeTableFragment;
     private SubstitutionFragment substitutionFragment;
+    private DashboardFragment dashboardFragment;
 
     public MainActivity() {
         super(R.layout.activity_main);
@@ -34,17 +36,26 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
         subjectFragment = new SubjectFragment();
         calendarFragment = new CalendarFragment();
         substitutionFragment = new SubstitutionFragment();
+        dashboardFragment = new DashboardFragment();
     }
 
     @Override
     public void initializeViews() {
         Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         bottomNavigationView.setOnItemSelectedListener(this);
+        dashboardFragment.setOnFragmentSelectedListener(this);
     }
 
     @Override
     public void execute() {
-        bottomNavigationView.setSelectedItemId(R.id.activity_main_bottom_navigation_subjects);
+        bottomNavigationView.setSelectedItemId(R.id.activity_main_bottom_navigation_dashboard);
+
+        Settings settings = new Settings(this);
+        if (!settings.doesExist()) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            finish();
+        }
+
     }
 
     private void showFragment(Fragment fragment, @StringRes int title) {
@@ -54,16 +65,27 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.activity_main_bottom_navigation_calendar) {
-            showFragment(calendarFragment, R.string.menu_calendar);
-        } else if (item.getItemId() == R.id.activity_main_bottom_navigation_subjects) {
-            showFragment(subjectFragment, R.string.menu_subjects);
-        } else if (item.getItemId() == R.id.activity_main_bottom_navigation_substitutions) {
-            showFragment(substitutionFragment, R.string.menu_substitutions);
-        } else if (item.getItemId() == R.id.activity_main_bottom_navigation_time_table) {
-            showFragment(timeTableFragment, R.string.menu_time_table);
-        }
-
+        select(item.getItemId());
         return true;
+    }
+
+    public void select(int id) {
+        if (id == R.id.activity_main_bottom_navigation_calendar) {
+            showFragment(calendarFragment, R.string.menu_calendar);
+        } else if (id == R.id.activity_main_bottom_navigation_subjects) {
+            showFragment(subjectFragment, R.string.menu_subjects);
+        } else if (id == R.id.activity_main_bottom_navigation_substitutions) {
+            showFragment(substitutionFragment, R.string.menu_substitutions);
+        } else if (id == R.id.activity_main_bottom_navigation_time_table) {
+            showFragment(timeTableFragment, R.string.menu_time_table);
+        } else if (id == R.id.activity_main_bottom_navigation_dashboard) {
+            showFragment(dashboardFragment, R.string.menu_dashboard);
+        }
+    }
+
+    @Override
+    public void onSelect(int id) {
+        select(id);
+        bottomNavigationView.setSelectedItemId(id);
     }
 }

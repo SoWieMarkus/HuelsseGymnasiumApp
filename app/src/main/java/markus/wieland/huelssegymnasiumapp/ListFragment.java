@@ -3,6 +3,8 @@ package markus.wieland.huelssegymnasiumapp;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
@@ -13,10 +15,10 @@ import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 @Setter
 public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends DefaultAdapter<T, V>> extends DefaultFragment {
 
-    private RecyclerView recyclerView;
+    private StateRecyclerView<T,V,A> recyclerView;
     private A adapter;
 
-    public ListFragment(int layout) {
+    protected ListFragment(int layout) {
         super(layout);
     }
 
@@ -30,11 +32,13 @@ public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends 
         adapter = createAdapter();
     }
 
+    public void submitList(List<T> list) {
+        recyclerView.submitList(list);
+    }
+
     @Override
     public void initializeViews() {
         recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
 }

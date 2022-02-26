@@ -1,36 +1,44 @@
 package markus.wieland.huelssegymnasiumapp.grades;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
 import lombok.Getter;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.helper.Type;
 
 @Getter
-public enum GradeFormat {
+public enum GradeFormat implements Type {
 
-    ABITUR(0, 15),
-    NORMAL(6, 1);
+    NORMAL(6, 1, 0, R.string.grade_format_normal),
+    ABITUR(0, 15, 1, R.string.grade_format_abitur);
 
     private final int minimum;
     private final int maximum;
+    private final int id;
+    private final int displayName;
 
-    GradeFormat(int minimum, int maximum) {
+    GradeFormat(int minimum, int maximum, int id, int displayName) {
         this.minimum = minimum;
         this.maximum = maximum;
+        this.id = id;
+        this.displayName = displayName;
     }
 
-    public Integer[] getAllPossibleGrades() {
-        int minimum = Math.min(getMinimum(), getMaximum());
-        int maximum = Math.max(getMinimum(), getMaximum());
-        boolean reverseOrder = getMinimum() > getMaximum();
+    @Override
+    public int getDisplayName() {
+        return displayName;
+    }
 
-        ArrayList<Integer> grades = new ArrayList<>();
-        for (int i = minimum; i <= maximum; i++) {
-            grades.add(i);
-        }
+    @Override
+    public int getId() {
+        return id;
+    }
 
-        if (reverseOrder) Collections.reverse(grades);
-
-        return grades.toArray(new Integer[0]);
+    @Override
+    public String getDisplayNameAsString(Context context) {
+        return context.getString(displayName);
     }
 }

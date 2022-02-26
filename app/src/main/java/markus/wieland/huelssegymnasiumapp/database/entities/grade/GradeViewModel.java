@@ -17,4 +17,8 @@ public class GradeViewModel extends BaseViewModel<Grade, GradeDataAccessObject, 
     protected GradeRepository initRepository() {
         return new GradeRepository(getApplication());
     }
+
+    public void deleteAll() {
+        getRepository().deleteAll();
+    }
 }

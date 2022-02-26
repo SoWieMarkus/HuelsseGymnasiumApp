@@ -51,7 +51,6 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
 
     public void setList(List<Subject> subjects) {
         subjectInputWidgetAdapter.submitList(subjects);
-        setValue(subjects.isEmpty() ? null : subjects.get(0));
     }
 
     @Override

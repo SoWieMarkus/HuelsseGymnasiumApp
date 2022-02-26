@@ -40,8 +40,8 @@ public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntr
 
     @Override
     public void bindViews() {
-        entryTypeEnumInputWidget = findViewById(R.id.activity_create_calendar_entry_enum_widget);
-        subjectInputWidget = findViewById(R.id.activity_create_calendar_entry_subject_widget);
+        entryTypeEnumInputWidget = findViewById(R.id.activity_settings_format);
+        subjectInputWidget = findViewById(R.id.activity_settings_course);
         calendarInputWidget = findViewById(R.id.activity_create_calendar_entry_calendar_widget);
         titleEditText = findViewById(R.id.activity_create_calendar_entry_title);
         descriptionEditText = findViewById(R.id.activity_create_calendar_entry_description);
@@ -92,7 +92,7 @@ public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntr
     @Override
     public CalendarEntry getDefaultItem() {
         CalendarEntry calendarEntry = new CalendarEntry();
-        calendarEntry.setSubjectId(null);
+        calendarEntry.setSubjectId(getSubjectId());
         calendarEntry.setTitle(getTextFromEditText(titleEditText));
         calendarEntry.setDescription(getTextFromEditText(descriptionEditText));
         calendarEntry.setLocalDate(LocalDate.now().plusDays(1));
@@ -105,8 +105,8 @@ public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntr
         calendarEntry.setCalendarEntryType(entryTypeEnumInputWidget.getValue());
         calendarEntry.setLocalDate(calendarInputWidget.getValue());
 
-        calendarEntry.setTitle(titleEditText.getText().toString().trim());
-        calendarEntry.setDescription(descriptionEditText.getText().toString().trim());
+        calendarEntry.setTitle(getTextFromEditText(titleEditText));
+        calendarEntry.setDescription(getTextFromEditText(descriptionEditText));
 
         Subject subject = subjectInputWidget.getValue();
         calendarEntry.setSubjectId(subject == null ? null : subject.getSubjectId());

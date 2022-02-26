@@ -29,4 +29,8 @@ public class SubjectRepository extends BaseRepository<Subject, SubjectDataAccess
     public LiveData<SubjectWithGradesAndCalendar> getSubjectWithGradesAndEvents(long subjectId){
         return getDataAccessObject().getSubjectWithGradesAndEvents(subjectId);
     }
+
+    public LiveData<List<SubjectWithGradesAndCalendar>> getAllSubjectsWithGradesAndEvents(){
+        return getDataAccessObject().getAllSubjectsWithGradesAndEvents();
+    }
 }

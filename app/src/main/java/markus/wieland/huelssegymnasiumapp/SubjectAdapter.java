@@ -8,15 +8,21 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
+import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
-public class SubjectAdapter extends QueryableAdapter<Long, Subject, SubjectAdapter.SubjectViewHolder> {
+@Setter
+public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder> {
 
-    public SubjectAdapter(OnItemInteractListener<Subject> onItemInteractListener) {
+    private GradeFormat gradeFormat;
+
+    public SubjectAdapter(OnItemInteractListener<SubjectWithGradesAndCalendar> onItemInteractListener) {
         super(onItemInteractListener);
     }
 
@@ -27,11 +33,11 @@ public class SubjectAdapter extends QueryableAdapter<Long, Subject, SubjectAdapt
     }
 
     @Override
-    public OnItemClickListener<Subject> getOnItemInteractListener() {
-        return (OnItemClickListener<Subject>)super.getOnItemInteractListener();
+    public OnItemClickListener<SubjectWithGradesAndCalendar> getOnItemInteractListener() {
+        return (OnItemClickListener<SubjectWithGradesAndCalendar>)super.getOnItemInteractListener();
     }
 
-    public class SubjectViewHolder extends DefaultViewHolder<Subject> {
+    public class SubjectViewHolder extends DefaultViewHolder<SubjectWithGradesAndCalendar> {
 
         private TextView name;
         private TextView teacher;
@@ -51,12 +57,13 @@ public class SubjectAdapter extends QueryableAdapter<Long, Subject, SubjectAdapt
         }
 
         @Override
-        public void bindItemToViewHolder(Subject subject) {
+        public void bindItemToViewHolder(SubjectWithGradesAndCalendar subjectWithGradesAndCalendar) {
+            Subject subject = subjectWithGradesAndCalendar.getSubject();
             color.setBackgroundColor(subject.getColor());
             name.setText(subject.getName());
             teacher.setText(subject.getTeacher() == null ? "-" : subject.getTeacher());
-            average.setText("TODO");
-            itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(subject));
+            average.setText(subjectWithGradesAndCalendar.getAverageAsString(gradeFormat));
+            itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(subjectWithGradesAndCalendar));
         }
     }
 

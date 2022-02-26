@@ -11,15 +11,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
+import lombok.Getter;
+import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
-public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.SubjectViewHolder, SubjectAdapter>
-        implements OnItemClickListener<Subject>, Observer<List<Subject>> {
+public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder, SubjectAdapter>
+        implements OnItemClickListener<SubjectWithGradesAndCalendar>, Observer<List<SubjectWithGradesAndCalendar>> {
 
     private SubjectViewModel subjectViewModel;
+    private Settings settings;
+    private AverageView averageView;
 
     public SubjectFragment() {
         super(R.layout.fragment_subjects);
@@ -29,7 +34,11 @@ public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.Subjec
     @Override
     public void bindViews() {
         super.bindViews();
+        if (getActivity() == null) return;
         subjectViewModel = ViewModelProviders.of(getActivity()).get(SubjectViewModel.class);
+        settings = new Settings(getActivity());
+        averageView = findViewById(R.id.fragment_subjects_average);
+        averageView.update(null);
     }
 
     @Override
@@ -43,13 +52,14 @@ public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.Subjec
     }
 
     @Override
-    public void onClick(Subject subject) {
-        startActivity(new Intent(getActivity(), SubjectDetailActivity.class).putExtra(SubjectDetailActivity.SUBJECT_ID, subject.getSubjectId()));
+    public void onClick(SubjectWithGradesAndCalendar subject) {
+        startActivity(new Intent(getActivity(), SubjectDetailActivity.class)
+                .putExtra(SubjectDetailActivity.SUBJECT_ID, subject.getSubject().getSubjectId()));
     }
 
     @Override
     public void execute() {
-        subjectViewModel.getAllSubjects().observe(this,this);
+        subjectViewModel.getAllSubjectsWithGradesAndEvents().observe(this,this);
     }
 
     @Override
@@ -66,7 +76,9 @@ public class SubjectFragment extends ListFragment<Subject, SubjectAdapter.Subjec
     }
 
     @Override
-    public void onChanged(List<Subject> subjects) {
-        getAdapter().submitList(subjects);
+    public void onChanged(List<SubjectWithGradesAndCalendar> subjects) {
+        getAdapter().setGradeFormat(settings.getGradeFormat());
+        submitList(subjects);
+        averageView.calculateAverage(subjects);
     }
 }

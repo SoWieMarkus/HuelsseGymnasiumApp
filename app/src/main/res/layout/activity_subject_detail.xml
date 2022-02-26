@@ -7,4 +7,106 @@
     android:background="?attr/background_color"
     tools:context=".SubjectDetailActivity">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <markus.wieland.huelssegymnasiumapp.AverageView
+                android:id="@+id/actvitiy_subject_detail_average"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/activity_subject_detail_grades"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/actvitiy_subject_detail_add_grade"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_add"
+                        android:text="@string/fragment_dashboard_add"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/accent_color" />
+                </LinearLayout>
+
+                <markus.wieland.huelssegymnasiumapp.StateRecyclerView
+                    android:id="@+id/activity_subject_detail_grades"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nested="true"
+                    app:empty_message="@string/empty_message_grades"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/activity_subject_detail_calendar_entries"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="18sp" />
+
+                    <Button
+                        android:id="@+id/actvitiy_subject_detail_add_calendar_entries"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_add"
+                        android:text="@string/fragment_dashboard_add"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/accent_color" />
+                </LinearLayout>
+
+                <markus.wieland.huelssegymnasiumapp.StateRecyclerView
+                    android:id="@+id/activity_subject_detail_calendar_entries"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:nested="true"
+                    app:empty_message="@string/empty_message_calendar_entries"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

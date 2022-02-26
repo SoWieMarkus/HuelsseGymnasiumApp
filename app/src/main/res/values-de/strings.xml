@@ -36,4 +36,16 @@
     <string name="activity_create_calendar_entry_description_argument_name">Die Beschreibung</string>
     <string name="validation_argument_error_max_length">%1$s darf nicht länger als %2$d Zeichen lang sein!</string>
     <string name="validation_argument_error_non_null">%1$s darf nicht leer sein.</string>
+    <string name="input_widget_string_title">Klasse</string>
+    <string name="activity_settings_title">Einstellungen</string>
+    <string name="fragment_dashboard_add_grade">Note</string>
+    <string name="fragment_dashboard_add">Hinzufügen</string>
+    <string name="fragment_dashboard_calendar_entry">Erinnerung</string>
+    <string name="activity_create_grade_error_no_subject">Bitte erstelle zuerst ein Fach!</string>
+    <string name="fragment_dashboard_calendar_entry_title">In den nächsten 7 Tagen ...</string>
+    <string name="activity_subject_detail_grades">Noten</string>
+    <string name="activity_subject_detail_calendar_entries">Erinnerungen</string>
+    <string name="empty_message_grades">Keine Noten</string>
+    <string name="empty_message_subjects">Keine Fächer</string>
+    <string name="empty_message_calendar_entries">Keiner Hausaufgaben</string>
 </resources>

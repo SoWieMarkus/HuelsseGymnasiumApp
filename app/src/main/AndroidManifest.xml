@@ -18,6 +18,9 @@
             android:name=".CreateTimeTableActivity"
             android:exported="true" />
         <activity
+            android:name=".SettingsActivity"
+            android:exported="true" />
+        <activity
             android:name=".CreateGradeActivity"
             android:exported="true" />
         <activity

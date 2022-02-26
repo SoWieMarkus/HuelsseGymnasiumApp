@@ -18,12 +18,14 @@ import lombok.Setter;
 import markus.wieland.databases.BaseViewModel;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 
 @Getter
 @Setter
 public abstract class CreateItemActivity<T extends Serializable> extends DefaultActivity {
 
+    public static final String SUBJECT_ID = "markus.wieland.huelssegymnasiumapp.SUBJECT_ID";
     public static final String OBJECT_TO_EDIT = "markus.wieland.defaultappelements.uielements.activities.DefaultActivity.OBJECT_TO_EDIT";
     public static final String RESULT = "markus.wieland.defaultappelements.uielements.activities.DefaultActivity.RESULT";
 
@@ -38,6 +40,11 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
         super(layout);
         this.titleString = title;
         this.isEditMode = true;
+    }
+
+    protected Long getSubjectId() {
+        long subjectId = getIntent().getLongExtra(SUBJECT_ID, Subject.NO_SUBJECT_ID);
+        return subjectId == Subject.NO_SUBJECT_ID ? null : subjectId;
     }
 
     @Override

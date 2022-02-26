@@ -71,6 +71,7 @@ public class SubjectInputWidgetAdapter extends DefaultAdapter<Subject, SubjectIn
             selected.setVisibility(selectedSubject == null || subject.getSubjectId() != selectedSubject.getSubjectId()
                     ? View.INVISIBLE
                     : View.VISIBLE);
+            selected.setCardBackgroundColor(subject.getColor());
             abbreviation.setText(subject.getAbbreviation());
             background.setOnClickListener(view -> select(subject));
         }
