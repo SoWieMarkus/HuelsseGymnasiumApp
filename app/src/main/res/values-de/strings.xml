@@ -49,4 +49,18 @@
     <string name="empty_message_subjects">Keine Fächer</string>
     <string name="empty_message_calendar_entries">Keiner Hausaufgaben</string>
     <string name="menu_subsititution_refresh">Aktualisieren</string>
+    <string name="context_menu_edit">Bearbeiten</string>
+    <string name="context_menu_delete">Löschen</string>
+    <string name="input_widget_time_period_title">Zeitraum</string>
+    <string name="activity_create_time_table_slot_title">Stundenplaneintrag</string>
+    <string name="input_widget_time_period_error_time">Die Startzeit muss vor der Endzeit liegen!</string>
+    <string name="week_day_tuesday_short">Di</string>
+    <string name="week_day_wednesday_short">Mi</string>
+    <string name="week_day_thursday_short">Do</string>
+    <string name="week_day_monday">Montag</string>
+    <string name="week_day_tuesday">Dienstag</string>
+    <string name="week_day_wednesday">Mittwoch</string>
+    <string name="week_day_thursday">Donnerstag</string>
+    <string name="week_day_friday">Freitag</string>
+    <string name="input_widget_week_day_title">Tag</string>
 </resources>

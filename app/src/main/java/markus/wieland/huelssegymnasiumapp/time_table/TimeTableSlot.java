@@ -2,6 +2,7 @@ package markus.wieland.huelssegymnasiumapp.time_table;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import lombok.Getter;
@@ -29,5 +30,18 @@ public class TimeTableSlot implements DatabaseEntity {
     @Override
     public long getUniqueId() {
         return getTimeTableSlotId();
+    }
+
+    @Ignore
+    public void setTimePeriod(TimePeriod timePeriod) {
+        this.endMinute = timePeriod.getEndTime().getMinute();
+        this.endHour = timePeriod.getEndTime().getHour();
+        this.startMinute = timePeriod.getStartTime().getMinute();
+        this.startHour= timePeriod.getStartTime().getHour();
+    }
+
+    @Ignore
+    public TimePeriod getTimePeriod() {
+        return new TimePeriod(new Time(startHour, startMinute), new Time(endHour, endMinute));
     }
 }

@@ -2,8 +2,6 @@ package markus.wieland.huelssegymnasiumapp;
 
 import org.junit.Test;
 
-import markus.wieland.huelssegymnasiumapp.helper.Matrix;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 

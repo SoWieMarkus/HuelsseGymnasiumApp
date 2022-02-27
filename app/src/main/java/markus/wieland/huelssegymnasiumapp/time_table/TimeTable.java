@@ -1,33 +1,55 @@
 package markus.wieland.huelssegymnasiumapp.time_table;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.helper.Matrix;
+import lombok.Getter;
+import markus.wieland.huelssegymnasiumapp.TimeTableDay;
 
+@Getter
 public class TimeTable {
+    private static final int AMOUNT_DAYS_IN_WEEK = 5;
 
-    private final Matrix<TimeTableSlot> timeTableMatrix;
-    private final TimeTableConfiguration timeTableConfiguration;
+    private final TimeTableDay[] days;
+    private final TimePeriod range;
 
-    public TimeTable(TimeTableConfiguration timeTableConfiguration, List<TimeTableSlot> timeTableSlots) {
-        timeTableMatrix = new Matrix<>(timeTableConfiguration.getLessons().size(), 5);
-        this.timeTableConfiguration = timeTableConfiguration;
-        for (TimeTableSlot timeTableSlot : timeTableSlots) {
-            timeTableMatrix.set(timeTableSlot.getLesson(), timeTableSlot.getDay(), timeTableSlot);
+    public TimeTable(List<TimeTableSlotWithSubject> slots) {
+        this.days = new TimeTableDay[AMOUNT_DAYS_IN_WEEK];
+        for (int day = 0; day < AMOUNT_DAYS_IN_WEEK; day++) {
+            this.days[day] = new TimeTableDay(day);
         }
+
+        for (TimeTableSlotWithSubject timeTableSlotWithSubject : slots) {
+            int day = timeTableSlotWithSubject.getTimeTableSlot().getDay();
+            this.days[day].add(timeTableSlotWithSubject);
+        }
+
+        this.range = new TimePeriod(slots);
     }
 
-    public List<TimeTableSlot> getTodayLessons() {
-        LocalDateTime localDateTime = LocalDateTime.now();
-        if (localDateTime.getDayOfWeek().getValue() >= 5) return new ArrayList<>();
-        return timeTableMatrix.getColumn(localDateTime.getDayOfWeek().getValue());
+    public int getMaxHour(){
+        int maxHour = getRange().getEndTime().getHour() + 1;
+        return Math.min(maxHour, 24);
     }
 
-    public int getCurrentLesson(){
-        return timeTableConfiguration.getCurrentTimeSlot();
+    public int getMinHour(){
+        return getRange().getStartTime().getHour();
     }
 
+    public int getHoursToDisplay() {
+        return getMaxHour() - getMinHour();
+    }
+
+    public int getSizePerHour(int minHeight, int heightOfView) {
+        int sizePerHour = heightOfView / getHoursToDisplay();
+        return Math.max(sizePerHour, minHeight);
+    }
+
+    public int getSizePerMinute(int minHeight, int heightOfView) {
+        return getSizePerHour(minHeight, heightOfView) / 60;
+    }
+
+    public int getHeightNeeded(int minHeight, int heightOfView){
+        return getHoursToDisplay() * getSizePerHour(minHeight, heightOfView);
+    }
 
 }

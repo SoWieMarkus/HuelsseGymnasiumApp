@@ -64,11 +64,6 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
     }
 
     @Override
-    public ValidationResult check() {
-        return new ValidationResult();
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_color_body;
     }

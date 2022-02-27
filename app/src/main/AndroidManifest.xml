@@ -15,7 +15,7 @@
             android:name=".SubjectDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateTimeTableActivity"
+            android:name=".CreateTimeTableSlotActivity"
             android:exported="true" />
         <activity
             android:name=".SettingsActivity"

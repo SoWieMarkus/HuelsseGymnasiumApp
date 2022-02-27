@@ -122,6 +122,8 @@
         .domain(groups)
         .range([0, width]);
 
+    const xAxis = d3.axisTop().ticks(5).scale(x)
+
     svg.append("g")
         .attr("transform", "translate(0," + 120 + ")")
         .call(d3.axisTop(x).tickSizeOuter(0));

@@ -7,18 +7,23 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.util.Locale;
+
+import lombok.Getter;
+import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.api.models.Substitution;
 
+@Getter
+@Setter
 public class SubstitutionAdapter extends DefaultAdapter<Substitution, SubstitutionAdapter.SubstitutionViewHolder> {
 
-    private final String course;
+    private String course;
 
-    public SubstitutionAdapter(String course) {
+    public SubstitutionAdapter() {
         super(null);
-        this.course = course;
     }
 
     @NonNull
@@ -60,6 +65,9 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
             info.setText(substitution.getInfo());
             course.setText(substitution.getCourse());
 
+            if (substitution.getCourse().toLowerCase().contains(getCourse().toLowerCase())){
+                course.setText("MYYYYY");
+            }
             // TODO check if your class is there
         }
     }

@@ -3,8 +3,12 @@ package markus.wieland.huelssegymnasiumapp.time_table;
 import androidx.room.Embedded;
 import androidx.room.Relation;
 
+import lombok.Getter;
+import lombok.Setter;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 
+@Getter
+@Setter
 public class TimeTableSlotWithSubject {
 
     @Embedded

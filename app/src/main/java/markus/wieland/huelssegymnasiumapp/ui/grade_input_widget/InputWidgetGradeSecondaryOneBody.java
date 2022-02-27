@@ -19,6 +19,7 @@ public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGra
     }
 
 
+
     @Override
     protected void initialize() {
         super.initialize();
@@ -48,11 +49,6 @@ public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGra
     @Override
     public SecondaryOneGrade getValue() {
         return new SecondaryOneGrade(value.getValue(), sign.getValue());
-    }
-
-    @Override
-    public ValidationResult check() {
-        return new ValidationResult();
     }
 
     @Override

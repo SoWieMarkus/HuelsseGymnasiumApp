@@ -17,4 +17,9 @@ public class ValidationResult {
         this.errorMessage = null;
     }
 
+    public ValidationResult(String errorMessage) {
+        this.errorMessage = errorMessage;
+        this.isValid = false;
+    }
+
 }

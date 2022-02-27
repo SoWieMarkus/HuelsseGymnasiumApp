@@ -2,27 +2,24 @@ package markus.wieland.huelssegymnasiumapp;
 
 import android.content.Intent;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.Objects;
 
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.grades.Grade;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
-public class SubjectDetailActivity extends DefaultActivity implements Observer<SubjectWithGradesAndCalendar> {
+public class SubjectDetailActivity extends DefaultActivity implements Observer<SubjectWithGradesAndCalendar>, OnContextMenuListener<Grade>{
 
     public static final String SUBJECT_ID = "markus.wieland.huelssegymnasiumapp.SUBJECT_ID";
 
@@ -33,6 +30,8 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
     private Button addCalendarEntry;
 
     private SubjectViewModel subjectViewModel;
+    private GradeViewModel gradeViewModel;
+    private CalendarViewModel calendarViewModel;
     private long subjectId;
 
     private Settings settings;
@@ -43,11 +42,36 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
         super(R.layout.activity_subject_detail);
     }
 
+    private final OnCalendarContextMenu<CalendarEntry> calendarContextMenu = new OnCalendarContextMenu<CalendarEntry>() {
+        @Override
+        public void onDone(CalendarEntry calendarEntry) {
+            onDelete(calendarEntry);
+        }
+
+        @Override
+        public void onEdit(CalendarEntry calendarEntry) {
+            startActivity(new Intent(SubjectDetailActivity.this, CreateCalendarEntryActivity.class).putExtra(
+                    CreateItemActivity.OBJECT_TO_EDIT, calendarEntry));
+        }
+
+        @Override
+        public void onDelete(CalendarEntry calendarEntry) {
+            calendarViewModel.delete(calendarEntry);
+        }
+
+        @Override
+        public void onClick(CalendarEntry calendarEntry) {
+            onEdit(calendarEntry);
+        }
+    };
+
     @Override
     public void bindViews() {
 
         settings = new Settings(this);
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
+        gradeViewModel = ViewModelProviders.of(this).get(GradeViewModel.class);
+        calendarViewModel = ViewModelProviders.of(this).get(CalendarViewModel.class);
         recyclerViewGrades = findViewById(R.id.activity_subject_detail_grades);
         recyclerViewCalendarEntries = findViewById(R.id.activity_subject_detail_calendar_entries);
         addGrade = findViewById(R.id.actvitiy_subject_detail_add_grade);
@@ -62,13 +86,13 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
         getSupportActionBar().setElevation(0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerViewGrades.setAdapter(new GradeAdapter());
+        recyclerViewGrades.setAdapter(new GradeAdapter(this));
         recyclerViewGrades.getRecyclerView().setHasFixedSize(false);
         recyclerViewGrades.getRecyclerView().setNestedScrollingEnabled(false);
 
         averageView.update(null);
 
-        recyclerViewCalendarEntries.setAdapter(new CalendarAdapter(null));
+        recyclerViewCalendarEntries.setAdapter(new CalendarAdapter(calendarContextMenu));
         recyclerViewCalendarEntries.getRecyclerView().setHasFixedSize(false);
         recyclerViewCalendarEntries.getRecyclerView().setNestedScrollingEnabled(false);
 
@@ -106,5 +130,21 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
         recyclerViewGrades.submitList(subjectWithGradesAndCalendar.getGrades());
         recyclerViewCalendarEntries.submitList(subjectWithGradesAndCalendar.getCalendarEntries());
         averageView.update(subjectWithGradesAndCalendar.calculateAverage(settings.getGradeFormat()));
+    }
+
+    @Override
+    public void onEdit(Grade grade) {
+        startActivity(new Intent(this, CreateGradeActivity.class)
+                .putExtra(CreateItemActivity.OBJECT_TO_EDIT, grade));
+    }
+
+    @Override
+    public void onDelete(Grade grade) {
+        gradeViewModel.delete(grade);
+    }
+
+    @Override
+    public void onClick(Grade grade) {
+        onEdit(grade);
     }
 }

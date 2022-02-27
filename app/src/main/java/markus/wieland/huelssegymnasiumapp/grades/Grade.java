@@ -7,6 +7,7 @@ import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import lombok.Getter;
@@ -22,7 +23,7 @@ import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 @Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId", childColumns = "subjectId", onDelete = ForeignKey.CASCADE))
 @Getter
 @Setter
-public class Grade implements DatabaseEntity, QueryableEntity<Long> {
+public class Grade implements DatabaseEntity, QueryableEntity<Long>, Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private long gradeId;
@@ -52,7 +53,6 @@ public class Grade implements DatabaseEntity, QueryableEntity<Long> {
     public String getStringToApplyQuery() {
         return "";
     }
-
 
     @Ignore
     public DefaultGrade getGrade(GradeFormat gradeFormat) {

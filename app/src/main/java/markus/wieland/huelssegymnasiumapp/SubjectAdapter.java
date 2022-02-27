@@ -11,9 +11,8 @@ import androidx.annotation.NonNull;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
 import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
@@ -22,8 +21,8 @@ public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndC
 
     private GradeFormat gradeFormat;
 
-    public SubjectAdapter(OnItemInteractListener<SubjectWithGradesAndCalendar> onItemInteractListener) {
-        super(onItemInteractListener);
+    public SubjectAdapter(OnContextMenuListener<SubjectWithGradesAndCalendar> onContextMenuListener) {
+        super(onContextMenuListener);
     }
 
     @NonNull
@@ -33,8 +32,8 @@ public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndC
     }
 
     @Override
-    public OnItemClickListener<SubjectWithGradesAndCalendar> getOnItemInteractListener() {
-        return (OnItemClickListener<SubjectWithGradesAndCalendar>)super.getOnItemInteractListener();
+    public OnContextMenuListener<SubjectWithGradesAndCalendar> getOnItemInteractListener() {
+        return (OnContextMenuListener<SubjectWithGradesAndCalendar>) super.getOnItemInteractListener();
     }
 
     public class SubjectViewHolder extends DefaultViewHolder<SubjectWithGradesAndCalendar> {
@@ -64,6 +63,7 @@ public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndC
             teacher.setText(subject.getTeacher() == null ? "-" : subject.getTeacher());
             average.setText(subjectWithGradesAndCalendar.getAverageAsString(gradeFormat));
             itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(subjectWithGradesAndCalendar));
+            itemView.setOnCreateContextMenuListener(new ContextMenu<>(getOnItemInteractListener(), subjectWithGradesAndCalendar));
         }
     }
 

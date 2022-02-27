@@ -4,6 +4,8 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -13,22 +15,27 @@ import java.time.LocalDate;
 
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 
 public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder> {
 
-    public CalendarWithSubjectAdapter(OnItemInteractListener<CalendarEntryWithSubject> onItemInteractListener) {
-        super(onItemInteractListener);
+    public CalendarWithSubjectAdapter(OnCalendarContextMenu<CalendarEntryWithSubject> onContextMenuListener) {
+        super(onContextMenuListener);
     }
 
     @NonNull
     @Override
     public CalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new CalendarViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_calendar_entry_with_subject, parent, false));
+    }
+
+    @Override
+    public OnCalendarContextMenu<CalendarEntryWithSubject> getOnItemInteractListener() {
+        return (OnCalendarContextMenu<CalendarEntryWithSubject>) super.getOnItemInteractListener();
     }
 
     public class CalendarViewHolder extends DefaultViewHolder<CalendarEntryWithSubject> {
@@ -38,6 +45,7 @@ public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarE
         private TextView subjectName;
         private TextView title;
         private TextView description;
+        private CheckBox done;
         private LinearLayout color;
 
         public CalendarViewHolder(@NonNull View itemView) {
@@ -52,6 +60,7 @@ public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarE
             title = findViewById(R.id.item_calendar_with_subject_title);
             description = findViewById(R.id.item_calendar_with_subject_description);
             color = findViewById(R.id.item_calendar_with_subject_color);
+            done = findViewById(R.id.item_calendar_with_subject_check_box);
         }
 
         @Override
@@ -59,7 +68,14 @@ public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarE
 
             CalendarEntry calendarEntry = calendarEntryWithSubject.getCalendarEntry();
             Subject subject = calendarEntryWithSubject.getSubject();
-
+            itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(calendarEntryWithSubject));
+            itemView.setOnCreateContextMenuListener(new ContextMenu<>(getOnItemInteractListener(), calendarEntryWithSubject));
+            done.setOnCheckedChangeListener(null);
+            done.setChecked(calendarEntryWithSubject.getCalendarEntry().isDone());
+            done.setOnCheckedChangeListener((compoundButton, b) -> {
+                calendarEntryWithSubject.getCalendarEntry().setDone(b);
+                getOnItemInteractListener().onDone(calendarEntryWithSubject);
+            });
 
             date.setText(LocalDateConverter.toDisplayString(calendarEntry.getLocalDate(), itemView.getContext()));
             date.setTextColor(getColor(calendarEntry.getLocalDate()));

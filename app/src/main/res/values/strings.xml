@@ -50,4 +50,20 @@
     <string name="empty_message_subjects">No subjects</string>
     <string name="empty_message_calendar_entries">No homework</string>
     <string name="menu_subsititution_refresh">Refresh</string>
+    <string name="context_menu_edit">Edit</string>
+    <string name="context_menu_delete">Delete</string>
+    <string name="input_widget_time_period_title">Period</string>
+    <string name="activity_create_time_table_slot_title">Time table entry</string>
+    <string name="input_widget_time_period_error_time">Start time can\'t be after end time</string>
+    <string name="week_day_monday_short" translatable="false">Mo</string>
+    <string name="week_day_tuesday_short">Tu</string>
+    <string name="week_day_wednesday_short">We</string>
+    <string name="week_day_thursday_short">Th</string>
+    <string name="week_day_friday_short" translatable="false">Fr</string>
+    <string name="week_day_monday">Monday</string>
+    <string name="week_day_tuesday">Tuesday</string>
+    <string name="week_day_wednesday">Wednesday</string>
+    <string name="week_day_thursday">Thursday</string>
+    <string name="week_day_friday">Friday</string>
+    <string name="input_widget_week_day_title">Day</string>
 </resources>

@@ -11,13 +11,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
 
 public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
-        implements OnItemClickListener<CalendarEntry>, Observer<List<CalendarEntryWithSubject>> {
+        implements Observer<List<CalendarEntryWithSubject>>, OnCalendarContextMenu<CalendarEntryWithSubject> {
 
     private CalendarViewModel calendarViewModel;
 
@@ -39,17 +38,12 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
 
     @Override
     public CalendarWithSubjectAdapter createAdapter() {
-        return new CalendarWithSubjectAdapter(null);
+        return new CalendarWithSubjectAdapter(this);
     }
 
     @Override
     public void execute() {
         calendarViewModel.getCalendarEntryWithSubjects().observe(this, this);
-    }
-
-    @Override
-    public void onClick(CalendarEntry calendarEntry) {
-        startActivity(new Intent(getActivity(), CreateItemActivity.class).putExtra(CreateItemActivity.OBJECT_TO_EDIT, calendarEntry));
     }
 
     @Override
@@ -67,6 +61,27 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
 
     @Override
     public void onChanged(List<CalendarEntryWithSubject> calendarEntries) {
-       submitList(calendarEntries);
+        submitList(calendarEntries);
+    }
+
+    @Override
+    public void onDone(CalendarEntryWithSubject calendarEntryWithSubject) {
+        calendarViewModel.delete(calendarEntryWithSubject.getCalendarEntry());
+    }
+
+    @Override
+    public void onEdit(CalendarEntryWithSubject calendarEntryWithSubject) {
+        startActivity(new Intent(getActivity(), CreateCalendarEntryActivity.class).putExtra(
+                CreateItemActivity.OBJECT_TO_EDIT, calendarEntryWithSubject.getCalendarEntry()));
+    }
+
+    @Override
+    public void onDelete(CalendarEntryWithSubject calendarEntryWithSubject) {
+        calendarViewModel.delete(calendarEntryWithSubject.getCalendarEntry());
+    }
+
+    @Override
+    public void onClick(CalendarEntryWithSubject calendarEntryWithSubject) {
+        onEdit(calendarEntryWithSubject);
     }
 }

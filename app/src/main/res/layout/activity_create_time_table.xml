@@ -5,6 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color"
-    tools:context=".CreateTimeTableActivity">
+    tools:context=".CreateTimeTableSlotActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <markus.wieland.huelssegymnasiumapp.ui.week_day_input_widget.WeekDayInputWidget
+                android:id="@+id/activity_create_time_table_slot_day"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget
+                android:id="@+id/activity_create_time_table_slot_subject"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget>
+
+            <markus.wieland.huelssegymnasiumapp.ui.time_table_slot_input_widget.TimePeriodInputWidget
+                android:id="@+id/activity_create_time_table_slot_time_period"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

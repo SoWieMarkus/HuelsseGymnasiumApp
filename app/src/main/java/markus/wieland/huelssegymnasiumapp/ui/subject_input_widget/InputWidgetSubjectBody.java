@@ -74,14 +74,6 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
     }
 
     @Override
-    public ValidationResult check() {
-        if (subjectInputWidgetAdapter.getSelectedSubject() == null) {
-            return new ValidationResult(getContext().getString(R.string.input_widget_subject_error_nothing_selected), false);
-        }
-        return new ValidationResult();
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_subject_body;
     }

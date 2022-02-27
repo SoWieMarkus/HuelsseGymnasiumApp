@@ -8,13 +8,15 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
 import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
+import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 
-public class SubjectInputWidget extends InputWidget<Subject, String> {
+public class SubjectInputWidget extends InputWidget<Subject, String> implements Validation {
 
     public SubjectInputWidget(Context context) {
         super(context);
@@ -60,5 +62,13 @@ public class SubjectInputWidget extends InputWidget<Subject, String> {
     @Override
     public void onValueChanged(Subject subject) {
         getInputWidgetHeader().setValue(subject == null ? "" : subject.getName());
+    }
+
+    @Override
+    public ValidationResult check(Context context) {
+        if (getInputWidgetBody().getValue() == null) {
+            return new ValidationResult(context.getString(R.string.input_widget_subject_error_nothing_selected), false);
+        }
+        return new ValidationResult();
     }
 }

@@ -11,16 +11,11 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import lombok.Getter;
-import lombok.Setter;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
 
 public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder, SubjectAdapter>
-        implements OnItemClickListener<SubjectWithGradesAndCalendar>, Observer<List<SubjectWithGradesAndCalendar>> {
+        implements Observer<List<SubjectWithGradesAndCalendar>>, OnContextMenuListener<SubjectWithGradesAndCalendar> {
 
     private SubjectViewModel subjectViewModel;
     private Settings settings;
@@ -59,7 +54,7 @@ public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, 
 
     @Override
     public void execute() {
-        subjectViewModel.getAllSubjectsWithGradesAndEvents().observe(this,this);
+        subjectViewModel.getAllSubjectsWithGradesAndEvents().observe(this, this);
     }
 
     @Override
@@ -80,5 +75,16 @@ public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, 
         getAdapter().setGradeFormat(settings.getGradeFormat());
         submitList(subjects);
         averageView.calculateAverage(subjects);
+    }
+
+    @Override
+    public void onEdit(SubjectWithGradesAndCalendar subjectWithGradesAndCalendar) {
+        startActivity(new Intent(getActivity(), CreateSubjectActivity.class)
+                .putExtra(CreateItemActivity.OBJECT_TO_EDIT, subjectWithGradesAndCalendar.getSubject()));
+    }
+
+    @Override
+    public void onDelete(SubjectWithGradesAndCalendar subjectWithGradesAndCalendar) {
+        subjectViewModel.delete(subjectWithGradesAndCalendar.getSubject());
     }
 }

@@ -42,11 +42,6 @@ public class InputWidgetGradeSecondaryTwoBody extends InputWidgetBody<DefaultGra
     }
 
     @Override
-    public ValidationResult check() {
-        return new ValidationResult();
-    }
-
-    @Override
     protected int getLayoutId() {
         return R.layout.layout_input_widget_number_picker_body;
     }

@@ -79,8 +79,4 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
         return inputWidgetBody.getValue();
     }
 
-    public ValidationResult check() {
-        return inputWidgetBody.check();
-    }
-
 }

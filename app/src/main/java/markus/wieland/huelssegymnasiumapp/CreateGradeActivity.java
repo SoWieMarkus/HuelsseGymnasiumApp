@@ -7,6 +7,8 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
@@ -17,6 +19,7 @@ import markus.wieland.huelssegymnasiumapp.grades.GradeType;
 import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
 import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryOneGrade;
 import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryTwoGrade;
+import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 import markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget;
@@ -66,6 +69,7 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
         subjectViewModel.getAllSubjects().observe(this, this);
     }
 
+    // TODO move to DefaultGrade noargscontructor
     private DefaultGrade getDefaultGrade() {
         if (settings.getGradeFormat() == GradeFormat.ABITUR) {
             return new SecondaryTwoGrade(15);
@@ -87,11 +91,8 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
     }
 
     @Override
-    public ValidationResult validate() {
-        if (subjectInputWidget.getValue() == null) {
-            return new ValidationResult(getString(R.string.input_widget_subject_error_nothing_selected), false);
-        }
-        return new ValidationResult();
+    public List<Validation> getValidations() {
+        return new ArrayList<>(Collections.singleton(subjectInputWidget));
     }
 
     @Override

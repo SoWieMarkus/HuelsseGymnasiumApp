@@ -8,11 +8,15 @@ import java.util.List;
 
 import markus.wieland.databases.BaseDataAccessObject;
 import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
 
 @Dao
 public interface TimeTableSlotDataAccessObject extends BaseDataAccessObject<TimeTableSlot> {
 
     @Query("SELECT * FROM TimeTableSlot WHERE week = :week")
     LiveData<List<TimeTableSlot>> getTimeTableSlotsByWeek(int week);
+
+    @Query("SELECT * FROM TimeTableSlot")
+    LiveData<List<TimeTableSlotWithSubject>> getAllTimeTableSlots();
 
 }

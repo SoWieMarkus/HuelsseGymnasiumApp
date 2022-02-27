@@ -6,6 +6,8 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
@@ -14,7 +16,7 @@ import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
 @Getter
 @Setter
 @Entity
-public class Subject implements DatabaseEntity, QueryableEntity<Long> {
+public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializable {
 
     @Ignore
     public static final long NO_SUBJECT_ID = -1;
