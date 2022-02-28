@@ -113,8 +113,6 @@ Oapp/src/main/java/markus/wieland/huelssegymnasiumapp/OnContextMenuListener.java
 Tapp/src/main/java/markus/wieland/huelssegymnasiumapp/OnFragmentSelectedListener.java,3\7\37a66757c0c228b9d9baac87129dd2a9c4688baa
 …
 Uapp/src/main/java/markus/wieland/huelssegymnasiumapp/CreateCalendarEntryActivity.java,9\d\9d68b41505809eccf1527d42403e31a62b0afbda
-P
- app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 t
 Dapp/src/test/java/markus/wieland/huelssegymnasiumapp/MatrixTest.java,2\6\26829b343a853f6022e6c1af7f370c3dbbe31448
 y
@@ -125,8 +123,6 @@ Papp/src/test/java/markus/wieland/huelssegymnasiumapp/TimeTableConfiguration.jav
 Xapp/src/androidTest/java/markus/wieland/huelssegymnasiumapp/ExampleInstrumentedTest.java,c\3\c3e75a8bb618f17f59907e3cc771834a070642ba
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
 X
@@ -198,3 +194,13 @@ oapp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/time_table_slot_input_w
 lapp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/weighting_input_widget/InputWidgetWeightingBody.java,8\2\825a8ccfbdb77b47402c0f2a988f645005ce749b
 £
 sapp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/time_table_slot_input_widget/InputWidgetTimePeriodBody.java,2\9\295971b6e730047f867375c02341a660e96667e6
+@
+local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
+€
+Papp/src/main/java/markus/wieland/huelssegymnasiumapp/calendar/CalendarEntry.java,7\9\79e16f3e8cad6893d7980f2bec670a3bf08ac573
+‚
+Rapp/src/main/java/markus/wieland/huelssegymnasiumapp/time_table/TimeTableSlot.java,d\5\d5a8d5800d020e0f5a9bff2df290377bdcf0f74a
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
