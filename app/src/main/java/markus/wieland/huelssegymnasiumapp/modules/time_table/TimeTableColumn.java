@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.time_table;
 
 import androidx.annotation.NonNull;
 
@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
 
 @Getter
 public class TimeTableColumn implements Iterable<TimeTableSlotWithSubject> {

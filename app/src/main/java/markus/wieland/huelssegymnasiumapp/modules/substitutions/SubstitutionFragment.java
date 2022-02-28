@@ -11,6 +11,7 @@ import markus.wieland.huelssegymnasiumapp.api.SubstitutionAPI;
 import markus.wieland.huelssegymnasiumapp.api.models.Substitution;
 import markus.wieland.huelssegymnasiumapp.api.models.SubstitutionPlan;
 import markus.wieland.huelssegymnasiumapp.substitutions.SubstitutionAdapter;
+import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 public class SubstitutionFragment extends ListFragment<Substitution, SubstitutionAdapter.SubstitutionViewHolder, SubstitutionAdapter>
         implements APIResult<SubstitutionPlan> {

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.subjects;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import androidx.room.Embedded;
 import androidx.room.Ignore;
@@ -11,12 +11,12 @@ import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.grades.Grade;
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryOneGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryTwoGrade;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryOneGrade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryTwoGrade;
 
 @Getter
 @Setter

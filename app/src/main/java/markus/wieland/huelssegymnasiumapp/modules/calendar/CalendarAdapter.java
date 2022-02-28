@@ -4,17 +4,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
 import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
+import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarAdapter extends QueryableAdapter<Long, CalendarEntry, CalendarAdapter.CalendarViewHolder> {
 

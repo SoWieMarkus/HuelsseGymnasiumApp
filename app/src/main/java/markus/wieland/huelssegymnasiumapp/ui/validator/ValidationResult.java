@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui;
+package markus.wieland.huelssegymnasiumapp.helper.validator;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

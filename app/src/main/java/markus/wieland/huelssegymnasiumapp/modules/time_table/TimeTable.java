@@ -3,7 +3,6 @@ package markus.wieland.huelssegymnasiumapp.time_table;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.huelssegymnasiumapp.TimeTableDay;
 
 @Getter
 public class TimeTable {
@@ -26,12 +25,12 @@ public class TimeTable {
         this.range = new TimePeriod(slots);
     }
 
-    public int getMaxHour(){
+    public int getMaxHour() {
         int maxHour = getRange().getEndTime().getHour() + 1;
         return Math.min(maxHour, 24);
     }
 
-    public int getMinHour(){
+    public int getMinHour() {
         return getRange().getStartTime().getHour();
     }
 
@@ -48,7 +47,7 @@ public class TimeTable {
         return getSizePerHour(minHeight, heightOfView) / 60;
     }
 
-    public int getHeightNeeded(int minHeight, int heightOfView){
+    public int getHeightNeeded(int minHeight, int heightOfView) {
         return getHoursToDisplay() * getSizePerHour(minHeight, heightOfView);
     }
 

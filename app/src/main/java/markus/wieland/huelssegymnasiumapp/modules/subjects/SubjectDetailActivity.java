@@ -20,8 +20,11 @@ import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewM
 import markus.wieland.huelssegymnasiumapp.grades.Grade;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
+import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
+import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
-public class SubjectDetailActivity extends DefaultActivity implements Observer<SubjectWithGradesAndCalendar>, OnContextMenuListener<Grade>{
+public class SubjectDetailActivity extends DefaultActivity implements Observer<SubjectWithGradesAndCalendar>, OnContextMenuListener<Grade> {
 
     public static final String SUBJECT_ID = "markus.wieland.huelssegymnasiumapp.SUBJECT_ID";
 

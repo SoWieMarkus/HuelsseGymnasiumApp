@@ -11,9 +11,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
         implements Observer<List<CalendarEntryWithSubject>>, OnCalendarContextMenu<CalendarEntryWithSubject> {

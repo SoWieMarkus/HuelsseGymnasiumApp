@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,6 +19,7 @@ import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
 import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder> {
 

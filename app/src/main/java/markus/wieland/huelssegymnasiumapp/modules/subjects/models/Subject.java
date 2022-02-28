@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.subjects;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import android.graphics.Color;
 

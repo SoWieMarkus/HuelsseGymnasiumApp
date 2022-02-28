@@ -11,12 +11,11 @@ import androidx.annotation.NonNull;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
 import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
 import markus.wieland.huelssegymnasiumapp.grades.Grade;
 import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
 import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
+import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 @Setter
 public class GradeAdapter extends QueryableAdapter<Long, Grade, GradeAdapter.GradeViewHolder> {

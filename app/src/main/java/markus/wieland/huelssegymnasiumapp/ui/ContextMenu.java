@@ -2,7 +2,7 @@ package markus.wieland.huelssegymnasiumapp.helper;
 
 import android.view.View;
 
-import markus.wieland.huelssegymnasiumapp.OnContextMenuListener;
+import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 import markus.wieland.huelssegymnasiumapp.R;
 
 public class ContextMenu<T> implements View.OnCreateContextMenuListener {

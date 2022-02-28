@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import java.time.LocalDate;
@@ -16,12 +15,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.database.entities.time_table.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.OnFragmentSelectedListener;
 
 public class DashboardFragment extends DefaultFragment {
 

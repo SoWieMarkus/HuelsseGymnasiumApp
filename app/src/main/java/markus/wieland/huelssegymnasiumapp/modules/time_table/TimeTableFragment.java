@@ -1,7 +1,6 @@
 package markus.wieland.huelssegymnasiumapp;
 
 import android.content.Intent;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -18,6 +17,8 @@ import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.database.entities.time_table.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.time_table.TimeTable;
 import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableBackgroundView;
+import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableView;
 
 public class TimeTableFragment extends DefaultFragment implements Observer<List<TimeTableSlotWithSubject>>, OnItemClickListener<TimeTableSlotWithSubject> {
 
@@ -44,7 +45,7 @@ public class TimeTableFragment extends DefaultFragment implements Observer<List<
 
     @Override
     public void execute() {
-        timeTableSlotViewModel.getAllTimeTableSlots().observe(this,this);
+        timeTableSlotViewModel.getAllTimeTableSlots().observe(this, this);
     }
 
     @Override

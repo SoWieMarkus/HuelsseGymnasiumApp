@@ -1,10 +1,9 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.time_table;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
 
 @Getter
 public class TimeTableDay {
@@ -18,7 +17,7 @@ public class TimeTableDay {
         this.day = day;
     }
 
-    public TimeTableDay add(TimeTableSlotWithSubject timeTableSlotWithSubject){
+    public TimeTableDay add(TimeTableSlotWithSubject timeTableSlotWithSubject) {
         for (TimeTableColumn column : columns) {
             if (column.add(timeTableSlotWithSubject)) return this;
         }
@@ -28,7 +27,7 @@ public class TimeTableDay {
         return this;
     }
 
-    public int getAmountColumns(){
+    public int getAmountColumns() {
         return columns.size();
     }
 

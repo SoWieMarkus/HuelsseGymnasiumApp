@@ -15,6 +15,7 @@ import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
 import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 @Setter
 public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder> {

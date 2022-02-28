@@ -13,6 +13,7 @@ import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder, SubjectAdapter>
         implements Observer<List<SubjectWithGradesAndCalendar>>, OnContextMenuListener<SubjectWithGradesAndCalendar> {
