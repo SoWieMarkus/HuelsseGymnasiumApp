@@ -57,8 +57,6 @@ mapp/src/main/java/markus/wieland/huelssegymnasiumapp/helper/validator/string_va
 \app/src/main/java/markus/wieland/huelssegymnasiumapp/helper/validator/ValidatorArgument.java,1\3\13cd6ae452bf940e18f7d6b8eadca2b17d10df51
 |
 Lapp/src/main/java/markus/wieland/huelssegymnasiumapp/helper/ContextMenu.java,c\3\c378e5ade211df09bba18029940023ab594f5905
-Ä
-Papp/src/main/java/markus/wieland/huelssegymnasiumapp/calendar/CalendarEntry.java,7\9\79e16f3e8cad6893d7980f2bec670a3bf08ac573
 Ñ
 Tapp/src/main/java/markus/wieland/huelssegymnasiumapp/calendar/CalendarEntryType.java,0\7\0712b9351fe260f74fda5f67abf459b5e38912eb
 Ö
@@ -91,8 +89,6 @@ z
 Japp/src/main/java/markus/wieland/huelssegymnasiumapp/subjects/Subject.java,2\d\2d60e0f77b99e0f7ef6dde0b95665f4c5dcdb142
 è
 _app/src/main/java/markus/wieland/huelssegymnasiumapp/subjects/SubjectWithGradesAndCalendar.java,b\b\bbf99cdfdb3941871bd05c48bcf48fbb4e6bb2c1
-r
-Bapp/src/main/java/markus/wieland/huelssegymnasiumapp/Settings.java,2\5\25321d7f62562eb1d6a30168c486e2363080f35d
 u
 Eapp/src/main/java/markus/wieland/huelssegymnasiumapp/AverageView.java,4\b\4bc7777f50a4f180b9596f3eb8ebb43714e19553
 v
@@ -109,8 +105,6 @@ z
 Japp/src/main/java/markus/wieland/huelssegymnasiumapp/SettingsActivity.java,7\c\7c2c4c6967c91213f4f56246a065e691761bd509
 {
 Kapp/src/main/java/markus/wieland/huelssegymnasiumapp/DashboardFragment.java,b\e\be336ab3eb26ad17c3a880784e376707d76a6022
-~
-Napp/src/main/java/markus/wieland/huelssegymnasiumapp/SubstitutionFragment.java,e\a\ea044144353e41ad064b58164f22891d4e4eb880
 
 Oapp/src/main/java/markus/wieland/huelssegymnasiumapp/OnCalendarContextMenu.java,b\3\b338e857ecf315a48add77ff0fa9a7d6f91d64f1
 
@@ -150,8 +144,6 @@ X
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
-
-Oapp/src/main/java/markus/wieland/huelssegymnasiumapp/SubjectDetailActivity.java,5\0\506125a5f94a0b7a6f32fbf64b9601f755372d55
 ã
 [app/src/main/java/markus/wieland/huelssegymnasiumapp/substitutions/SubstitutionAdapter.java,9\8\98dbd4d2e95574e1b8745508241175ff0bd8e9a8
 Ñ
@@ -176,12 +168,8 @@ dapp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/color_input_widget/Inpu
 japp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/calendar_input_widget/InputWidgetCalendarBody.java,3\d\3dd2bafeb325926d3829deeb56736ee8d260d16c
 ñ
 fapp/src/main/java/markus/wieland/huelssegymnasiumapp/ui/calendar_input_widget/CalendarInputWidget.java,3\3\33fbf53ef58265a60743581affa17a436b173742
-ç
-]app/src/main/java/markus/wieland/huelssegymnasiumapp/time_table/TimeTableSlotWithSubject.java,3\8\38b0df67d3132b735b07f16629443f7b746ade9a
 Ö
 Uapp/src/main/java/markus/wieland/huelssegymnasiumapp/api/models/SubstitutionPlan.java,3\a\3a41c58e3ba9bae2c897ec1cf7b5a267144ff39c
-Ç
-Rapp/src/main/java/markus/wieland/huelssegymnasiumapp/time_table/TimeTableSlot.java,d\5\d5a8d5800d020e0f5a9bff2df290377bdcf0f74a
 v
 Fapp/src/main/java/markus/wieland/huelssegymnasiumapp/TimeTableDay.java,a\0\a011aa6f76355a912a9b5cfda07baa6ac10941aa
 ù

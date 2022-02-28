@@ -25,6 +25,7 @@ public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlo
     private SubjectViewModel subjectViewModel;
     private TimeTableSlotViewModel timeTableSlotViewModel;
     private WeekDayInputWidget weekDayInputWidget;
+    private Settings settings;
 
     public CreateTimeTableSlotActivity() {
         super(R.layout.activity_create_time_table, R.string.activity_create_time_table_slot_title);
@@ -37,6 +38,7 @@ public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlo
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
         timeTableSlotViewModel = ViewModelProviders.of(this).get(TimeTableSlotViewModel.class);
         weekDayInputWidget = findViewById(R.id.activity_create_time_table_slot_day);
+        settings = new Settings(this);
     }
 
     @Override
@@ -51,12 +53,15 @@ public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlo
         weekDayInputWidget.setValue(item.getDay());
         subjectInputWidget.select(item.getSubjectId());
 
+        timePeriodInputWidget.setExpanded(true);
+        weekDayInputWidget.setExpanded(true);
+        subjectInputWidget.setExpanded(!isEditMode());
     }
 
     @Override
     public TimeTableSlot getDefaultItem() {
         TimeTableSlot timeTableSlot = new TimeTableSlot();
-        timeTableSlot.setDay(1);
+        timeTableSlot.setDay(settings.getLastSelectedDay());
         timeTableSlot.setTimePeriod(new TimePeriod());
         timeTableSlot.setSubjectId(null);
         return timeTableSlot;
@@ -75,6 +80,8 @@ public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlo
         timeTableSlot.setTimePeriod(timePeriodInputWidget.getValue());
         timeTableSlot.setSubjectId(subjectInputWidget.getValue().getSubjectId());
         timeTableSlot.setDay(weekDayInputWidget.getValue());
+
+        settings.saveLastSelectedDay(weekDayInputWidget.getValue());
     }
 
     @Override

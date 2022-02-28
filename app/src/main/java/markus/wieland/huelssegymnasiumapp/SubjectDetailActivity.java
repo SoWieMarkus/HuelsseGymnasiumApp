@@ -1,6 +1,8 @@
 package markus.wieland.huelssegymnasiumapp;
 
 import android.content.Intent;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Button;
 
@@ -35,6 +37,7 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
     private long subjectId;
 
     private Settings settings;
+    private Subject subject;
 
     private AverageView averageView;
 
@@ -119,12 +122,26 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+        } else if (item.getItemId() == R.id.menu_subject_delete && subject != null) {
+            subjectViewModel.getSubjectWithGradesAndEvents(subjectId).removeObservers(this);
+            subjectViewModel.delete(subject);
+            finish();
+        } else if (item.getItemId() == R.id.menu_subject_edit && subject != null) {
+            startActivity(new Intent(this, CreateSubjectActivity.class)
+                    .putExtra(CreateItemActivity.OBJECT_TO_EDIT, subject));
         }
         return super.onOptionsItemSelected(item);
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_subject, menu);
+        return true;
+    }
+    @Override
     public void onChanged(SubjectWithGradesAndCalendar subjectWithGradesAndCalendar) {
+        subject = subjectWithGradesAndCalendar.getSubject();
         recyclerViewGrades.getAdapter().setGradeFormat(settings.getGradeFormat());
         Objects.requireNonNull(getSupportActionBar()).setTitle(subjectWithGradesAndCalendar.getSubject().getName());
         recyclerViewGrades.submitList(subjectWithGradesAndCalendar.getGrades());

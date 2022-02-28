@@ -25,7 +25,7 @@ public class WeekDayInputWidget extends InputWidget<Integer, String> {
     }
 
     @Override
-    protected InputWidgetBody<Integer> getBody() {
+    protected InputWidgetWeekDayBody getBody() {
         return new InputWidgetWeekDayBody(getContext());
     }
 
@@ -35,12 +35,17 @@ public class WeekDayInputWidget extends InputWidget<Integer, String> {
     }
 
     @Override
+    public InputWidgetWeekDayBody getInputWidgetBody() {
+        return (InputWidgetWeekDayBody) super.getInputWidgetBody();
+    }
+
+    @Override
     protected int getTitle() {
         return R.string.input_widget_week_day_title;
     }
 
     @Override
     public void onValueChanged(Integer integer) {
-        getInputWidgetHeader().setValue(String.valueOf(integer));
+        getInputWidgetHeader().setValue(getInputWidgetBody().getDisplayName(integer));
     }
 }

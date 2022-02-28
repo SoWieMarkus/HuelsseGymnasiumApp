@@ -62,6 +62,10 @@ public class SubstitutionFragment extends ListFragment<Substitution, Substitutio
     @Override
     public void onLoad(SubstitutionPlan substitutionPlan) {
         getRecyclerView().getAdapter().setCourse(settings.getCourse());
+        if (substitutionPlan == null) {
+            getRecyclerView().setState(StateRecyclerView.State.EMPTY);
+            return;
+        }
         submitList(substitutionPlan.getSubstitutions());
     }
 }

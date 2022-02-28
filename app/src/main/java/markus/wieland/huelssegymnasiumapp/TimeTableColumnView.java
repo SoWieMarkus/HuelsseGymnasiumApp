@@ -29,7 +29,6 @@ public class TimeTableColumnView extends RelativeLayout {
             int minutesToStart = TimePeriod.getMinutes(new Time(minHour, 0), timePeriod.getStartTime());
             int marginTop = sizePerMinute * minutesToStart;
 
-
             layoutParams.setMargins(2, marginTop, 0, 2);  // left, top, right, bottom
 
             addView(view, layoutParams);

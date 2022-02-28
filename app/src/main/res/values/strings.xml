@@ -66,4 +66,6 @@
     <string name="week_day_thursday">Thursday</string>
     <string name="week_day_friday">Friday</string>
     <string name="input_widget_week_day_title">Day</string>
+    <string name="menu_subject_delete">Delete</string>
+    <string name="menu_subject_edit">Edit</string>
 </resources>

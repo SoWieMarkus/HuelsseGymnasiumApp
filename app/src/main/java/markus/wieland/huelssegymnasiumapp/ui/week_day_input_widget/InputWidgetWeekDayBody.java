@@ -9,6 +9,7 @@ import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
 public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements NumberPicker.OnValueChangeListener {
 
     private NumberPicker numberPicker;
+    private String[] displayNames;
 
     protected InputWidgetWeekDayBody(Context context) {
         super(context);
@@ -17,7 +18,7 @@ public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements 
     @Override
     protected void initialize() {
         super.initialize();
-        String[] displayNames = new String[] {
+         displayNames= new String[] {
                 getContext().getString(R.string.week_day_monday),
                 getContext().getString(R.string.week_day_tuesday),
                 getContext().getString(R.string.week_day_wednesday),
@@ -30,6 +31,10 @@ public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements 
         numberPicker.setDisplayedValues(displayNames);
         numberPicker.setWrapSelectorWheel(false);
         numberPicker.setOnValueChangedListener(this);
+    }
+
+    public String getDisplayName(int index) {
+        return displayNames[index];
     }
 
     @Override

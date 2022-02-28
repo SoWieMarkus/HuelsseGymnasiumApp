@@ -13,6 +13,7 @@ public class Settings {
 
     private static final String GRADE_FORMAT_KEY = "markus.wieland.huelssegymnasiumapp.GRADE_FORMAT_KEY";
     private static final String COURSE_KEY = "markus.wieland.huelssegymnasiumapp.COURSE_KEY";
+    private static final String LAST_DAY_KEY = "markus.wieland.huelssegymnasiumapp.LAST_SELECTED_DAY_KEY";
 
     private final SharedPreferences sharedPreferences;
     private final Gson gson;
@@ -28,6 +29,16 @@ public class Settings {
 
     public GradeFormat getGradeFormat() {
         return gson.fromJson(sharedPreferences.getString(GRADE_FORMAT_KEY, null), GradeFormat.class);
+    }
+
+    public int getLastSelectedDay() {
+        return sharedPreferences.getInt(LAST_DAY_KEY, 0);
+    }
+
+    public void saveLastSelectedDay(int selectedDay) {
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(LAST_DAY_KEY, selectedDay);
+        editor.apply();
     }
 
     public String getCourse() {

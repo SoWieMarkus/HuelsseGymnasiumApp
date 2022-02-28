@@ -21,7 +21,7 @@ import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlot;
         TimeTableSlot.class,
         Grade.class,
         CalendarEntry.class},
-        version = 4)
+        version = 5)
 public abstract class SchoolDatabase extends RoomDatabase {
 
     private static SchoolDatabase instance;

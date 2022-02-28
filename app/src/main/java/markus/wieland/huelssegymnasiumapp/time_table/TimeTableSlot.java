@@ -2,16 +2,19 @@ package markus.wieland.huelssegymnasiumapp.time_table;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
+import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
+import markus.wieland.huelssegymnasiumapp.subjects.Subject;
 
 @Getter
 @Setter
-@Entity
+@Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId",
+        childColumns = "subjectId", onDelete = ForeignKey.CASCADE))
 public class TimeTableSlot implements DatabaseEntity {
 
     @PrimaryKey(autoGenerate = true)
