@@ -1,7 +1,5 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui;
 
-import android.content.Context;
-import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -15,11 +13,11 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.databases.BaseViewModel;
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.ui.validator.ValidationResult;
 
 @Getter
 @Setter
@@ -92,7 +90,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
         return new ArrayList<>();
     }
 
-    public void check(){
+    public void check() {
         ValidationResult validationResult = validate();
         if (validationResult.isValid()) {
             setValues(item);
@@ -109,7 +107,7 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
 
     public abstract void initializeWidgets(T item);
 
-    public ValidationResult validate(){
+    public ValidationResult validate() {
         for (Validation validation : getValidations()) {
             ValidationResult result = validation.check(this);
             if (!result.isValid()) {

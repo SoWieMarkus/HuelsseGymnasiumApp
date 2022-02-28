@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.helper.validator;
+package markus.wieland.huelssegymnasiumapp.ui.validator;
 
 import android.content.Context;
 
@@ -7,7 +7,6 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 
 @Getter
 @Setter

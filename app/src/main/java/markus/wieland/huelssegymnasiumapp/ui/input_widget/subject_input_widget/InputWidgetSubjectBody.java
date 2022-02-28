@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.subject_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -11,9 +11,8 @@ import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements OnItemClickListener<Subject> {
 
@@ -59,7 +58,7 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
         getValueChangeListener().onValueChanged(subject);
     }
 
-    public Subject getSubjectById(long id){
+    public Subject getSubjectById(long id) {
         for (Subject subject : subjectInputWidgetAdapter.getList()) {
             if (subject.getSubjectId() == id) {
                 return subject;

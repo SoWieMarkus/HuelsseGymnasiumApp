@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.time_table_slot_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,13 +6,13 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.time_table.TimePeriod;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.ui.validator.ValidationResult;
 
 public class TimePeriodInputWidget extends InputWidget<TimePeriod, String> implements Validation {
     public TimePeriodInputWidget(Context context) {

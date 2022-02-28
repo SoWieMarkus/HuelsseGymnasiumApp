@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.calendar;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +10,10 @@ import androidx.annotation.NonNull;
 
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
-import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.ui.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarAdapter extends QueryableAdapter<Long, CalendarEntry, CalendarAdapter.CalendarViewHolder> {
@@ -57,7 +58,7 @@ public class CalendarAdapter extends QueryableAdapter<Long, CalendarEntry, Calen
         @Override
         public void bindItemToViewHolder(CalendarEntry calendarEntry) {
             itemView.setAlpha(calendarEntry.isDone() ? 0.6f : 1f);
-            itemView.setOnCreateContextMenuListener(new ContextMenu<>(getOnItemInteractListener(),calendarEntry));
+            itemView.setOnCreateContextMenuListener(new ContextMenu<>(getOnItemInteractListener(), calendarEntry));
             itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(calendarEntry));
             done.setOnCheckedChangeListener(null);
             done.setChecked(calendarEntry.isDone());

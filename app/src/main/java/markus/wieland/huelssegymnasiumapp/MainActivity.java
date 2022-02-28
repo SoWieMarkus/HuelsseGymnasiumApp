@@ -13,6 +13,14 @@ import com.google.android.material.navigation.NavigationBarView;
 import java.util.Objects;
 
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarFragment;
+import markus.wieland.huelssegymnasiumapp.modules.dashboard.DashboardFragment;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.settings.SettingsActivity;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.SubjectFragment;
+import markus.wieland.huelssegymnasiumapp.modules.substitutions.SubstitutionFragment;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableFragment;
+import markus.wieland.huelssegymnasiumapp.ui.OnFragmentSelectedListener;
 
 public class MainActivity extends DefaultActivity implements NavigationBarView.OnItemSelectedListener, OnFragmentSelectedListener {
 

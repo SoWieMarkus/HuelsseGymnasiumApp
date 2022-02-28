@@ -1,16 +1,17 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
-import markus.wieland.huelssegymnasiumapp.ui.color_input_widget.Color;
-import markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget.WeightingInputWidget;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget.Color;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget.ColorInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.weighting_input_widget.WeightingInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
 
 public class CreateSubjectActivity extends CreateItemActivity<Subject> {
 
@@ -45,7 +46,6 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> {
         weightingInputWidget.setValue(item.getExamWeight());
     }
 
-    // TODO
     @Override
     public List<Validation> getValidations() {
         return super.getValidations();
@@ -73,7 +73,6 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> {
     public void update(Subject subject) {
         subjectViewModel.update(subject);
     }
-
 
 
 }

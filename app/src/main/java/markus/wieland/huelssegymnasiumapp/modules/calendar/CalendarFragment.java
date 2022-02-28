@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.calendar;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -11,8 +11,11 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
-import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
 import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
@@ -33,6 +36,7 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
     @Override
     public void bindViews() {
         super.bindViews();
+        if (getActivity() == null) return;
         calendarViewModel = ViewModelProviders.of(getActivity()).get(CalendarViewModel.class);
     }
 

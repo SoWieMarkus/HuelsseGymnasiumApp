@@ -1,10 +1,10 @@
-package markus.wieland.huelssegymnasiumapp.ui.week_day_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.week_day_input_widget;
 
 import android.content.Context;
 import android.widget.NumberPicker;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements NumberPicker.OnValueChangeListener {
 
@@ -18,7 +18,7 @@ public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements 
     @Override
     protected void initialize() {
         super.initialize();
-         displayNames= new String[] {
+        displayNames = new String[]{
                 getContext().getString(R.string.week_day_monday),
                 getContext().getString(R.string.week_day_tuesday),
                 getContext().getString(R.string.week_day_wednesday),

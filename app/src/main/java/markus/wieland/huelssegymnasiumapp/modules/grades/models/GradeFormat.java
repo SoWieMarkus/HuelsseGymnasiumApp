@@ -1,9 +1,6 @@
-package markus.wieland.huelssegymnasiumapp.grades;
+package markus.wieland.huelssegymnasiumapp.modules.grades.models;
 
 import android.content.Context;
-
-import java.util.ArrayList;
-import java.util.Collections;
 
 import lombok.Getter;
 import markus.wieland.huelssegymnasiumapp.R;

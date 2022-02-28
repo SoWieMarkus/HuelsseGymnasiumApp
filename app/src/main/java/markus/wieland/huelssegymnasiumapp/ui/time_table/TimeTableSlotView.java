@@ -1,12 +1,11 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
 import android.view.Gravity;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
 
 public class TimeTableSlotView extends LinearLayout {
     public TimeTableSlotView(Context context) {

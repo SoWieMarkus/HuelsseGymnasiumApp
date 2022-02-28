@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.grades.transformer;
+package markus.wieland.huelssegymnasiumapp.modules.grades.models;
 
 import android.graphics.Color;
 

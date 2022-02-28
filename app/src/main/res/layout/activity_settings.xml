@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color"
-    tools:context=".SettingsActivity">
+    tools:context=".modules.settings.SettingsActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -21,12 +21,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <markus.wieland.huelssegymnasiumapp.ui.course_input_widget.CourseInputWidget
+            <markus.wieland.huelssegymnasiumapp.ui.input_widget.course_input_widget.CourseInputWidget
                 android:id="@+id/activity_settings_course"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget
+            <markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget.EnumInputWidget
                 android:id="@+id/activity_settings_format"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -13,8 +13,10 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import java.text.DecimalFormat;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
 
 public class AverageView extends ConstraintLayout {
 

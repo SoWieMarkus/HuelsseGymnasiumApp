@@ -1,13 +1,12 @@
-package markus.wieland.huelssegymnasiumapp.ui.grade_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.grade_input_widget;
 
 import android.content.Context;
 import android.widget.NumberPicker;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryOneGrade;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryOneGrade;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGrade> implements NumberPicker.OnValueChangeListener {
 
@@ -17,8 +16,6 @@ public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGra
     public InputWidgetGradeSecondaryOneBody(Context context) {
         super(context);
     }
-
-
 
     @Override
     protected void initialize() {

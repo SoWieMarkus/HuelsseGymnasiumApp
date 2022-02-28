@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 @Getter
 @Setter
@@ -40,7 +40,7 @@ public class TimeTableSlot implements DatabaseEntity {
         this.endMinute = timePeriod.getEndTime().getMinute();
         this.endHour = timePeriod.getEndTime().getHour();
         this.startMinute = timePeriod.getStartTime().getMinute();
-        this.startHour= timePeriod.getStartTime().getHour();
+        this.startHour = timePeriod.getStartTime().getHour();
     }
 
     @Ignore

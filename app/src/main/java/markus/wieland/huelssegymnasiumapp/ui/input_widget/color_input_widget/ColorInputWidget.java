@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.color_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
 
 public class ColorInputWidget extends InputWidget<Color, Color> {
 

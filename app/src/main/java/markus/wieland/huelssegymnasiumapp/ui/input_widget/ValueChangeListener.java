@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget;
 
 public interface ValueChangeListener<T> {
 

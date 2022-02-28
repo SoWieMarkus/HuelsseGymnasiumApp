@@ -1,11 +1,11 @@
-package markus.wieland.huelssegymnasiumapp.ui.color_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget;
 
 import android.content.Context;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;
 
 public class InputWidgetColorHeader extends InputWidgetHeader<Color> {
 

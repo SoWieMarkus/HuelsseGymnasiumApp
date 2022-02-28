@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.calendar;
+package markus.wieland.huelssegymnasiumapp.modules.calendar.database;
 
 import android.content.Context;
 
@@ -13,7 +13,8 @@ public class LocalDateConverter {
 
     private static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    private LocalDateConverter(){}
+    private LocalDateConverter() {
+    }
 
     @TypeConverter
     public static String toString(LocalDate localDate) {
@@ -25,8 +26,10 @@ public class LocalDateConverter {
     }
 
     public static String toDisplayString(LocalDate localDate, Context context) {
-        if (localDate.equals(LocalDate.now())) return context.getString(R.string.calendar_date_today);
-        if (localDate.equals(LocalDate.now().plusDays(1))) return context.getString(R.string.calendar_date_tomorrow);
+        if (localDate.equals(LocalDate.now()))
+            return context.getString(R.string.calendar_date_today);
+        if (localDate.equals(LocalDate.now().plusDays(1)))
+            return context.getString(R.string.calendar_date_tomorrow);
         return localDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 

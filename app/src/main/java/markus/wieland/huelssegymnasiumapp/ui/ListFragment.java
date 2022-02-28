@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
-import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 @Getter
 @Setter

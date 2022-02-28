@@ -7,7 +7,7 @@ import java.util.List;
 
 import lombok.Getter;
 import lombok.Setter;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
 
 @Getter
 @Setter

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color"
-    tools:context=".CreateSubjectActivity">
+    tools:context=".modules.subjects.CreateSubjectActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -99,12 +99,12 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget.WeightingInputWidget
+            <markus.wieland.huelssegymnasiumapp.ui.input_widget.weighting_input_widget.WeightingInputWidget
                 android:id="@+id/activity_create_subject_weighting"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <markus.wieland.huelssegymnasiumapp.ui.color_input_widget.ColorInputWidget
+            <markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget.ColorInputWidget
                 android:id="@+id/activity_create_subject_color"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

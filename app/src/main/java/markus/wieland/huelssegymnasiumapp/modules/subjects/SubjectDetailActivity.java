@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -13,13 +13,21 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.Objects;
 
 import markus.wieland.defaultappelements.uielements.activities.DefaultActivity;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
-import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.grades.Grade;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.modules.grades.GradeAdapter;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarAdapter;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CreateCalendarEntryActivity;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.grades.CreateGradeActivity;
+import markus.wieland.huelssegymnasiumapp.modules.grades.database.GradeViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.AverageView;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
 import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;

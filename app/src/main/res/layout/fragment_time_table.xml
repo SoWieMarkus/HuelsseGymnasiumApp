@@ -106,12 +106,12 @@
                         android:text="07:00"
                         android:visibility="invisible" />
 
-                    <markus.wieland.huelssegymnasiumapp.TimeTableBackgroundView
+                    <markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableBackgroundView
                         android:id="@+id/fragment_time_table_time_background_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
-                    <markus.wieland.huelssegymnasiumapp.TimeTableView
+                    <markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableView
                         android:id="@+id/fragment_time_table_time_table_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"

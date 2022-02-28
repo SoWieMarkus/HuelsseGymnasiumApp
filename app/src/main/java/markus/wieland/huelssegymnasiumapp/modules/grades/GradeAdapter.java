@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.grades;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +11,11 @@ import androidx.annotation.NonNull;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
-import markus.wieland.huelssegymnasiumapp.grades.Grade;
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.ui.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 @Setter

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.calendar;
+package markus.wieland.huelssegymnasiumapp.modules.calendar.models;
 
 import android.content.Context;
 
@@ -14,10 +14,10 @@ import markus.wieland.huelssegymnasiumapp.helper.Type;
 public enum CalendarEntryType implements Type {
 
     OTHERS(0, R.string.calendar_entry_type_others),
-    TEST(1,  R.string.calendar_entry_type_test),
-    EXAM(2,  R.string.calendar_entry_type_exam),
-    HAND_IN(3,  R.string.calendar_entry_type_hand_in),
-    HOMEWORK(4,  R.string.calendar_entry_type_homework);
+    TEST(1, R.string.calendar_entry_type_test),
+    EXAM(2, R.string.calendar_entry_type_exam),
+    HAND_IN(3, R.string.calendar_entry_type_hand_in),
+    HOMEWORK(4, R.string.calendar_entry_type_homework);
 
     private final int id;
     private final int displayName;
@@ -28,12 +28,12 @@ public enum CalendarEntryType implements Type {
     }
 
     @TypeConverter
-    public static int toInt(CalendarEntryType calendarEntryType){
+    public static int toInt(CalendarEntryType calendarEntryType) {
         return calendarEntryType.getId();
     }
 
     @TypeConverter
-    public static CalendarEntryType toCalendarEntryType(int id){
+    public static CalendarEntryType toCalendarEntryType(int id) {
         for (CalendarEntryType calendarEntryType : Objects.requireNonNull(CalendarEntryType.class.getEnumConstants())) {
             if (calendarEntryType.getId() == id) return calendarEntryType;
         }

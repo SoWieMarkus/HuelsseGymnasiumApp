@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.grade;
+package markus.wieland.huelssegymnasiumapp.modules.grades.database;
 
 import android.os.AsyncTask;
 

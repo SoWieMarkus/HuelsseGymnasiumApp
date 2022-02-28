@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.subject_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,13 +8,13 @@ import androidx.annotation.Nullable;
 import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.ui.validator.ValidationResult;
 
 public class SubjectInputWidget extends InputWidget<Subject, String> implements Validation {
 

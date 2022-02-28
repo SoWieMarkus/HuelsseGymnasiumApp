@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import android.content.Intent;
 import android.view.Menu;
@@ -11,8 +11,13 @@ import androidx.lifecycle.ViewModelProviders;
 
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.ui.AverageView;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
 import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, SubjectAdapter.SubjectViewHolder, SubjectAdapter>

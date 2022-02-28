@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.color_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ public class Color {
     private int b;
 
     public int getColor() {
-        return android.graphics.Color.rgb(r,g,b);
+        return android.graphics.Color.rgb(r, g, b);
     }
 
 }

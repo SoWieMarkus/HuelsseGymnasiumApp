@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.modules.subjects;
+package markus.wieland.huelssegymnasiumapp.modules.subjects.models;
 
 import android.graphics.Color;
 
@@ -41,7 +41,7 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializa
     }
 
     @Ignore
-    public int getColor(){
+    public int getColor() {
         return Color.rgb(colorR, colorG, colorB);
     }
 

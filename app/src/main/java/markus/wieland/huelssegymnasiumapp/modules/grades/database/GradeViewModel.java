@@ -1,11 +1,11 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.grade;
+package markus.wieland.huelssegymnasiumapp.modules.grades.database;
 
 import android.app.Application;
 
 import androidx.annotation.NonNull;
 
 import markus.wieland.databases.BaseViewModel;
-import markus.wieland.huelssegymnasiumapp.grades.Grade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
 
 public class GradeViewModel extends BaseViewModel<Grade, GradeDataAccessObject, GradeRepository> {
 

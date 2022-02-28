@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.calendar_input_widget;
 
 import android.content.Context;
 import android.widget.CalendarView;
@@ -10,8 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetCalendarBody extends InputWidgetBody<LocalDate> implements CalendarView.OnDateChangeListener {
 

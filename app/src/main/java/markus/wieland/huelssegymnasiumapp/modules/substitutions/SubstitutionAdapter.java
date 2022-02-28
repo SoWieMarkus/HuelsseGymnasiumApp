@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.substitutions;
+package markus.wieland.huelssegymnasiumapp.modules.substitutions;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +6,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-
-import java.util.Locale;
 
 import lombok.Getter;
 import lombok.Setter;

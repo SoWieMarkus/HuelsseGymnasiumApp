@@ -1,14 +1,14 @@
-package markus.wieland.huelssegymnasiumapp.ui.grade_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.grade_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
 
 import androidx.annotation.Nullable;
 
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
-public class SecondaryOneGradeInputWidget extends GradeInputWidget{
+public class SecondaryOneGradeInputWidget extends GradeInputWidget {
     public SecondaryOneGradeInputWidget(Context context) {
         super(context);
     }

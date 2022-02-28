@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.substitutions;
 
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -7,10 +7,12 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 
 import markus.wieland.defaultappelements.api.APIResult;
+import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.api.SubstitutionAPI;
 import markus.wieland.huelssegymnasiumapp.api.models.Substitution;
 import markus.wieland.huelssegymnasiumapp.api.models.SubstitutionPlan;
-import markus.wieland.huelssegymnasiumapp.substitutions.SubstitutionAdapter;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
 import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 public class SubstitutionFragment extends ListFragment<Substitution, SubstitutionAdapter.SubstitutionViewHolder, SubstitutionAdapter>

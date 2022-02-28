@@ -12,23 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HuelsseGymnasiumApp">
         <activity
-            android:name=".SubjectDetailActivity"
+            android:name=".modules.subjects.SubjectDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".CreateTimeTableSlotActivity"
-            android:exported="true" />
+            android:name=".modules.subjects.CreateTimeTableSlotActivity"
+            android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
-            android:exported="true" />
+            android:name=".modules.settings.SettingsActivity"
+            android:exported="false" />
         <activity
-            android:name=".CreateGradeActivity"
-            android:exported="true" />
+            android:name=".modules.grades.CreateGradeActivity"
+            android:exported="false" />
         <activity
-            android:name=".CreateCalendarEntryActivity"
-            android:exported="true" />
+            android:name=".modules.calendar.CreateCalendarEntryActivity"
+            android:exported="false" />
         <activity
-            android:name=".CreateSubjectActivity"
-            android:exported="true" />
+            android:name=".modules.subjects.CreateSubjectActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

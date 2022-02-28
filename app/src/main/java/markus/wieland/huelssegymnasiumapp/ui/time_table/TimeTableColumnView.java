@@ -1,13 +1,14 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.huelssegymnasiumapp.time_table.Time;
-import markus.wieland.huelssegymnasiumapp.time_table.TimePeriod;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.Time;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableColumn;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
 
 public class TimeTableColumnView extends RelativeLayout {
 

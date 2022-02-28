@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.subject;
+package markus.wieland.huelssegymnasiumapp.modules.subjects.database;
 
 import android.app.Application;
 
@@ -8,8 +8,8 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import markus.wieland.databases.BaseViewModel;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
 
 public class SubjectViewModel extends BaseViewModel<Subject, SubjectDataAccessObject, SubjectRepository> {
 
@@ -22,15 +22,15 @@ public class SubjectViewModel extends BaseViewModel<Subject, SubjectDataAccessOb
         return new SubjectRepository(getApplication());
     }
 
-    public LiveData<List<Subject>> getAllSubjects(){
+    public LiveData<List<Subject>> getAllSubjects() {
         return getRepository().getAllSubjects();
     }
 
-    public LiveData<SubjectWithGradesAndCalendar> getSubjectWithGradesAndEvents(long subjectId){
+    public LiveData<SubjectWithGradesAndCalendar> getSubjectWithGradesAndEvents(long subjectId) {
         return getRepository().getSubjectWithGradesAndEvents(subjectId);
     }
 
-    public LiveData<List<SubjectWithGradesAndCalendar>> getAllSubjectsWithGradesAndEvents(){
+    public LiveData<List<SubjectWithGradesAndCalendar>> getAllSubjectsWithGradesAndEvents() {
         return getRepository().getAllSubjectsWithGradesAndEvents();
     }
 }

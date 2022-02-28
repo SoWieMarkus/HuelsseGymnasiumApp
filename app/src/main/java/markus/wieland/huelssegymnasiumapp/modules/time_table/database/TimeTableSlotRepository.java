@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table.database;
 
 import android.app.Application;
 
@@ -9,8 +9,8 @@ import java.util.List;
 
 import markus.wieland.databases.BaseRepository;
 import markus.wieland.huelssegymnasiumapp.database.SchoolDatabase;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlot;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
 
 public class TimeTableSlotRepository extends BaseRepository<TimeTableSlot, TimeTableSlotDataAccessObject> {
 

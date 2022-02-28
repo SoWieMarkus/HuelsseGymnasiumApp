@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.subjects;
 
 import android.widget.Toast;
 
@@ -8,15 +8,18 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.ArrayList;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.database.entities.time_table.TimeTableSlotViewModel;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.time_table.TimePeriod;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlot;
-import markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.time_table_slot_input_widget.TimePeriodInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.week_day_input_widget.WeekDayInputWidget;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget.TimePeriodInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.week_day_input_widget.WeekDayInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
 
 public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlot> implements Observer<List<Subject>> {
 

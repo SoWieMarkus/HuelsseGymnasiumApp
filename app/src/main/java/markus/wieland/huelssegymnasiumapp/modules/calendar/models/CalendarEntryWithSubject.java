@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.calendar;
+package markus.wieland.huelssegymnasiumapp.modules.calendar.models;
 
 import androidx.room.Embedded;
 import androidx.room.Relation;
@@ -6,7 +6,7 @@ import androidx.room.Relation;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 @Getter
 @Setter

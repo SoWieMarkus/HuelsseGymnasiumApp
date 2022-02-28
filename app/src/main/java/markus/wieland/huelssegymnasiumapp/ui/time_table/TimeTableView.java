@@ -1,15 +1,14 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import java.util.List;
-
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTable;
-import markus.wieland.huelssegymnasiumapp.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTable;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableDay;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
 
 public class TimeTableView extends LinearLayout {
 
@@ -37,7 +36,6 @@ public class TimeTableView extends LinearLayout {
 
         int sizePerMinute = timeTable.getSizePerMinute(MIN_TIME_HEIGHT, height);
         int minHour = timeTable.getMinHour();
-
 
 
         for (TimeTableDay timeTableDay : timeTable.getDays()) {

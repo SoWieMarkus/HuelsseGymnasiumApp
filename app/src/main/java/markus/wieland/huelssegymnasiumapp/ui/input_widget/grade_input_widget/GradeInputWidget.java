@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.grade_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.grade_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -6,10 +6,10 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;
 
 public abstract class GradeInputWidget extends InputWidget<DefaultGrade, String> {
     protected GradeInputWidget(Context context) {

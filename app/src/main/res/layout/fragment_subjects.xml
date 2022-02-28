@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <markus.wieland.huelssegymnasiumapp.AverageView
+    <markus.wieland.huelssegymnasiumapp.ui.AverageView
         android:id="@+id/fragment_subjects_average"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <markus.wieland.huelssegymnasiumapp.StateRecyclerView
+    <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
         android:id="@+id/fragment_subjects_recycler_view"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.enum_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,8 +7,9 @@ import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.helper.Type;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
+
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;
 
 public class EnumInputWidget<T extends Type> extends InputWidget<T, String> {
     public EnumInputWidget(Context context) {

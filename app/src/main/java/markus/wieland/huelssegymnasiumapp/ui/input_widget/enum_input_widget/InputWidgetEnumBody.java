@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.enum_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,8 +8,7 @@ import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.helper.Type;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetEnumBody<T extends Type> extends InputWidgetBody<T> implements NumberPicker.OnValueChangeListener {
 

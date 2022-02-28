@@ -1,9 +1,9 @@
-package markus.wieland.huelssegymnasiumapp.helper.validator.string_validator;
+package markus.wieland.huelssegymnasiumapp.ui.validator.string_validator;
 
 import android.content.Context;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.validator.ValidatorArgument;
+import markus.wieland.huelssegymnasiumapp.ui.validator.ValidatorArgument;
 
 public class MinLengthArgument extends ValidatorArgument<String> {
 

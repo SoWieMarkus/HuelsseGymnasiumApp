@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +25,6 @@ public class TimeTableDay {
         if (!timeTableColumn.add(timeTableSlotWithSubject)) throw new IllegalStateException();
         this.columns.add(timeTableColumn);
         return this;
-    }
-
-    public int getAmountColumns() {
-        return columns.size();
     }
 
 }

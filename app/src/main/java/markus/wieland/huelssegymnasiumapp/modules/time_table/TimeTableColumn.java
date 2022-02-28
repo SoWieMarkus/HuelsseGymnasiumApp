@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table;
 
 import androidx.annotation.NonNull;
 

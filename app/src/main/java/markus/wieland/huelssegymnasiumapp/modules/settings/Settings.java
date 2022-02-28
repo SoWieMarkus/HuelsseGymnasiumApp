@@ -1,16 +1,15 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.settings;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.gson.Gson;
 
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
 
 public class Settings {
 
     private static final String SETTINGS_KEY = "markus.wieland.huelssegymnasiumapp.SETTINGS_KEY";
-
     private static final String GRADE_FORMAT_KEY = "markus.wieland.huelssegymnasiumapp.GRADE_FORMAT_KEY";
     private static final String COURSE_KEY = "markus.wieland.huelssegymnasiumapp.COURSE_KEY";
     private static final String LAST_DAY_KEY = "markus.wieland.huelssegymnasiumapp.LAST_SELECTED_DAY_KEY";

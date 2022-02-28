@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.color_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -7,8 +7,7 @@ import android.widget.SeekBar;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetColorBody extends InputWidgetBody<Color> implements SeekBar.OnSeekBarChangeListener {
 

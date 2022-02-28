@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.calendar;
 
 import android.widget.EditText;
 
@@ -9,19 +9,21 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryType;
-import markus.wieland.huelssegymnasiumapp.database.entities.calendar.CalendarViewModel;
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validator;
-import markus.wieland.huelssegymnasiumapp.helper.validator.string_validator.MaxLengthArgument;
-import markus.wieland.huelssegymnasiumapp.helper.validator.string_validator.MinLengthArgument;
-import markus.wieland.huelssegymnasiumapp.helper.validator.string_validator.NotNullArgument;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryType;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.calendar_input_widget.CalendarInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget.EnumInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validator;
+import markus.wieland.huelssegymnasiumapp.ui.validator.string_validator.MaxLengthArgument;
+import markus.wieland.huelssegymnasiumapp.ui.validator.string_validator.MinLengthArgument;
+import markus.wieland.huelssegymnasiumapp.ui.validator.string_validator.NotNullArgument;
 
 public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntry> implements Observer<List<Subject>> {
 

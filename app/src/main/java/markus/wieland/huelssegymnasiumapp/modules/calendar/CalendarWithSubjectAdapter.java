@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.calendar;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -14,11 +14,12 @@ import java.time.LocalDate;
 
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableAdapter;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
-import markus.wieland.huelssegymnasiumapp.helper.ContextMenu;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.ContextMenu;
 import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder> {

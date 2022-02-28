@@ -1,11 +1,10 @@
-package markus.wieland.huelssegymnasiumapp.ui.weighting_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.weighting_input_widget;
 
 import android.content.Context;
 import android.widget.SeekBar;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetWeightingBody extends InputWidgetBody<Integer> implements SeekBar.OnSeekBarChangeListener {
 

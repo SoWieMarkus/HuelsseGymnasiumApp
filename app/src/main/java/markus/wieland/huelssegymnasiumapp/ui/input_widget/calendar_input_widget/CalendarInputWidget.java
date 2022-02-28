@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.calendar_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,11 +8,11 @@ import androidx.annotation.Nullable;
 import java.time.LocalDate;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeader;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetHeaderText;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;
 
 public class CalendarInputWidget extends InputWidget<LocalDate, String> {
 

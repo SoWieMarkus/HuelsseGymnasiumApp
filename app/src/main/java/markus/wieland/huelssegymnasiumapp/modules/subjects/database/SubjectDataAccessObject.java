@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.subject;
+package markus.wieland.huelssegymnasiumapp.modules.subjects.database;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
@@ -8,8 +8,8 @@ import androidx.room.Transaction;
 import java.util.List;
 
 import markus.wieland.databases.BaseDataAccessObject;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.subjects.SubjectWithGradesAndCalendar;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
 
 @Dao
 public interface SubjectDataAccessObject extends BaseDataAccessObject<Subject> {

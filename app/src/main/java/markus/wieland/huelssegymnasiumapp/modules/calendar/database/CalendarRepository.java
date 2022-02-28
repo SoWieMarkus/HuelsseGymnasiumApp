@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.database.entities.calendar;
+package markus.wieland.huelssegymnasiumapp.modules.calendar.database;
 
 import android.app.Application;
 
@@ -8,9 +8,9 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import markus.wieland.databases.BaseRepository;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntry;
-import markus.wieland.huelssegymnasiumapp.calendar.CalendarEntryWithSubject;
 import markus.wieland.huelssegymnasiumapp.database.SchoolDatabase;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;
 
 public class CalendarRepository extends BaseRepository<CalendarEntry, CalendarEntryDataAccessObject> {
 
@@ -23,14 +23,9 @@ public class CalendarRepository extends BaseRepository<CalendarEntry, CalendarEn
         return SchoolDatabase.getInstance(application).getCalendarDataAccessObject();
     }
 
-    public LiveData<List<CalendarEntry>> getAllCalendarEntries() {
-        return getDataAccessObject().getAllCalendarEntries();
-    }
-
     public LiveData<List<CalendarEntryWithSubject>> getCalendarEntryWithSubjects() {
         return getDataAccessObject().getCalendarEntryWithSubjects();
     }
-
 
 
 }

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.subject_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +11,8 @@ import androidx.cardview.widget.CardView;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemInteractListener;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 public class SubjectInputWidgetAdapter extends DefaultAdapter<Subject, SubjectInputWidgetAdapter.SubjectInputWidgetViewHolder> {
 
@@ -23,8 +22,6 @@ public class SubjectInputWidgetAdapter extends DefaultAdapter<Subject, SubjectIn
         super(onItemClickListener);
 
     }
-
-
 
     @NonNull
     @Override

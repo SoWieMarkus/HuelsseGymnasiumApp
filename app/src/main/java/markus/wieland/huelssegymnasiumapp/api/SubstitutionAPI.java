@@ -23,15 +23,6 @@ public class SubstitutionAPI extends API {
         querySubstitutionPlan(result, url);
     }
 
-    public void queryToday(APIResult<SubstitutionPlan> result) {
-        LocalDate localDate = LocalDate.now();
-        String url = BASE_URL + "/"
-                + localDate.getYear() + "/"
-                + localDate.getMonthValue() + "/"
-                + localDate.getDayOfMonth();
-        querySubstitutionPlan(result, url);
-    }
-
     private void querySubstitutionPlan(APIResult<SubstitutionPlan> result, String url) {
         GetRequest<SubstitutionPlan> routesGetRequest = new GetRequest<>(SubstitutionPlan.class, url, new RequestResultListener<SubstitutionPlan>() {
             @Override

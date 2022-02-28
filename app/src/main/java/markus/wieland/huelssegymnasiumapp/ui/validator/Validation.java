@@ -1,8 +1,6 @@
-package markus.wieland.huelssegymnasiumapp.helper.validator;
+package markus.wieland.huelssegymnasiumapp.ui.validator;
 
 import android.content.Context;
-
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
 
 public interface Validation {
 

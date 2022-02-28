@@ -1,16 +1,15 @@
-package markus.wieland.huelssegymnasiumapp.ui.course_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.course_input_widget;
 
 import android.content.Context;
 import android.widget.NumberPicker;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.InputWidgetBody;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetCourseBody extends InputWidgetBody<String> implements NumberPicker.OnValueChangeListener {
 
     private NumberPicker numberPicker;
-    private static final char[] courseLetters = new char[]{'a','b','c','d','e'};
+    private static final char[] courseLetters = new char[]{'a', 'b', 'c', 'd', 'e'};
 
     private static final int AMOUNT_GRADE_LEVEL_SECONDARY_1 = 6;
     private static final int AMOUNT_GRADE_LEVEL_SECONDARY_2 = 2;
@@ -52,7 +51,7 @@ public class InputWidgetCourseBody extends InputWidgetBody<String> implements Nu
             return;
         }
         for (int i = 0; i < courses.length; i++) {
-            if (courses[i].equals(s)){
+            if (courses[i].equals(s)) {
                 numberPicker.setValue(i);
                 getValueChangeListener().onValueChanged(s);
                 return;

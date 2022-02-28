@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

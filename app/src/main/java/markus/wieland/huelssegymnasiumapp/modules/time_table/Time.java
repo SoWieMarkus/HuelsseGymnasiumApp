@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table;
 
 import androidx.annotation.NonNull;
 
@@ -21,7 +21,7 @@ public class Time {
     @NonNull
     @Override
     public String toString() {
-        return String.format(Locale.getDefault(), "%02d", hour) + ":" + String.format(Locale.getDefault(),"%02d", minute);
+        return String.format(Locale.getDefault(), "%02d", hour) + ":" + String.format(Locale.getDefault(), "%02d", minute);
     }
 
     public boolean isBefore(Time time) {

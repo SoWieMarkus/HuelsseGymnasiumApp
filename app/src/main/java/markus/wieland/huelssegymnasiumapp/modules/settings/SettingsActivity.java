@@ -1,15 +1,18 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.settings;
 
 import android.content.Intent;
 
 import androidx.lifecycle.ViewModelProviders;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.ui.course_input_widget.CourseInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.MainActivity;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.grades.database.GradeViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.course_input_widget.CourseInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget.EnumInputWidget;
 
-public class SettingsActivity extends CreateItemActivity<String>{
+public class SettingsActivity extends CreateItemActivity<String> {
 
     private Settings settings;
     private CourseInputWidget courseInputWidget;

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.modules.grades;
 
 import android.view.View;
 import android.widget.Toast;
@@ -11,21 +11,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.database.entities.grade.GradeViewModel;
-import markus.wieland.huelssegymnasiumapp.database.entities.subject.SubjectViewModel;
-import markus.wieland.huelssegymnasiumapp.grades.Grade;
-import markus.wieland.huelssegymnasiumapp.grades.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.grades.GradeType;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryOneGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryTwoGrade;
-import markus.wieland.huelssegymnasiumapp.helper.validator.Validation;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
-import markus.wieland.huelssegymnasiumapp.ui.ValidationResult;
-import markus.wieland.huelssegymnasiumapp.ui.calendar_input_widget.CalendarInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.enum_input_widget.EnumInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.grade_input_widget.GradeInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.grades.database.GradeViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeType;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryOneGrade;
+import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryTwoGrade;
+import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.calendar_input_widget.CalendarInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.enum_input_widget.EnumInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.grade_input_widget.GradeInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget.SubjectInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
 
 public class CreateGradeActivity extends CreateItemActivity<Grade> implements Observer<List<Subject>> {
 
@@ -53,7 +55,7 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
         initGradeInputWidget();
     }
 
-    public void initGradeInputWidget(){
+    public void initGradeInputWidget() {
         if (settings.getGradeFormat() == GradeFormat.ABITUR) {
             gradeInputWidget = findViewById(R.id.activity_create_grade_secondary_two);
             findViewById(R.id.activity_create_grade_secondary_one).setVisibility(View.GONE);
@@ -128,7 +130,7 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
         subjectInputWidget.setList(subjects);
         subjectInputWidget.select(getItem().getSubjectId());
         if (subjects.isEmpty()) {
-            Toast.makeText(this, getString(R.string.activity_create_grade_error_no_subject),Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.activity_create_grade_error_no_subject), Toast.LENGTH_SHORT).show();
             finish();
         }
     }

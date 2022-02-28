@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.calendar;
+package markus.wieland.huelssegymnasiumapp.modules.calendar.models;
 
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
@@ -15,7 +15,8 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 @Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId",
         childColumns = "subjectId", onDelete = ForeignKey.CASCADE))

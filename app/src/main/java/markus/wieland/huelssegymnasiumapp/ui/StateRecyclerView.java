@@ -1,10 +1,9 @@
-package markus.wieland.huelssegymnasiumapp;
+package markus.wieland.huelssegymnasiumapp.ui;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -21,10 +20,11 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
+import markus.wieland.huelssegymnasiumapp.R;
 
 @Getter
 @Setter
-public class StateRecyclerView<T, V extends DefaultViewHolder<T>, A extends DefaultAdapter<T,V>> extends ConstraintLayout {
+public class StateRecyclerView<T, V extends DefaultViewHolder<T>, A extends DefaultAdapter<T, V>> extends ConstraintLayout {
 
     private RecyclerView recyclerView;
     private LinearLayout emptyView;
@@ -88,6 +88,6 @@ public class StateRecyclerView<T, V extends DefaultViewHolder<T>, A extends Defa
     public enum State {
         LOADING,
         EMPTY,
-        LIST;
+        LIST
     }
 }

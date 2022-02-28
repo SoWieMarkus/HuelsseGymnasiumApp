@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.grades;
+package markus.wieland.huelssegymnasiumapp.modules.grades.models;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -14,11 +14,8 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.huelssegymnasiumapp.calendar.LocalDateConverter;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.DefaultGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryOneGrade;
-import markus.wieland.huelssegymnasiumapp.grades.transformer.SecondaryTwoGrade;
-import markus.wieland.huelssegymnasiumapp.subjects.Subject;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
+import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 @Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId", childColumns = "subjectId", onDelete = ForeignKey.CASCADE))
 @Getter

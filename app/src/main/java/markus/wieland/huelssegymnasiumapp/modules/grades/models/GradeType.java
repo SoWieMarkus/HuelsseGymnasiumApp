@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.grades;
+package markus.wieland.huelssegymnasiumapp.modules.grades.models;
 
 import android.content.Context;
 
@@ -14,10 +14,10 @@ import markus.wieland.huelssegymnasiumapp.helper.Type;
 public enum GradeType implements Type {
 
     TEST(0, R.string.grade_type_test, false),
-    PRESENTATION(1,  R.string.grade_type_presentation, false),
-    PROJECT(2,  R.string.grade_type_project, false),
-    OTHERS(3,  R.string.grade_type_others, false),
-    EXAM(4,  R.string.grade_type_exam, true);
+    PRESENTATION(1, R.string.grade_type_presentation, false),
+    PROJECT(2, R.string.grade_type_project, false),
+    OTHERS(3, R.string.grade_type_others, false),
+    EXAM(4, R.string.grade_type_exam, true);
 
     private final int id;
     private final int displayName;
@@ -36,7 +36,7 @@ public enum GradeType implements Type {
 
     @TypeConverter
     public static GradeType toGradeType(int id) {
-        for (GradeType gradeType : Objects.requireNonNull(GradeType.class.getEnumConstants())){
+        for (GradeType gradeType : Objects.requireNonNull(GradeType.class.getEnumConstants())) {
             if (gradeType.getId() == id) return gradeType;
         }
         return null;
