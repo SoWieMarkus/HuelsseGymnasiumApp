@@ -20,9 +20,8 @@ import markus.wieland.huelssegymnasiumapp.modules.settings.SettingsActivity;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.SubjectFragment;
 import markus.wieland.huelssegymnasiumapp.modules.substitutions.SubstitutionFragment;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableFragment;
-import markus.wieland.huelssegymnasiumapp.ui.OnFragmentSelectedListener;
 
-public class MainActivity extends DefaultActivity implements NavigationBarView.OnItemSelectedListener, OnFragmentSelectedListener {
+public class MainActivity extends DefaultActivity implements NavigationBarView.OnItemSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
 
@@ -51,7 +50,6 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
     public void initializeViews() {
         Objects.requireNonNull(getSupportActionBar()).setElevation(0);
         bottomNavigationView.setOnItemSelectedListener(this);
-        dashboardFragment.setOnFragmentSelectedListener(this);
     }
 
     @Override
@@ -71,12 +69,6 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
         Objects.requireNonNull(getSupportActionBar()).setTitle(title);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        select(item.getItemId());
-        return true;
-    }
-
     public void select(int id) {
         if (id == R.id.activity_main_bottom_navigation_calendar) {
             showFragment(calendarFragment, R.string.menu_calendar);
@@ -92,8 +84,8 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
     }
 
     @Override
-    public void onSelect(int id) {
-        select(id);
-        bottomNavigationView.setSelectedItemId(id);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        select(item.getItemId());
+        return true;
     }
 }
