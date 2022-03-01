@@ -65,7 +65,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@null"
                                 android:hint="@string/activity_create_subject_name"
-                                android:inputType="textAutoCorrect|textMultiLine|textCapSentences"
+                                android:inputType="textAutoCorrect|textCapSentences"
                                 android:maxLines="1"
                                 android:nextFocusDown="@id/activity_create_subject_teacher"
                                 android:padding="8dp"
@@ -78,7 +78,7 @@
                                 android:layout_height="wrap_content"
                                 android:background="@null"
                                 android:hint="@string/activity_create_subject_teacher"
-                                android:inputType="textAutoCorrect|textMultiLine|textCapSentences"
+                                android:inputType="textAutoCorrect|textCapSentences"
                                 android:maxLines="1"
                                 android:padding="8dp"
                                 android:textSize="16sp" />
