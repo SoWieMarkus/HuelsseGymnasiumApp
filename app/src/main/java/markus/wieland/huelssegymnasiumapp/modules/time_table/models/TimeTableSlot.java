@@ -1,6 +1,7 @@
 package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
 import androidx.annotation.Nullable;
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
@@ -30,6 +31,7 @@ public class TimeTableSlot implements DatabaseEntity, Serializable {
     private int endMinute;
 
     @Nullable
+    @ColumnInfo(index = true)
     private Long subjectId;
 
     @Override

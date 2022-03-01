@@ -4,23 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <markus.wieland.huelssegymnasiumapp.ui.AverageView
-        android:id="@+id/fragment_subjects_average"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
-        android:id="@+id/fragment_subjects_recycler_view"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:empty_message="@string/empty_message_subjects"
+        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragment_subjects_average" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <markus.wieland.huelssegymnasiumapp.ui.AverageView
+                android:id="@+id/fragment_subjects_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
+                android:id="@+id/fragment_subjects_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:empty_message="@string/empty_message_subjects"
+                app:nested="true" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

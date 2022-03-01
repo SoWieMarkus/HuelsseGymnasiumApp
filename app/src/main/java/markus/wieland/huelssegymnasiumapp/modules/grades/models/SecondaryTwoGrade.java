@@ -12,6 +12,10 @@ public class SecondaryTwoGrade extends DefaultGrade {
         super(isExam);
     }
 
+    public SecondaryTwoGrade() {
+        super(false, 15);
+    }
+
     @NonNull
     @Override
     public String toString() {

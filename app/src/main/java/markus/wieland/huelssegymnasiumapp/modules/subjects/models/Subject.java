@@ -54,4 +54,5 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializa
     public String getStringToApplyQuery() {
         return getName() + getAbbreviation();
     }
+
 }

@@ -42,6 +42,7 @@ public class SubjectFragment extends ListFragment<SubjectWithGradesAndCalendar, 
         averageView.update(null);
     }
 
+
     @Override
     public int getRecyclerViewId() {
         return R.id.fragment_subjects_recycler_view;

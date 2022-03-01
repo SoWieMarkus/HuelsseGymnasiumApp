@@ -19,7 +19,7 @@ import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
 import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 
 public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
-        implements Observer<List<CalendarEntryWithSubject>>, OnCalendarContextMenu<CalendarEntryWithSubject> {
+        implements Observer<List<CalendarEntryWithSubject>>{
 
     private CalendarViewModel calendarViewModel;
 
@@ -42,7 +42,7 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
 
     @Override
     public CalendarWithSubjectAdapter createAdapter() {
-        return new CalendarWithSubjectAdapter(this);
+        return new CalendarWithSubjectAdapter(new CalendarInteractionListener(getActivity(), calendarViewModel));
     }
 
     @Override
@@ -68,24 +68,4 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
         submitList(calendarEntries);
     }
 
-    @Override
-    public void onDone(CalendarEntryWithSubject calendarEntryWithSubject) {
-        calendarViewModel.delete(calendarEntryWithSubject.getCalendarEntry());
-    }
-
-    @Override
-    public void onEdit(CalendarEntryWithSubject calendarEntryWithSubject) {
-        startActivity(new Intent(getActivity(), CreateCalendarEntryActivity.class).putExtra(
-                CreateItemActivity.OBJECT_TO_EDIT, calendarEntryWithSubject.getCalendarEntry()));
-    }
-
-    @Override
-    public void onDelete(CalendarEntryWithSubject calendarEntryWithSubject) {
-        calendarViewModel.delete(calendarEntryWithSubject.getCalendarEntry());
-    }
-
-    @Override
-    public void onClick(CalendarEntryWithSubject calendarEntryWithSubject) {
-        onEdit(calendarEntryWithSubject);
-    }
 }

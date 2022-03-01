@@ -16,6 +16,9 @@ import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarAdapter;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarInteractionListener;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarWithSubjectAdapter;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.CreateCalendarEntryActivity;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;
@@ -25,7 +28,9 @@ import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewM
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.ui.AverageView;
+import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
 import markus.wieland.huelssegymnasiumapp.ui.OnFragmentSelectedListener;
+import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 public class DashboardFragment extends DefaultFragment {
 
@@ -38,6 +43,8 @@ public class DashboardFragment extends DefaultFragment {
     private Button addCalendarEntry;
 
     private OnFragmentSelectedListener onFragmentSelectedListener;
+
+    private StateRecyclerView<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter> homework;
 
     public DashboardFragment() {
         super(R.layout.fragment_dashboard);
@@ -58,12 +65,14 @@ public class DashboardFragment extends DefaultFragment {
         addGrade = findViewById(R.id.fragment_dashboard_add_grade);
         averageView = findViewById(R.id.fragment_dashboard_total_average);
         averageView.update(null);
+        homework = findViewById(R.id.fragment_dashboard_homework);
     }
 
     @Override
     public void initializeViews() {
         addGrade.setOnClickListener(this::onClickAddGrade);
         addCalendarEntry.setOnClickListener(this::onClickAddCalendarEntry);
+        homework.setAdapter(new CalendarWithSubjectAdapter(new CalendarInteractionListener(getActivity(), calendarViewModel)));
     }
 
     public void onClickAddGrade(View view) {
@@ -98,7 +107,6 @@ public class DashboardFragment extends DefaultFragment {
         return super.onOptionsItemSelected(item);
     }
 
-
     public void onChangedCalendar(List<CalendarEntryWithSubject> calendarEntryWithSubjects) {
         LocalDate inSevenDays = LocalDate.now().plusDays(7);
         List<CalendarEntryWithSubject> calendarEntriesThisWeek = new ArrayList<>();
@@ -107,9 +115,11 @@ public class DashboardFragment extends DefaultFragment {
                 calendarEntriesThisWeek.add(calendarEntryWithSubject);
             }
         }
+        homework.submitList(calendarEntriesThisWeek);
     }
 
     public void onChangedSubjects(List<SubjectWithGradesAndCalendar> subjectWithGradesAndCalendars) {
         averageView.calculateAverage(subjectWithGradesAndCalendars);
     }
+
 }

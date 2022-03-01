@@ -101,14 +101,9 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerViewGrades.setAdapter(new GradeAdapter(this));
-        recyclerViewGrades.getRecyclerView().setHasFixedSize(false);
-        recyclerViewGrades.getRecyclerView().setNestedScrollingEnabled(false);
+        recyclerViewCalendarEntries.setAdapter(new CalendarAdapter(calendarContextMenu));
 
         averageView.update(null);
-
-        recyclerViewCalendarEntries.setAdapter(new CalendarAdapter(calendarContextMenu));
-        recyclerViewCalendarEntries.getRecyclerView().setHasFixedSize(false);
-        recyclerViewCalendarEntries.getRecyclerView().setNestedScrollingEnabled(false);
 
         addGrade.setOnClickListener(view ->
                 startActivity(new Intent(this, CreateGradeActivity.class).putExtra(

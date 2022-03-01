@@ -59,4 +59,11 @@ public class Grade implements DatabaseEntity, QueryableEntity<Long>, Serializabl
         return new SecondaryOneGrade(false).setUpFromDatabaseValue(value);
     }
 
+    @Ignore
+    public DefaultGrade translate(GradeFormat gradeFormat) {
+        return gradeFormat == GradeFormat.ABITUR
+                ? new SecondaryTwoGrade(gradeType.isExam()).setUpFromDatabaseValue(getValue())
+                : new SecondaryOneGrade(gradeType.isExam()).setUpFromDatabaseValue(getValue());
+    }
+
 }

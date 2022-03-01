@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/background_color"
-    tools:context=".modules.subjects.CreateTimeTableSlotActivity">
+    tools:context=".modules.time_table.CreateTimeTableSlotActivity">
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
 
             </markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget.SubjectInputWidget>
 
-            <markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget.TimePeriodInputWidget
+            <markus.wieland.huelssegymnasiumapp.ui.input_widget.time_period_input_widget.TimePeriodInputWidget
                 android:id="@+id/activity_create_time_table_slot_time_period"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />

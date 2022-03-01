@@ -51,6 +51,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="16sp"
                         android:text="@string/week_day_monday_short" />
 
                     <TextView
@@ -59,6 +61,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="16sp"
                         android:text="@string/week_day_tuesday_short" />
 
                     <TextView
@@ -67,6 +71,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="16sp"
                         android:text="@string/week_day_wednesday_short" />
 
                     <TextView
@@ -75,6 +81,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="16sp"
                         android:text="@string/week_day_thursday_short" />
 
                     <TextView
@@ -83,9 +91,17 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
+                        android:textColor="?attr/text_color_main"
+                        android:textSize="16sp"
                         android:text="@string/week_day_friday_short" />
                 </LinearLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#8BC34A"
+                android:orientation="vertical"></LinearLayout>
 
             <ScrollView
                 android:id="@+id/fragment_time_table_scroll_view"

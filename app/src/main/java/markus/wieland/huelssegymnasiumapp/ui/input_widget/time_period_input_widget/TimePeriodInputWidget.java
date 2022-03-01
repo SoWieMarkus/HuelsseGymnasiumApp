@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_period_input_widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

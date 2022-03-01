@@ -65,4 +65,8 @@
     <string name="input_widget_week_day_title">Tag</string>
     <string name="menu_subject_delete">Löschen</string>
     <string name="menu_subject_edit">Bearbeiten</string>
+    <string name="activity_create_subject_teacher">Lehrer</string>
+    <string name="activity_create_subject_name">Name</string>
+    <string name="activity_create_subject_name_argument_name">Der Name des Fachs</string>
+    <string name="activity_create_subject_teacher_argument_name">Der Name des Lehrernden</string>
 </resources>

@@ -1,8 +1,8 @@
-package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget;
+package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_period_input_widget;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.widget.TextView;
+import android.widget.Button;
 
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
@@ -12,8 +12,8 @@ import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 public class InputWidgetTimePeriodBody extends InputWidgetBody<TimePeriod> {
 
     private TimePeriod timePeriod;
-    private TextView startTime;
-    private TextView endTime;
+    private Button startTime;
+    private Button endTime;
 
     public InputWidgetTimePeriodBody(Context context) {
         super(context);

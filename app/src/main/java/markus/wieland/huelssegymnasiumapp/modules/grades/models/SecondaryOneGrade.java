@@ -18,6 +18,7 @@ public class SecondaryOneGrade extends DefaultGrade {
 
     public static final int SIGN_PLUS = 0;
     public static final int SIGN_MINUS = 2;
+    public static final int SIGN_NONE = 1;
     protected static final String[] DISPLAY_VALUES = new String[]{"+", " ", "-"};
 
     private int sign;
@@ -25,6 +26,11 @@ public class SecondaryOneGrade extends DefaultGrade {
     public SecondaryOneGrade(int value, int sign) {
         super(false, value);
         this.sign = sign;
+    }
+
+    public SecondaryOneGrade(){
+        super(false, LOWEST_GRADE_VALUE);
+        this.sign = SIGN_NONE;
     }
 
     public static String[] getDisplayValues() {

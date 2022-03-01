@@ -15,8 +15,6 @@ import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntry;
 import markus.wieland.huelssegymnasiumapp.modules.grades.models.DefaultGrade;
 import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
 import markus.wieland.huelssegymnasiumapp.modules.grades.models.GradeFormat;
-import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryOneGrade;
-import markus.wieland.huelssegymnasiumapp.modules.grades.models.SecondaryTwoGrade;
 
 @Getter
 @Setter
@@ -40,15 +38,7 @@ public class SubjectWithGradesAndCalendar implements QueryableEntity<Long> {
         float sumExams = 0;
         float amountExams = 0;
 
-        List<DefaultGrade> translatedGrades = new ArrayList<>();
-        for (Grade grade : grades) {
-            boolean isExam = grade.getGradeType().isExam();
-            translatedGrades.add(format == GradeFormat.ABITUR
-                    ? new SecondaryTwoGrade(isExam).setUpFromDatabaseValue(grade.getValue())
-                    : new SecondaryOneGrade(isExam).setUpFromDatabaseValue(grade.getValue()));
-        }
-
-        for (DefaultGrade grade : translatedGrades) {
+        for (DefaultGrade grade : translateGrades(format)) {
             if (grade.isExam()) {
                 sumExams += grade.getValueToCalculateAverage();
                 amountExams++;
@@ -66,6 +56,14 @@ public class SubjectWithGradesAndCalendar implements QueryableEntity<Long> {
         if (amountOthers == 0) return sumExams / amountExams;
         if (amountExams == 0) return sumOthers / amountOthers;
         return weightExam * (sumExams / amountExams) + weightOthers * (sumOthers / amountOthers);
+    }
+
+    private List<DefaultGrade> translateGrades(GradeFormat gradeFormat) {
+        List<DefaultGrade> translatedGrades = new ArrayList<>();
+        for (Grade grade : grades) {
+            translatedGrades.add(grade.translate(gradeFormat));
+        }
+        return translatedGrades;
     }
 
     @Ignore

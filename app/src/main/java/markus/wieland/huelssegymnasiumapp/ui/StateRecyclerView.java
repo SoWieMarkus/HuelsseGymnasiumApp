@@ -64,10 +64,12 @@ public class StateRecyclerView<T, V extends DefaultViewHolder<T>, A extends Defa
         emptyMessage = findViewById(R.id.layout_state_recycler_view_empty_message);
         emptyMessage.setText(array.getString(R.styleable.StateRecyclerView_empty_message));
 
-        if (array.getBoolean(R.styleable.StateRecyclerView_nested, false)) {
 
+        if (array.getBoolean(R.styleable.StateRecyclerView_nested, false)) {
             setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             recyclerView.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+            recyclerView.setHasFixedSize(false);
+            recyclerView.setNestedScrollingEnabled(false);
         }
 
         setState(State.LOADING);

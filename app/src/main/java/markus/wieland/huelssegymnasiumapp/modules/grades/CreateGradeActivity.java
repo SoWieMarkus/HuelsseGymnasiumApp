@@ -71,12 +71,12 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
         subjectViewModel.getAllSubjects().observe(this, this);
     }
 
-    // TODO move to DefaultGrade noargscontructor
+
     private DefaultGrade getDefaultGrade() {
         if (settings.getGradeFormat() == GradeFormat.ABITUR) {
-            return new SecondaryTwoGrade(15);
+            return new SecondaryTwoGrade();
         }
-        return new SecondaryOneGrade(false).setUpFromDatabaseValue(11);
+        return new SecondaryOneGrade();
     }
 
 
@@ -89,7 +89,7 @@ public class CreateGradeActivity extends CreateItemActivity<Grade> implements Ob
         gradeInputWidget.setExpanded(true);
         calendarInputWidget.setExpanded(false);
         gradeTypeEnumInputWidget.setExpanded(!isEditMode());
-        subjectInputWidget.setExpanded(!isEditMode());
+        subjectInputWidget.setExpanded(item.getSubjectId() == null);
     }
 
     @Override

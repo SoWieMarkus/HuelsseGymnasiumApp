@@ -50,8 +50,6 @@ public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntr
 
         calendarViewModel = ViewModelProviders.of(this).get(CalendarViewModel.class);
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
-
-
     }
 
     @Override
@@ -83,12 +81,8 @@ public class CreateCalendarEntryActivity extends CreateItemActivity<CalendarEntr
 
         calendarInputWidget.setValue(calendarEntry.getLocalDate());
         calendarInputWidget.setExpanded(true);
-    }
 
-
-    public String getTextFromEditText(EditText editText) {
-        String text = editText.getText().toString().trim();
-        return text.isEmpty() ? null : text;
+        subjectInputWidget.setExpanded(calendarEntry.getSubjectId() == null);
     }
 
     @Override

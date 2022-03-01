@@ -4,10 +4,8 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -15,11 +13,9 @@ import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
-import markus.wieland.huelssegymnasiumapp.modules.subjects.CreateTimeTableSlotActivity;
 import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTable;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableBackgroundView;
 import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableView;

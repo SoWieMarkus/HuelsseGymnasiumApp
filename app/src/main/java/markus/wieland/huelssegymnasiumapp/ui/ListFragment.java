@@ -26,7 +26,6 @@ public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends 
     @Override
     public void bindViews() {
         recyclerView = findViewById(getRecyclerViewId());
-        adapter = createAdapter();
     }
 
     public void submitList(List<T> list) {
@@ -35,6 +34,7 @@ public abstract class ListFragment<T, V extends DefaultViewHolder<T>, A extends 
 
     @Override
     public void initializeViews() {
+        adapter = createAdapter();
         recyclerView.setAdapter(adapter);
     }
 

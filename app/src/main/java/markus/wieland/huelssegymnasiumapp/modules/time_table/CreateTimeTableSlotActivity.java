@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.modules.subjects;
+package markus.wieland.huelssegymnasiumapp.modules.time_table;
 
 import android.widget.Toast;
 
@@ -13,7 +13,7 @@ import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.subject_input_widget.SubjectInputWidget;
-import markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_widget.TimePeriodInputWidget;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.time_period_input_widget.TimePeriodInputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.week_day_input_widget.WeekDayInputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;

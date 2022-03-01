@@ -2,6 +2,7 @@ package markus.wieland.huelssegymnasiumapp.ui;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -78,7 +79,11 @@ public abstract class CreateItemActivity<T extends Serializable> extends Default
         }
 
         initializeWidgets(item);
+    }
 
+    public String getTextFromEditText(EditText editText) {
+        String text = editText.getText().toString().trim();
+        return text.isEmpty() ? null : text;
     }
 
     @Override
