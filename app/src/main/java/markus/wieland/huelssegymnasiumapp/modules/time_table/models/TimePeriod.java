@@ -1,6 +1,5 @@
-package markus.wieland.huelssegymnasiumapp.modules.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import lombok.AllArgsConstructor;

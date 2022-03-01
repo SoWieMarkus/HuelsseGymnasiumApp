@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimePeriod;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeader;

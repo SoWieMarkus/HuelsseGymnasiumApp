@@ -7,8 +7,8 @@ import androidx.room.Query;
 import java.util.List;
 
 import markus.wieland.databases.BaseDataAccessObject;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 @Dao
 public interface TimeTableSlotDataAccessObject extends BaseDataAccessObject<TimeTableSlot> {

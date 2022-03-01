@@ -17,8 +17,8 @@ import markus.wieland.huelssegymnasiumapp.ui.input_widget.time_table_slot_input_
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.week_day_input_widget.WeekDayInputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.validator.Validation;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
 import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
 
 public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlot> implements Observer<List<Subject>> {

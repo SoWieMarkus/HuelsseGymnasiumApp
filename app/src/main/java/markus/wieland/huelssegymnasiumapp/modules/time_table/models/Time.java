@@ -1,8 +1,9 @@
-package markus.wieland.huelssegymnasiumapp.modules.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
 import androidx.annotation.NonNull;
 
 import java.util.Locale;
+import java.util.Objects;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,12 +26,27 @@ public class Time {
     }
 
     public boolean isBefore(Time time) {
+        if (time.equals(this)) return true;
         if (hour == time.getHour()) return minute < time.getMinute();
         return hour < time.getHour();
     }
 
     public boolean isAfter(Time time) {
+        if (time.equals(this)) return true;
         if (hour == time.getHour()) return minute > time.getMinute();
         return hour > time.getHour();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Time time = (Time) o;
+        return hour == time.hour && minute == time.minute;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hour, minute);
     }
 }

@@ -8,8 +8,8 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 
 import markus.wieland.databases.BaseViewModel;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableSlotViewModel extends BaseViewModel<TimeTableSlot, TimeTableSlotDataAccessObject, TimeTableSlotRepository> {
 

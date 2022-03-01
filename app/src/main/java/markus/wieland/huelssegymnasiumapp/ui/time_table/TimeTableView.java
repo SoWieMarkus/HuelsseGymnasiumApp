@@ -6,13 +6,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTable;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableDay;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTable;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableDay;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableView extends LinearLayout {
 
-    public static final int MIN_TIME_HEIGHT = 120;
+    public static final int MIN_TIME_HEIGHT = 180;
 
     public TimeTableView(Context context) {
         this(context, null);

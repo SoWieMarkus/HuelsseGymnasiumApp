@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableSlotView extends LinearLayout {
     public TimeTableSlotView(Context context) {

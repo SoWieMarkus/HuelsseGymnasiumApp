@@ -12,7 +12,7 @@ import markus.wieland.huelssegymnasiumapp.modules.grades.database.GradeDataAcces
 import markus.wieland.huelssegymnasiumapp.modules.grades.models.Grade;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectDataAccessObject;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotDataAccessObject;
 
 @Database(entities = {

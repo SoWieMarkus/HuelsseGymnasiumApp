@@ -1,10 +1,12 @@
-package markus.wieland.huelssegymnasiumapp.modules.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
 import androidx.annotation.Nullable;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +17,7 @@ import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 @Setter
 @Entity(foreignKeys = @ForeignKey(entity = Subject.class, parentColumns = "subjectId",
         childColumns = "subjectId", onDelete = ForeignKey.CASCADE))
-public class TimeTableSlot implements DatabaseEntity {
+public class TimeTableSlot implements DatabaseEntity, Serializable {
 
     @PrimaryKey(autoGenerate = true)
     private long timeTableSlotId;

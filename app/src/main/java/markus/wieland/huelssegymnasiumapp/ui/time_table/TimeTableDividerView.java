@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.Time;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
 
 public class TimeTableDividerView extends LinearLayout {
 

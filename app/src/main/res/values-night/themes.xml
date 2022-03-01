@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.HuelsseGymnasiumApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.HuelsseGymnasiumApp" parent="Theme.MaterialComponents.DayNight">
         <!-- Primary brand color. -->
         <item name="colorPrimary">?attr/background_color</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -16,7 +16,7 @@
         <item name="background_color">@color/background_dark</item>
         <item name="text_color_main">@color/text_color_main_dark</item>
         <item name="accent_color">@color/color_accent_dark</item>
-
-        <item name="cardBackgroundColor">@color/card_view_background_dark</item>
+        <item name="colorSurface">?attr/background_color</item>
+        <!--item name="cardBackgroundColor">@color/card_view_background_dark</item-->
     </style>
 </resources>

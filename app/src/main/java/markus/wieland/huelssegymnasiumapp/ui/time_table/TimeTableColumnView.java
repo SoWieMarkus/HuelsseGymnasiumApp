@@ -5,10 +5,10 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.Time;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableColumn;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableColumn;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableColumnView extends RelativeLayout {
 

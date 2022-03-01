@@ -5,8 +5,8 @@ import android.content.Context;
 import android.widget.TextView;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.Time;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimePeriod;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimePeriod;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetTimePeriodBody extends InputWidgetBody<TimePeriod> {

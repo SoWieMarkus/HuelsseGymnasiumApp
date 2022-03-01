@@ -9,9 +9,9 @@ import androidx.annotation.Nullable;
 
 import lombok.Getter;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableColumn;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableDay;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableColumn;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableDay;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 @Getter
 public class TimeTableDayView extends LinearLayout {

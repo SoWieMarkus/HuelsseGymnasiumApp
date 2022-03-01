@@ -9,8 +9,8 @@ import java.util.List;
 
 import markus.wieland.databases.BaseRepository;
 import markus.wieland.huelssegymnasiumapp.database.SchoolDatabase;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlot;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlot;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableSlotRepository extends BaseRepository<TimeTableSlot, TimeTableSlotDataAccessObject> {
 

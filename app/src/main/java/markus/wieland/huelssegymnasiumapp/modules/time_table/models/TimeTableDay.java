@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.modules.time_table;
+package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
 import java.util.ArrayList;
 import java.util.List;

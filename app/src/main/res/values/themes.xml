@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
 
         <item name="background_color">@color/background_light</item>
-        <item name="android:textColorPrimary">@color/black</item>
+
         <item name="text_color_main">@color/text_color_main_light</item>
         <item name="accent_color">@color/color_accent_light</item>
     </style>

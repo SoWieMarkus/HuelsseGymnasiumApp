@@ -7,8 +7,8 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.Nullable;
 
-import markus.wieland.huelssegymnasiumapp.modules.time_table.Time;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.TimeTable;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTable;
 
 public class TimeTableBackgroundView extends RelativeLayout {
 
