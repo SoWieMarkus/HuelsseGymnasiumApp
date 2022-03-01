@@ -79,7 +79,6 @@ public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarE
             });
 
             date.setText(LocalDateConverter.toDisplayString(calendarEntry.getLocalDate(), itemView.getContext()));
-            date.setTextColor(getColor(calendarEntry.getLocalDate()));
             description.setVisibility(calendarEntry.getDescription() == null ? View.GONE : View.VISIBLE);
             description.setText(calendarEntry.getDescription());
             type.setText(calendarEntry.getCalendarEntryType().getDisplayName());
@@ -88,13 +87,6 @@ public class CalendarWithSubjectAdapter extends QueryableAdapter<Long, CalendarE
             color.setBackgroundColor(subject == null
                     ? itemView.getContext().getColor(R.color.default_subject_color)
                     : subject.getColor());
-        }
-
-        private int getColor(LocalDate localDate) {
-            LocalDate now = LocalDate.now();
-            if (localDate.isBefore(now.plusDays(1))) return Color.parseColor("#ffcc0000");
-            if (localDate.isBefore(now.plusDays(3))) return Color.YELLOW;
-            return Color.GREEN;
         }
     }
 }
