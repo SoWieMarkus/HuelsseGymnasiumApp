@@ -16,7 +16,6 @@ import java.util.List;
 
 import markus.wieland.defaultappelements.uielements.fragments.DefaultFragment;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarAdapter;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarInteractionListener;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.CalendarWithSubjectAdapter;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.CreateCalendarEntryActivity;
@@ -28,8 +27,6 @@ import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewM
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.ui.AverageView;
-import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
-import markus.wieland.huelssegymnasiumapp.ui.OnFragmentSelectedListener;
 import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 public class DashboardFragment extends DefaultFragment {
@@ -42,17 +39,11 @@ public class DashboardFragment extends DefaultFragment {
     private Button addGrade;
     private Button addCalendarEntry;
 
-    private OnFragmentSelectedListener onFragmentSelectedListener;
-
     private StateRecyclerView<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter> homework;
 
     public DashboardFragment() {
         super(R.layout.fragment_dashboard);
         setHasOptionsMenu(true);
-    }
-
-    public void setOnFragmentSelectedListener(OnFragmentSelectedListener onFragmentSelectedListener) {
-        this.onFragmentSelectedListener = onFragmentSelectedListener;
     }
 
     @Override
@@ -77,12 +68,10 @@ public class DashboardFragment extends DefaultFragment {
 
     public void onClickAddGrade(View view) {
         startActivity(new Intent(getActivity(), CreateGradeActivity.class));
-        onFragmentSelectedListener.onSelect(R.id.activity_main_bottom_navigation_subjects);
     }
 
     public void onClickAddCalendarEntry(View view) {
         startActivity(new Intent(getActivity(), CreateCalendarEntryActivity.class));
-        onFragmentSelectedListener.onSelect(R.id.activity_main_bottom_navigation_calendar);
     }
 
 
