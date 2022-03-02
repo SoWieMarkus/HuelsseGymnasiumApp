@@ -10,10 +10,7 @@ import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.ValueChangeListener;
 
-@Setter
 public class ColorInputWidget extends InputWidget<Color, Color> {
-
-    private ValueChangeListener<Color> colorValueChangeListener;
 
     public ColorInputWidget(Context context) {
         super(context);
@@ -43,8 +40,7 @@ public class ColorInputWidget extends InputWidget<Color, Color> {
     }
 
     @Override
-    public void onValueChanged(Color color) {
-        super.getInputWidgetHeader().setValue(color);
-        if (colorValueChangeListener != null) colorValueChangeListener.onValueChanged(color);
+    public void onUpdateHeader(Color color) {
+        getInputWidgetHeader().setValue(color);
     }
 }

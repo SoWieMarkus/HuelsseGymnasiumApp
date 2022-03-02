@@ -29,9 +29,8 @@ public class InputWidgetWeightingBody extends InputWidgetBody<Integer> implement
     }
 
     @Override
-    public void setValue(Integer integer) {
+    public void onValueSet(Integer integer) {
         seekBar.setProgress(integer / STEP_SIZE);
-        getValueChangeListener().onValueChanged(integer);
     }
 
     @Override

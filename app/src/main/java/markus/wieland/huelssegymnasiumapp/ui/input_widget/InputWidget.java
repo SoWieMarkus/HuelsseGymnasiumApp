@@ -22,6 +22,8 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
     private InputWidgetBody<T> inputWidgetBody;
     private InputWidgetHeader<G> inputWidgetHeader;
 
+    private ValueChangeListener<T> valueChangeListener;
+
     protected InputWidget(Context context) {
         this(context, null);
     }
@@ -79,4 +81,12 @@ public abstract class InputWidget<T, G> extends LinearLayout implements ValueCha
         return inputWidgetBody.getValue();
     }
 
+    @Override
+    public void onValueChanged(T t) {
+        onUpdateHeader(t);
+        if (valueChangeListener == null) return;
+        valueChangeListener.onValueChanged(t);
+    }
+
+    public abstract void onUpdateHeader(T t);
 }

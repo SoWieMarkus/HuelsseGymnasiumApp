@@ -35,7 +35,7 @@ public abstract class GradeInputWidget extends InputWidget<DefaultGrade, String>
     }
 
     @Override
-    public void onValueChanged(DefaultGrade defaultGrade) {
+    public void onUpdateHeader(DefaultGrade defaultGrade) {
         getInputWidgetHeader().setValue(defaultGrade.toString());
     }
 }

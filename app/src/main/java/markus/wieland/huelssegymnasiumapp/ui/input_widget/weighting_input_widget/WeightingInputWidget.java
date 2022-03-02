@@ -41,7 +41,7 @@ public class WeightingInputWidget extends InputWidget<Integer, String> {
     }
 
     @Override
-    public void onValueChanged(Integer integer) {
+    public void onUpdateHeader(Integer integer) {
         getInputWidgetHeader().setValue(integer + " / " + (InputWidgetWeightingBody.MAX_EXAM_WEIGHTING - integer));
     }
 }

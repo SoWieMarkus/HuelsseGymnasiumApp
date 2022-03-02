@@ -45,7 +45,7 @@ public class CalendarInputWidget extends InputWidget<LocalDate, String> {
     }
 
     @Override
-    public void onValueChanged(LocalDate localDate) {
+    public void onUpdateHeader(LocalDate localDate) {
         getInputWidgetHeader().setValue(LocalDateConverter.toDisplayString(localDate));
     }
 }

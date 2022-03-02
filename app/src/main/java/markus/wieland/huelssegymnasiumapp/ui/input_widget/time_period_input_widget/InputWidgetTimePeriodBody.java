@@ -2,6 +2,7 @@ package markus.wieland.huelssegymnasiumapp.ui.input_widget.time_period_input_wid
 
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.view.ContextThemeWrapper;
 import android.widget.Button;
 
 import markus.wieland.huelssegymnasiumapp.R;
@@ -32,9 +33,9 @@ public class InputWidgetTimePeriodBody extends InputWidgetBody<TimePeriod> {
     protected void onClick(boolean isStartTime) {
         Time time = isStartTime ? timePeriod.getStartTime() : timePeriod.getEndTime();
 
-        TimePickerDialog timePickerDialog = new TimePickerDialog(getContext(), (timePicker, selectedHour, selectedMinute) ->
+        TimePickerDialog timePickerDialog = new TimePickerDialog(new ContextThemeWrapper(getContext(), R.style.Theme_Dialog), (timePicker, selectedHour, selectedMinute) ->
                 setNewValues(selectedHour, selectedMinute, isStartTime), time.getHour(), time.getMinute(), true);//Yes 24 hour time
-        timePickerDialog.setTitle("Select Time");
+
         timePickerDialog.show();
     }
 
@@ -57,10 +58,9 @@ public class InputWidgetTimePeriodBody extends InputWidgetBody<TimePeriod> {
     }
 
     @Override
-    public void setValue(TimePeriod timePeriod) {
+    public void onValueSet(TimePeriod timePeriod) {
         this.timePeriod = timePeriod;
         update();
-        getValueChangeListener().onValueChanged(timePeriod);
     }
 
     @Override

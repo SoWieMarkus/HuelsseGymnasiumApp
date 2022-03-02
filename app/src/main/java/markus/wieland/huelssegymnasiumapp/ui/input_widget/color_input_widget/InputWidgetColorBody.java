@@ -50,11 +50,10 @@ public class InputWidgetColorBody extends InputWidgetBody<Color> implements Seek
     }
 
     @Override
-    public void setValue(Color color) {
+    public void onValueSet(Color color) {
         seekBarR.setProgress(color.getR());
         seekBarG.setProgress(color.getG());
         seekBarB.setProgress(color.getB());
-        getValueChangeListener().onValueChanged(color);
     }
 
     @Override

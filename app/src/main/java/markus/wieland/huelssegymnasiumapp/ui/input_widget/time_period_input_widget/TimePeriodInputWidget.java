@@ -43,7 +43,7 @@ public class TimePeriodInputWidget extends InputWidget<TimePeriod, String> imple
     }
 
     @Override
-    public void onValueChanged(TimePeriod period) {
+    public void onUpdateHeader(TimePeriod period) {
         getInputWidgetHeader().setValue(period.toString());
     }
 

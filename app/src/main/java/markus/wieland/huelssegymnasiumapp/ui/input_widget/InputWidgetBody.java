@@ -26,7 +26,12 @@ public abstract class InputWidgetBody<T> extends InputWidgetComponent {
         super(context, attrs, defStyleAttr);
     }
 
-    public abstract void setValue(T t);
+    public void setValue(T t){
+        onValueSet(t);
+        getValueChangeListener().onValueChanged(t);
+    }
+
+    public abstract void onValueSet(T t);
 
     public abstract T getValue();
 

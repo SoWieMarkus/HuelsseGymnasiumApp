@@ -17,9 +17,8 @@ public class InputWidgetGradeSecondaryTwoBody extends InputWidgetBody<DefaultGra
     }
 
     @Override
-    public void setValue(DefaultGrade secondaryTwoGrade) {
+    public void onValueSet(DefaultGrade secondaryTwoGrade) {
         numberPicker.setValue(secondaryTwoGrade.getValue());
-        getValueChangeListener().onValueChanged(secondaryTwoGrade);
     }
 
     @Override

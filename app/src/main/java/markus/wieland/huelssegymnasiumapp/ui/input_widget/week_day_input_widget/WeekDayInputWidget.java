@@ -44,7 +44,7 @@ public class WeekDayInputWidget extends InputWidget<Integer, String> {
     }
 
     @Override
-    public void onValueChanged(Integer integer) {
+    public void onUpdateHeader(Integer integer) {
         getInputWidgetHeader().setValue(getInputWidgetBody().getDisplayName(integer));
     }
 }

@@ -34,10 +34,9 @@ public class InputWidgetEnumBody<T extends Type> extends InputWidgetBody<T> impl
     }
 
     @Override
-    public void setValue(T t) {
+    public void onValueSet(T t) {
         if (t == null) return;
         this.numberPicker.setValue(t.getId());
-        getValueChangeListener().onValueChanged(t);
     }
 
     @Override

@@ -38,9 +38,8 @@ public class InputWidgetWeekDayBody extends InputWidgetBody<Integer> implements 
     }
 
     @Override
-    public void setValue(Integer integer) {
+    public void onValueSet(Integer integer) {
         numberPicker.setValue(integer);
-        getValueChangeListener().onValueChanged(integer);
     }
 
     @Override

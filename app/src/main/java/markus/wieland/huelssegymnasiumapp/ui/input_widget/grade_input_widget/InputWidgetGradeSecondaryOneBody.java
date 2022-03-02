@@ -36,11 +36,10 @@ public class InputWidgetGradeSecondaryOneBody extends InputWidgetBody<DefaultGra
     }
 
     @Override
-    public void setValue(DefaultGrade defaultGrade) {
+    public void onValueSet(DefaultGrade defaultGrade) {
         SecondaryOneGrade secondaryOneGrade = (SecondaryOneGrade) defaultGrade;
         value.setValue(secondaryOneGrade.getValue());
         sign.setValue(secondaryOneGrade.getSign());
-        getValueChangeListener().onValueChanged(secondaryOneGrade);
     }
 
     @Override

@@ -41,7 +41,7 @@ public class CourseInputWidget extends InputWidget<String, String> {
     }
 
     @Override
-    public void onValueChanged(String s) {
+    public void onUpdateHeader(String s) {
         getInputWidgetHeader().setValue(s);
     }
 }

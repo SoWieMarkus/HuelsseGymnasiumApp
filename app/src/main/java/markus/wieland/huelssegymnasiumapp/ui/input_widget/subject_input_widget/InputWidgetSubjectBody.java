@@ -53,9 +53,8 @@ public class InputWidgetSubjectBody extends InputWidgetBody<Subject> implements 
     }
 
     @Override
-    public void setValue(Subject subject) {
+    public void onValueSet(Subject subject) {
         subjectInputWidgetAdapter.select(subject);
-        getValueChangeListener().onValueChanged(subject);
     }
 
     public Subject getSubjectById(long id) {

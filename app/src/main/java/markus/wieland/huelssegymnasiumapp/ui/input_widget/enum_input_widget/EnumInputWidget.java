@@ -44,7 +44,7 @@ public class EnumInputWidget<T extends Type> extends InputWidget<T, String> {
     }
 
     @Override
-    public void onValueChanged(T t) {
+    public void onUpdateHeader(T t) {
         getInputWidgetHeader().setValue(t.getDisplayNameAsString(getContext()));
     }
 }

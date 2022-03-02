@@ -22,10 +22,9 @@ public class InputWidgetCalendarBody extends InputWidgetBody<LocalDate> implemen
     }
 
     @Override
-    public void setValue(LocalDate localDate) {
+    public void onValueSet(LocalDate localDate) {
         calendar.set(localDate.getYear(), localDate.getMonthValue() - 1, localDate.getDayOfMonth());
         calendarView.setDate(calendar.getTimeInMillis());
-        getValueChangeListener().onValueChanged(localDate);
     }
 
     @Override

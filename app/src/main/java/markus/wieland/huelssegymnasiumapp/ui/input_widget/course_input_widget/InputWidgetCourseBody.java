@@ -44,16 +44,14 @@ public class InputWidgetCourseBody extends InputWidgetBody<String> implements Nu
     }
 
     @Override
-    public void setValue(String s) {
+    public void onValueSet(String s) {
         if (s == null) {
             numberPicker.setValue(0);
-            getValueChangeListener().onValueChanged(null);
             return;
         }
         for (int i = 0; i < courses.length; i++) {
             if (courses[i].equals(s)) {
                 numberPicker.setValue(i);
-                getValueChangeListener().onValueChanged(s);
                 return;
             }
         }

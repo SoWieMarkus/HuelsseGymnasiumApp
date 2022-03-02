@@ -60,7 +60,7 @@ public class SubjectInputWidget extends InputWidget<Subject, String> implements 
     }
 
     @Override
-    public void onValueChanged(Subject subject) {
+    public void onUpdateHeader(Subject subject) {
         getInputWidgetHeader().setValue(subject == null ? "" : subject.getName());
     }
 
