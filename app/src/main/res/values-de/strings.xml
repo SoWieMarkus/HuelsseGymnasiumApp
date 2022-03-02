@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">HuelsseGymnasiumApp</string>
+    <string name="app_name">JAH Gymnasium</string>
     <string name="menu_dashboard">Start</string>
     <string name="menu_subjects">Fächer</string>
     <string name="menu_calendar">Kalender</string>
@@ -69,4 +69,7 @@
     <string name="activity_create_subject_name">Name</string>
     <string name="activity_create_subject_name_argument_name">Der Name des Fachs</string>
     <string name="activity_create_subject_teacher_argument_name">Der Name des Lehrernden</string>
+    <string name="activity_create_time_table_room_hint">Raum</string>
+    <string name="activity_create_time_table_slot_room_argument_name">Der Raum</string>
+    <string name="time_table_slot_no_room">Kein Raum</string>
 </resources>

@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">HuelsseGymnasiumApp</string>
     <string name="menu_dashboard">Home</string>
     <string name="menu_subjects">Subjects</string>
     <string name="menu_calendar">Calendar</string>
@@ -72,4 +71,8 @@
     <string name="activity_create_subject_name">Name</string>
     <string name="activity_create_subject_name_argument_name">name</string>
     <string name="activity_create_subject_teacher_argument_name">teacher</string>
+    <string name="app_name">JAH Gymnasium</string>
+    <string name="activity_create_time_table_room_hint">Room</string>
+    <string name="activity_create_time_table_slot_room_argument_name">room</string>
+    <string name="time_table_slot_no_room">No room</string>
 </resources>
