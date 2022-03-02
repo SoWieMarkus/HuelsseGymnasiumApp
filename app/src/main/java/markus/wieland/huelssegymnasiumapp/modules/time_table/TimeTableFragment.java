@@ -17,10 +17,11 @@ import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTable;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
+import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
 import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableBackgroundView;
 import markus.wieland.huelssegymnasiumapp.ui.time_table.TimeTableView;
 
-public class TimeTableFragment extends DefaultFragment implements Observer<List<TimeTableSlotWithSubject>>, OnItemClickListener<TimeTableSlotWithSubject> {
+public class TimeTableFragment extends DefaultFragment implements Observer<List<TimeTableSlotWithSubject>>, OnItemClickListener<TimeTableSlotWithSubject>, TimeTableDialogInteractionListener {
 
     private static final String DETAILS_DIALOG_KEY = "markus.wieland.huelssegymnasiumapp.modules.time_table.DETAILS_DIALOG_KEY";
 
@@ -74,6 +75,18 @@ public class TimeTableFragment extends DefaultFragment implements Observer<List<
     @Override
     public void onClick(TimeTableSlotWithSubject timeTableSlotWithSubject) {
         TimeTableDetailsDialog timeTableDetailsDialog = TimeTableDetailsDialog.build(timeTableSlotWithSubject);
+        timeTableDetailsDialog.setTimeTableDialogInteractionListener(this);
         timeTableDetailsDialog.show(getChildFragmentManager(), DETAILS_DIALOG_KEY);
+    }
+
+    @Override
+    public void onDelete(TimeTableSlotWithSubject timeTableSlotWithSubject) {
+        timeTableSlotViewModel.delete(timeTableSlotWithSubject.getTimeTableSlot());
+    }
+
+    @Override
+    public void onEdit(TimeTableSlotWithSubject timeTableSlotWithSubject) {
+        startActivity(new Intent(getActivity(), CreateTimeTableSlotActivity.class)
+                .putExtra(CreateItemActivity.OBJECT_TO_EDIT, timeTableSlotWithSubject.getTimeTableSlot()));
     }
 }
