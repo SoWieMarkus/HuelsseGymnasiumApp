@@ -12,20 +12,26 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.R;
+import markus.wieland.huelssegymnasiumapp.helper.Type;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
+import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryType;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;
-import markus.wieland.huelssegymnasiumapp.ui.CreateItemActivity;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Filter;
+import markus.wieland.huelssegymnasiumapp.ui.filter.FilterView;
 import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
-import markus.wieland.huelssegymnasiumapp.ui.OnCalendarContextMenu;
+import markus.wieland.huelssegymnasiumapp.ui.filter.OnFilterChangeListener;
 
 public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, CalendarWithSubjectAdapter.CalendarViewHolder, CalendarWithSubjectAdapter>
-        implements Observer<List<CalendarEntryWithSubject>>{
+        implements Observer<List<CalendarEntryWithSubject>>, OnFilterChangeListener {
 
     private CalendarViewModel calendarViewModel;
+    private final Filter<CalendarEntryWithSubject> filter;
+    private FilterView filterView;
 
     public CalendarFragment() {
         super(R.layout.fragment_calendar);
         setHasOptionsMenu(true);
+        filter = new Filter<>();
     }
 
     @Override
@@ -38,6 +44,14 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
         super.bindViews();
         if (getActivity() == null) return;
         calendarViewModel = ViewModelProviders.of(getActivity()).get(CalendarViewModel.class);
+        filterView = findViewById(R.id.fragment_calendar_filter);
+    }
+
+    @Override
+    public void initializeViews() {
+        super.initializeViews();
+        filterView.setFilterOptions(CalendarEntryType.class.getEnumConstants());
+        filterView.setOnFilterChangeListener(this);
     }
 
     @Override
@@ -65,7 +79,15 @@ public class CalendarFragment extends ListFragment<CalendarEntryWithSubject, Cal
 
     @Override
     public void onChanged(List<CalendarEntryWithSubject> calendarEntries) {
-        submitList(calendarEntries);
+        filter.updateList(calendarEntries);
+        submitList(filter.filterList(filterView.getFilterOptions()));
     }
+
+    @Override
+    public void onChange(List<Type> filters) {
+        submitList(filter.filterList(filters));
+    }
+
+
 
 }
