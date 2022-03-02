@@ -17,6 +17,9 @@
         <item name="background_color">@color/background_light</item>
 
         <item name="text_color_main">@color/text_color_main_light</item>
+        <item name="icon_color">@color/text_color_main_light</item>
         <item name="accent_color">@color/color_accent_light</item>
     </style>
+
+    <style name="Theme.Dialog" parent="android:Theme.Material.Dialog"/>
 </resources>
