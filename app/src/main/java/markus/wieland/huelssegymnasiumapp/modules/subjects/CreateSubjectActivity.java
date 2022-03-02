@@ -59,7 +59,7 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> implement
 
     @Override
     public void initializeWidgets(Subject item) {
-        colorInputWidget.setColorValueChangeListener(this);
+        colorInputWidget.setValueChangeListener(this);
         colorInputWidget.setValue(new Color(item.getColorR(), item.getColorG(), item.getColorB()));
         colorInputWidget.setExpanded(!isEditMode());
         weightingInputWidget.setValue(item.getExamWeight());
