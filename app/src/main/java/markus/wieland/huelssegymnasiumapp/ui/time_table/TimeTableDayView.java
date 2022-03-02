@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 
 import lombok.Getter;
 import markus.wieland.defaultappelements.uielements.adapter.iteractlistener.OnItemClickListener;
+import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableColumn;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableDay;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
@@ -36,12 +37,12 @@ public class TimeTableDayView extends LinearLayout {
         setLayoutParams(params);
     }
 
-    public void setTimeTableDay(TimeTableDay timeTableDay, int sizePerMinute, int minHour, OnItemClickListener<TimeTableSlotWithSubject> onItemClickListener) {
+    public void setTimeTableDay(TimeTableDay timeTableDay, int sizePerMinute, Time time, OnItemClickListener<TimeTableSlotWithSubject> onItemClickListener) {
         this.timeTableDay = timeTableDay;
 
         for (TimeTableColumn timeTableColumn : timeTableDay.getColumns()) {
             TimeTableColumnView tableColumnView = new TimeTableColumnView(getContext());
-            tableColumnView.setTimeTableSlots(timeTableColumn, sizePerMinute, minHour, onItemClickListener);
+            tableColumnView.setTimeTableSlots(timeTableColumn, sizePerMinute, time, onItemClickListener);
             addView(tableColumnView, getLayoutParams());
         }
 

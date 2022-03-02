@@ -34,7 +34,7 @@ public class TimePeriod {
 
     public TimePeriod(List<TimeTableSlotWithSubject> timeTableSlotWithSubjects) {
         this.startTime = new Time(7, 0);
-        this.endTime = new Time(14, 0);
+        this.endTime = new Time(13, 0);
 
         for (TimeTableSlotWithSubject timeTableSlotWithSubject : timeTableSlotWithSubjects) {
             Time startTimeCompare = timeTableSlotWithSubject.getTimeTableSlot().getTimePeriod().getStartTime();

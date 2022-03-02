@@ -2,6 +2,7 @@ package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
@@ -29,24 +30,24 @@ public class TimeTableBackgroundView extends RelativeLayout {
         this.removeAllViews();
 
         ViewGroup.LayoutParams layoutParams = getLayoutParams();
-        layoutParams.height = timeTable.getHeightNeeded(TimeTableView.MIN_TIME_HEIGHT, height);
+        layoutParams.height = timeTable.getHeightNeeded(height);
         setLayoutParams(layoutParams);
 
         int minHour = timeTable.getMinHour();
         int maxHour = timeTable.getMaxHour();
-        int heightHour = timeTable.getSizePerHour(TimeTableView.MIN_TIME_HEIGHT, height);
-
+        int sizePerMinute = timeTable.sizePerMinute(height);
 
         for (int i = 1; i < maxHour - minHour; i++) {
+            Time time = new Time(minHour + i, 0);
             TimeTableDividerView view = new TimeTableDividerView(getContext());
-            view.setTime(new Time(minHour + i, 0));
+            view.setTime(time);
 
             RelativeLayout.LayoutParams layoutParams1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
             view.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
             int heightTest = view.getMeasuredHeight();
 
-            int marginTop = heightHour * i - heightTest / 2;
+            int marginTop = TimeTable.getMargin(sizePerMinute,timeTable.getRange().getStartTime(), time) - heightTest / 2;
             layoutParams1.setMargins(2, marginTop, 0, 2);  // left, top, right, bottom
 
             addView(view, layoutParams1);

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlotWithSubject;
 
 public class TimeTableSlotView extends LinearLayout {
+
     public TimeTableSlotView(Context context) {
         super(context);
         setOrientation(VERTICAL);
@@ -23,7 +24,7 @@ public class TimeTableSlotView extends LinearLayout {
         room.setGravity(Gravity.CENTER);
 
         abbreviation.setText(timeTableSlotWithSubject.getSubject().getAbbreviation());
-        room.setText("RAUM");
+        room.setText(timeTableSlotWithSubject.getTimeTableSlot().roomToString(getContext()));
         addView(abbreviation);
         addView(room);
     }

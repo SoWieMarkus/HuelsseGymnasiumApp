@@ -8,6 +8,8 @@ import lombok.Getter;
 public class TimeTable {
     private static final int AMOUNT_DAYS_IN_WEEK = 5;
 
+    private static final int MIN_HEIGHT_MINUTE = 3;
+
     private final TimeTableDay[] days;
     private final TimePeriod range;
 
@@ -34,21 +36,22 @@ public class TimeTable {
         return getRange().getStartTime().getHour();
     }
 
-    public int getHoursToDisplay() {
-        return getMaxHour() - getMinHour();
+    public int getHeightNeeded(int heightOfView) {
+        return totalMinutes() * sizePerMinute(heightOfView) + 50;
     }
 
-    public int getSizePerHour(int minHeight, int heightOfView) {
-        int sizePerHour = heightOfView / getHoursToDisplay();
-        return Math.max(sizePerHour, minHeight);
+    public int totalMinutes() {
+        return range.getMinutes();
     }
 
-    public int getSizePerMinute(int minHeight, int heightOfView) {
-        return getSizePerHour(minHeight, heightOfView) / 60;
+    public int sizePerMinute(int height) {
+        int heightOfMinute = height / totalMinutes();
+        return Math.max(heightOfMinute, MIN_HEIGHT_MINUTE);
     }
 
-    public int getHeightNeeded(int minHeight, int heightOfView) {
-        return getHoursToDisplay() * getSizePerHour(minHeight, heightOfView);
+    public static int getMargin(int sizePerMinute, Time startTime, Time endTime) {
+        TimePeriod period = new TimePeriod(startTime, endTime);
+        return sizePerMinute * period.getMinutes();
     }
 
 }
