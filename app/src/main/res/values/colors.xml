@@ -11,13 +11,15 @@
     <color name="time_table_background_view_color">#A8A8A8</color>
 
     <color name="background_light">#F2F2F2</color>
-    <color name="background_dark">#000000</color>
+    <color name="background_dark">#1A1A1A</color>
 
     <color name="text_color_main_light">#000000</color>
     <color name="text_color_main_dark">#FFFFFF</color>
 
     <color name="color_accent_light">#3F51B5</color>
     <color name="color_accent_dark">#03A9F4</color>
+
+    <color name="color_grade_value">#3D2D2D</color>
 
 
 

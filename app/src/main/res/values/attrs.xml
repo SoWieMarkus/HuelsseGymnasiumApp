@@ -4,6 +4,7 @@
     <attr name="background_color" format="color"/>
     <attr name="text_color_main" format="color"/>
     <attr name="accent_color" format="color"/>
+    <attr name="icon_color" format="color"/>
 
     <declare-styleable name="StateRecyclerView">
         <attr name="empty_message" format="string" />
