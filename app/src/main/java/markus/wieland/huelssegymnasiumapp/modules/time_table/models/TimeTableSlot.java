@@ -1,5 +1,7 @@
 package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
+import android.content.Context;
+
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -12,6 +14,7 @@ import java.io.Serializable;
 import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
+import markus.wieland.huelssegymnasiumapp.R;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 
 @Getter
@@ -29,6 +32,8 @@ public class TimeTableSlot implements DatabaseEntity, Serializable {
     private int startMinute;
     private int endHour;
     private int endMinute;
+
+    private String room;
 
     @Nullable
     @ColumnInfo(index = true)
@@ -50,5 +55,10 @@ public class TimeTableSlot implements DatabaseEntity, Serializable {
     @Ignore
     public TimePeriod getTimePeriod() {
         return new TimePeriod(new Time(startHour, startMinute), new Time(endHour, endMinute));
+    }
+
+    @Ignore
+    public String roomToString(Context context) {
+        return room == null ? context.getString(R.string.time_table_slot_no_room) : room;
     }
 }
