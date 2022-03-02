@@ -1,17 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
-        android:id="@+id/fragment_calendar_recycler_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:empty_message="@string/empty_message_calendar_entries"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <markus.wieland.huelssegymnasiumapp.ui.filter.FilterView
+            android:id="@+id/fragment_calendar_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
+            android:id="@+id/fragment_calendar_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:empty_message="@string/empty_message_calendar_entries"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
