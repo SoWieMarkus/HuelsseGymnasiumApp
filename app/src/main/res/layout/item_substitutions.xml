@@ -21,6 +21,7 @@
             android:id="@+id/item_subsitution_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/substitution_background_color"
             android:orientation="vertical"
             android:padding="8dp">
 
