@@ -3,6 +3,7 @@ package markus.wieland.huelssegymnasiumapp.modules.substitutions;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,8 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
         private TextView room;
         private TextView course;
 
+        private LinearLayout background;
+
         public SubstitutionViewHolder(@NonNull View itemView) {
             super(itemView);
         }
@@ -52,6 +55,7 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
             room = findViewById(R.id.item_subsitutions_room);
             info = findViewById(R.id.item_subsitutions_info);
             course = findViewById(R.id.item_subsitutions_course);
+            background = findViewById(R.id.item_subsitution_background);
         }
 
         @Override
@@ -62,11 +66,7 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
             room.setText(substitution.getRoom());
             info.setText(substitution.getInfo());
             course.setText(substitution.getCourse());
-
-            if (substitution.getCourse().toLowerCase().contains(getCourse().toLowerCase())){
-                course.setText("MYYYYY");
-            }
-            // TODO check if your class is there
+            background.setSelected(substitution.getCourse().toLowerCase().contains(getCourse().toLowerCase()));
         }
     }
 
