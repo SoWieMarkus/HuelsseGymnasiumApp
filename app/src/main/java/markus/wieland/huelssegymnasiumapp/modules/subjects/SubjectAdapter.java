@@ -62,7 +62,7 @@ public class SubjectAdapter extends QueryableAdapter<Long, SubjectWithGradesAndC
             Subject subject = subjectWithGradesAndCalendar.getSubject();
             color.setBackgroundColor(subject.getColor());
             name.setText(subject.getName());
-            teacher.setText(subject.getTeacher() == null ? "-" : subject.getTeacher());
+            teacher.setText(subject.teacherToString());
             average.setText(subjectWithGradesAndCalendar.getAverageAsString(gradeFormat));
             itemView.setOnClickListener(view -> getOnItemInteractListener().onClick(subjectWithGradesAndCalendar));
             itemView.setOnCreateContextMenuListener(new ContextMenu<>(getOnItemInteractListener(), subjectWithGradesAndCalendar));

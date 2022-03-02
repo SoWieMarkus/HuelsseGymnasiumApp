@@ -55,4 +55,9 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializa
         return getName() + getAbbreviation();
     }
 
+    @Ignore
+    public String teacherToString(){
+        return getTeacher() == null ? "-" : getTeacher();
+    }
+
 }
