@@ -42,6 +42,7 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
         private TextView course;
 
         private LinearLayout background;
+        private LinearLayout roomContainer;
 
         public SubstitutionViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -56,12 +57,15 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
             info = findViewById(R.id.item_subsitutions_info);
             course = findViewById(R.id.item_subsitutions_course);
             background = findViewById(R.id.item_subsitution_background);
+            roomContainer = findViewById(R.id.item_substitution_room_container);
         }
 
         @Override
         public void bindItemToViewHolder(Substitution substitution) {
             lesson.setText(substitution.getLesson());
             teacher.setText(substitution.getTeacher());
+            teacher.setVisibility(View.GONE);
+            roomContainer.setVisibility(substitution.getRoom().isEmpty() ? View.GONE : View.VISIBLE);
             subject.setText(substitution.getSubject());
             room.setText(substitution.getRoom());
             info.setText(substitution.getInfo());

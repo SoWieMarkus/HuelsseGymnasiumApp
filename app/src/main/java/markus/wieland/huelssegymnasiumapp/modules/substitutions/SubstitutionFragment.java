@@ -1,42 +1,30 @@
 package markus.wieland.huelssegymnasiumapp.modules.substitutions;
 
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-
-import androidx.annotation.NonNull;
-
-import markus.wieland.defaultappelements.api.APIResult;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.api.SubstitutionAPI;
 import markus.wieland.huelssegymnasiumapp.api.models.Substitution;
-import markus.wieland.huelssegymnasiumapp.api.models.SubstitutionPlan;
 import markus.wieland.huelssegymnasiumapp.modules.settings.Settings;
 import markus.wieland.huelssegymnasiumapp.ui.ListFragment;
 import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
-public class SubstitutionFragment extends ListFragment<Substitution, SubstitutionAdapter.SubstitutionViewHolder, SubstitutionAdapter>
-        implements APIResult<SubstitutionPlan> {
-
-    private SubstitutionAPI substitutionAPI;
-    private Settings settings;
+public class SubstitutionFragment extends ListFragment<Substitution, SubstitutionAdapter.SubstitutionViewHolder, SubstitutionAdapter> {
 
     public SubstitutionFragment() {
         super(R.layout.fragment_substitutions);
         setHasOptionsMenu(true);
+        setAdapter(createAdapter());
     }
 
     @Override
     public void execute() {
         if (getActivity() == null) return;
-        substitutionAPI = new SubstitutionAPI(getActivity());
-        settings = new Settings(getActivity());
-        load();
+        Settings settings = new Settings(getActivity());
+        getAdapter().setCourse(settings.getCourse());
+        getRecyclerView().setState(StateRecyclerView.State.LIST);
     }
 
-    private void load() {
-        getRecyclerView().setState(StateRecyclerView.State.LOADING);
-        substitutionAPI.queryLatest(this);
+    @Override
+    public void initializeViews() {
+        getRecyclerView().setAdapter(getAdapter());
     }
 
     @Override
@@ -49,26 +37,4 @@ public class SubstitutionFragment extends ListFragment<Substitution, Substitutio
         return new SubstitutionAdapter();
     }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.menu_substitution, menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menu_substitution_refresh) {
-            load();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onLoad(SubstitutionPlan substitutionPlan) {
-        getRecyclerView().getAdapter().setCourse(settings.getCourse());
-        if (substitutionPlan == null) {
-            getRecyclerView().setState(StateRecyclerView.State.EMPTY);
-            return;
-        }
-        submitList(substitutionPlan.getSubstitutions());
-    }
 }
