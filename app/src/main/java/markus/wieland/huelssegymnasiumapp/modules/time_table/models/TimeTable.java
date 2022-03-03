@@ -1,5 +1,7 @@
 package markus.wieland.huelssegymnasiumapp.modules.time_table.models;
 
+import android.util.Log;
+
 import java.util.List;
 
 import lombok.Getter;
@@ -37,15 +39,18 @@ public class TimeTable {
     }
 
     public int getHeightNeeded(int heightOfView) {
-        return totalMinutes() * sizePerMinute(heightOfView) + 50;
+        return totalMinutes() * sizePerMinute(heightOfView);
     }
 
     public int totalMinutes() {
-        return range.getMinutes();
+        return Math.min(range.getMinutes() + 60, 60 * 24);
     }
 
     public int sizePerMinute(int height) {
         int heightOfMinute = height / totalMinutes();
+        while (totalMinutes() * heightOfMinute < height) {
+            heightOfMinute++;
+        }
         return Math.max(heightOfMinute, MIN_HEIGHT_MINUTE);
     }
 
