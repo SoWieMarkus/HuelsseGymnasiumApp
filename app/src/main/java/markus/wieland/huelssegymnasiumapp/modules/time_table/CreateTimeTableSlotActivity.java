@@ -54,9 +54,11 @@ public class CreateTimeTableSlotActivity extends CreateItemActivity<TimeTableSlo
         subjectColor = findViewById(R.id.activity_create_time_table_slot_subject_color);
         subjectPeriod = findViewById(R.id.activity_create_time_table_slot_subject_period);
         subjectInputWidget = findViewById(R.id.activity_create_time_table_slot_subject);
+        weekDayInputWidget = findViewById(R.id.activity_create_time_table_slot_day);
+
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
         timeTableSlotViewModel = ViewModelProviders.of(this).get(TimeTableSlotViewModel.class);
-        weekDayInputWidget = findViewById(R.id.activity_create_time_table_slot_day);
+
         settings = new Settings(this);
     }
 

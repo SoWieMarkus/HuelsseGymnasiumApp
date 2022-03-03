@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import lombok.Getter;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
 
 @Getter
 public class FilterView extends RecyclerView {

@@ -31,7 +31,7 @@ public class TimeTable {
 
     public int getMaxHour() {
         int maxHour = getRange().getEndTime().getHour() + 1;
-        return Math.min(maxHour, 24);
+        return Math.min(maxHour, Time.MAX_HOUR);
     }
 
     public int getMinHour() {
@@ -43,7 +43,7 @@ public class TimeTable {
     }
 
     public int totalMinutes() {
-        return Math.min(range.getMinutes() + 60, 60 * 24);
+        return Math.min(range.getMinutes() + Time.MINUTES_PER_HOUR, Time.MINUTES_PER_HOUR * Time.MAX_HOUR);
     }
 
     public int sizePerMinute(int height) {

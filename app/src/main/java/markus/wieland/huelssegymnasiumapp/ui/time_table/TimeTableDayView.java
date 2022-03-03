@@ -17,6 +17,9 @@ import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlo
 @Getter
 public class TimeTableDayView extends LinearLayout {
 
+    private static final int DAY_MARGIN_HORIZONTAL = 3;
+    private static final int DAY_MARGIN_VERTICAL = 0;
+
     private TimeTableDay timeTableDay;
 
     public TimeTableDayView(Context context) {
@@ -33,7 +36,7 @@ public class TimeTableDayView extends LinearLayout {
         params.height = ViewGroup.LayoutParams.MATCH_PARENT;
         params.width = ViewGroup.LayoutParams.MATCH_PARENT;
         params.weight = 1;
-        params.setMargins(3, 0, 3, 0);
+        params.setMargins(DAY_MARGIN_HORIZONTAL, DAY_MARGIN_VERTICAL, DAY_MARGIN_HORIZONTAL, DAY_MARGIN_VERTICAL);
         setLayoutParams(params);
     }
 

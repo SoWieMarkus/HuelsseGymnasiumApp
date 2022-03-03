@@ -12,6 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TimePeriod {
 
+
     private Time startTime;
     private Time endTime;
 
@@ -61,11 +62,11 @@ public class TimePeriod {
         int minutesLastHour = endTime.getMinute();
 
         int startHour = startTime.getHour() + 1;
-        if (startHour > 24)
-            startHour = 24;
+        if (startHour > Time.MAX_HOUR)
+            startHour = Time.MAX_HOUR;
         int endHour = endTime.getHour();
 
-        return minutesFirstHour + minutesLastHour + ((endHour - startHour) * 60);
+        return minutesFirstHour + minutesLastHour + ((endHour - startHour) * Time.MINUTES_PER_HOUR);
     }
 
 

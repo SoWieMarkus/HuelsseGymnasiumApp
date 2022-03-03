@@ -13,7 +13,7 @@ public class Color {
     private int g;
     private int b;
 
-    public int getColor() {
+    public int getColorValue() {
         return android.graphics.Color.rgb(r, g, b);
     }
 

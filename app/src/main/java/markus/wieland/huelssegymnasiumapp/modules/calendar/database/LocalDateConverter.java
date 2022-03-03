@@ -26,10 +26,13 @@ public class LocalDateConverter {
     }
 
     public static String toDisplayString(LocalDate localDate, Context context) {
-        if (localDate.equals(LocalDate.now()))
+        LocalDate now = LocalDate.now();
+        if (localDate.equals(now))
             return context.getString(R.string.calendar_date_today);
-        if (localDate.equals(LocalDate.now().plusDays(1)))
+        if (localDate.equals(now.plusDays(1)))
             return context.getString(R.string.calendar_date_tomorrow);
+        if (localDate.equals(now.minusDays(1)))
+            return context.getString(R.string.calendar_date_yesterday);
         return localDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
     }
 

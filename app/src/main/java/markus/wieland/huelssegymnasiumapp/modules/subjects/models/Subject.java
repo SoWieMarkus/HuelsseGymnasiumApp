@@ -1,7 +1,5 @@
 package markus.wieland.huelssegymnasiumapp.modules.subjects.models;
 
-import android.graphics.Color;
-
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -12,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
+import markus.wieland.huelssegymnasiumapp.ui.input_widget.color_input_widget.Color;
 
 @Getter
 @Setter
@@ -42,7 +41,14 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializa
 
     @Ignore
     public int getColor() {
-        return Color.rgb(colorR, colorG, colorB);
+        return new Color(getColorR(),getColorG(), getColorB()).getColorValue();
+    }
+
+    @Ignore
+    public void setColor(Color color) {
+        setColorR(color.getR());
+        setColorG(color.getG());
+        setColorB(color.getB());
     }
 
     @Override
@@ -56,7 +62,7 @@ public class Subject implements DatabaseEntity, QueryableEntity<Long>, Serializa
     }
 
     @Ignore
-    public String teacherToString(){
+    public String teacherToString() {
         return getTeacher() == null ? "-" : getTeacher();
     }
 

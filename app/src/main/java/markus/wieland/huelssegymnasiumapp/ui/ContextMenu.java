@@ -3,7 +3,6 @@ package markus.wieland.huelssegymnasiumapp.ui;
 import android.view.View;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.ui.OnContextMenuListener;
 
 public class ContextMenu<T> implements View.OnCreateContextMenuListener {
 

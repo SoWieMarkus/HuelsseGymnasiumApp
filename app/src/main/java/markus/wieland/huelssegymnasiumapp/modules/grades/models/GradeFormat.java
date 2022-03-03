@@ -4,7 +4,7 @@ import android.content.Context;
 
 import lombok.Getter;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Type;
 
 @Getter
 public enum GradeFormat implements Type {

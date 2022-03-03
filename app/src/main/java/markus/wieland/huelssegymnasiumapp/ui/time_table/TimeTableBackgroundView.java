@@ -2,7 +2,6 @@ package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
@@ -12,6 +11,9 @@ import markus.wieland.huelssegymnasiumapp.modules.time_table.models.Time;
 import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTable;
 
 public class TimeTableBackgroundView extends RelativeLayout {
+
+    private static final int DIVIDER_MARGIN_HORIZONTAL = 2;
+    private static final int DIVIDER_MARGIN_BOTTOM = 0;
 
     public TimeTableBackgroundView(Context context) {
         this(context, null);
@@ -42,15 +44,15 @@ public class TimeTableBackgroundView extends RelativeLayout {
             TimeTableDividerView view = new TimeTableDividerView(getContext());
             view.setTime(time);
 
-            RelativeLayout.LayoutParams layoutParams1 = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            RelativeLayout.LayoutParams dividerParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
 
             view.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
             int heightTest = view.getMeasuredHeight();
 
-            int marginTop = TimeTable.getMargin(sizePerMinute,timeTable.getRange().getStartTime(), time) - heightTest / 2;
-            layoutParams1.setMargins(2, marginTop, 0, 2);  // left, top, right, bottom
+            int marginTop = TimeTable.getMargin(sizePerMinute, timeTable.getRange().getStartTime(), time) - heightTest / 2;
+            dividerParams.setMargins(DIVIDER_MARGIN_HORIZONTAL, marginTop, DIVIDER_MARGIN_HORIZONTAL, DIVIDER_MARGIN_BOTTOM);  // left, top, right, bottom
 
-            addView(view, layoutParams1);
+            addView(view, dividerParams);
         }
 
 

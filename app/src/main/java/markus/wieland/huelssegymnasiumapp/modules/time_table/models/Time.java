@@ -16,6 +16,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Time {
 
+    public static final int MINUTES_PER_HOUR = 60;
+    public static final int MAX_HOUR = 24;
+
     private int hour;
     private int minute;
 

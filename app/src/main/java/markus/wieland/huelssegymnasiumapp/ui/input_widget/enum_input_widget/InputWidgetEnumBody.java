@@ -7,7 +7,7 @@ import android.widget.NumberPicker;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Type;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetBody;
 
 public class InputWidgetEnumBody<T extends Type> extends InputWidgetBody<T> implements NumberPicker.OnValueChangeListener {

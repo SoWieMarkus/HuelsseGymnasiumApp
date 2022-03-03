@@ -3,9 +3,6 @@ package markus.wieland.huelssegymnasiumapp.ui.filter;
 import java.util.ArrayList;
 import java.util.List;
 
-import markus.wieland.huelssegymnasiumapp.helper.Filterable;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
-
 public class Filter<F extends Filterable> {
 
     private final List<F> items;

@@ -1,4 +1,4 @@
-package markus.wieland.huelssegymnasiumapp.helper;
+package markus.wieland.huelssegymnasiumapp.ui.filter;
 
 import android.content.Context;
 

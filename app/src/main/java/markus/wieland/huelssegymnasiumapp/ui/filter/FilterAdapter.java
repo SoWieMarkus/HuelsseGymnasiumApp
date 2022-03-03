@@ -14,7 +14,6 @@ import lombok.Getter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultAdapter;
 import markus.wieland.defaultappelements.uielements.adapter.DefaultViewHolder;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
 
 @Getter
 public class FilterAdapter extends DefaultAdapter<Type, FilterAdapter.FilterViewHolder> {

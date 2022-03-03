@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders;
 import java.util.List;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Type;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.database.CalendarViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryType;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.models.CalendarEntryWithSubject;

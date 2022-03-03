@@ -14,8 +14,6 @@ import markus.wieland.huelssegymnasiumapp.modules.time_table.models.TimeTableSlo
 
 public class TimeTableView extends LinearLayout {
 
-    public static final int MIN_TIME_HEIGHT = 180;
-
     public TimeTableView(Context context) {
         this(context, null);
     }

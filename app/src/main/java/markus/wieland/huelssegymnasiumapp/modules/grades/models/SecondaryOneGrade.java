@@ -38,9 +38,8 @@ public class SecondaryOneGrade extends DefaultGrade {
     }
 
     public SecondaryOneGrade(boolean isExam) {
-        super(isExam);
-        this.sign = 0;
-        setValue(0);
+        super(isExam, LOWEST_GRADE_VALUE);
+        this.sign = SIGN_NONE;
     }
 
     @NonNull

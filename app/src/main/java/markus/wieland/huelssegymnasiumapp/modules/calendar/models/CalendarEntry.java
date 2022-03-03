@@ -15,8 +15,6 @@ import lombok.Getter;
 import lombok.Setter;
 import markus.wieland.databases.DatabaseEntity;
 import markus.wieland.defaultappelements.uielements.adapter.QueryableEntity;
-import markus.wieland.huelssegymnasiumapp.helper.Filterable;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
 import markus.wieland.huelssegymnasiumapp.modules.calendar.database.LocalDateConverter;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.Subject;
 

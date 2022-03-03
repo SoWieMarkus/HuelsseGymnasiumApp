@@ -25,14 +25,12 @@ import markus.wieland.huelssegymnasiumapp.modules.grades.CreateGradeActivity;
 import markus.wieland.huelssegymnasiumapp.modules.settings.SettingsActivity;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.database.SubjectViewModel;
 import markus.wieland.huelssegymnasiumapp.modules.subjects.models.SubjectWithGradesAndCalendar;
-import markus.wieland.huelssegymnasiumapp.modules.time_table.database.TimeTableSlotViewModel;
 import markus.wieland.huelssegymnasiumapp.ui.AverageView;
 import markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView;
 
 public class DashboardFragment extends DefaultFragment {
 
     private SubjectViewModel subjectViewModel;
-    private TimeTableSlotViewModel timeTableSlotViewModel;
     private CalendarViewModel calendarViewModel;
     private AverageView averageView;
 
@@ -49,7 +47,6 @@ public class DashboardFragment extends DefaultFragment {
     @Override
     public void bindViews() {
         subjectViewModel = ViewModelProviders.of(this).get(SubjectViewModel.class);
-        timeTableSlotViewModel = ViewModelProviders.of(this).get(TimeTableSlotViewModel.class);
         calendarViewModel = ViewModelProviders.of(this).get(CalendarViewModel.class);
 
         addCalendarEntry = findViewById(R.id.fragment_dashboard_add_calendar_entry);

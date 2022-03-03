@@ -22,15 +22,6 @@ public class TimeTableDetailsDialog extends DialogFragment {
 
     private static final String TIME_TABLE_SLOT_KEY = "markus.wieland.huelssegymnasiumapp.modules.time_table.TIME_TABLE_SLOT_KEY";
 
-    private TimeTableSlotWithSubject timeTableSlotWithSubject;
-    private TextView subjectTitle;
-    private TextView room;
-    private TextView teacher;
-    private LinearLayout color;
-    private TextView period;
-    private Button delete;
-    private Button edit;
-
     @Setter
     private TimeTableDialogInteractionListener timeTableDialogInteractionListener;
 
@@ -53,14 +44,14 @@ public class TimeTableDetailsDialog extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
         if (getArguments() == null) return;
 
-        timeTableSlotWithSubject = (TimeTableSlotWithSubject) getArguments().get(TIME_TABLE_SLOT_KEY);
-        subjectTitle = view.findViewById(R.id.dialog_time_table_slot_details_name);
-        teacher = view.findViewById(R.id.dialog_time_table_slot_details_teacher);
-        color = view.findViewById(R.id.dialog_time_table_slot_details_color);
-        period = view.findViewById(R.id.dialog_time_table_slot_details_period);
-        room = view.findViewById(R.id.dialog_time_table_slot_details_room);
-        delete = view.findViewById(R.id.dialog_time_table_slot_details_delete);
-        edit = view.findViewById(R.id.dialog_time_table_slot_details_edit);
+        TimeTableSlotWithSubject timeTableSlotWithSubject = (TimeTableSlotWithSubject) getArguments().get(TIME_TABLE_SLOT_KEY);
+        TextView subjectTitle = view.findViewById(R.id.dialog_time_table_slot_details_name);
+        TextView teacher = view.findViewById(R.id.dialog_time_table_slot_details_teacher);
+        LinearLayout color = view.findViewById(R.id.dialog_time_table_slot_details_color);
+        TextView period = view.findViewById(R.id.dialog_time_table_slot_details_period);
+        TextView room = view.findViewById(R.id.dialog_time_table_slot_details_room);
+        TextView delete = view.findViewById(R.id.dialog_time_table_slot_details_delete);
+        TextView edit = view.findViewById(R.id.dialog_time_table_slot_details_edit);
         subjectTitle.setText(timeTableSlotWithSubject.getSubject().getName());
         color.setBackgroundColor(timeTableSlotWithSubject.getSubject().getColor());
         edit.setOnClickListener(button -> {

@@ -33,7 +33,6 @@ public class InputWidgetCalendarBody extends InputWidgetBody<LocalDate> implemen
         calendarView = findViewById(R.id.input_widget_calendar_body_calendar);
         calendarView.setOnDateChangeListener(this);
         calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_MONTH, 1);
     }
 
     @Override

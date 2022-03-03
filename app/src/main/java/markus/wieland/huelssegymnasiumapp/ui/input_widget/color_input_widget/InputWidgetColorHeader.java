@@ -28,7 +28,7 @@ public class InputWidgetColorHeader extends InputWidgetHeader<Color> {
 
     @Override
     public void setValue(Color color) {
-        colorLayout.setBackgroundColor(color.getColor());
+        colorLayout.setBackgroundColor(color.getColorValue());
     }
 
     @Override

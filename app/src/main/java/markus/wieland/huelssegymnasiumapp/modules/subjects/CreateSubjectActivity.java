@@ -86,11 +86,7 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> implement
         subject.setName(getTextFromEditText(name));
         subject.setAbbreviation(getTextFromEditText(name).substring(0, 3));
         subject.setTeacher(getTextFromEditText(teacher));
-        Color color = colorInputWidget.getValue();
-
-        subject.setColorR(color.getR());
-        subject.setColorG(color.getG());
-        subject.setColorB(color.getB());
+        subject.setColor(colorInputWidget.getValue());
         subject.setExamWeight(weightingInputWidget.getValue());
     }
 
@@ -106,6 +102,6 @@ public class CreateSubjectActivity extends CreateItemActivity<Subject> implement
 
     @Override
     public void onValueChanged(Color color) {
-        subjectColor.setBackgroundColor(color.getColor());
+        subjectColor.setBackgroundColor(color.getColorValue());
     }
 }

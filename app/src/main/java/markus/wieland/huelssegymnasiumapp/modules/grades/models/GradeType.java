@@ -8,7 +8,7 @@ import java.util.Objects;
 
 import lombok.Getter;
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Type;
 
 @Getter
 public enum GradeType implements Type {

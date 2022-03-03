@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import androidx.annotation.Nullable;
 
 import markus.wieland.huelssegymnasiumapp.R;
-import markus.wieland.huelssegymnasiumapp.helper.Type;
+import markus.wieland.huelssegymnasiumapp.ui.filter.Type;
 
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidget;
 import markus.wieland.huelssegymnasiumapp.ui.input_widget.InputWidgetHeaderText;

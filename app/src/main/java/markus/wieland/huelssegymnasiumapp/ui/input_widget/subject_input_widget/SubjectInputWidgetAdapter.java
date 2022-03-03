@@ -73,6 +73,5 @@ public class SubjectInputWidgetAdapter extends DefaultAdapter<Subject, SubjectIn
             background.setOnClickListener(view -> select(subject));
         }
 
-
     }
 }

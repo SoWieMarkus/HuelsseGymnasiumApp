@@ -4,6 +4,17 @@ import androidx.annotation.NonNull;
 
 public class SecondaryTwoGrade extends DefaultGrade {
 
+    private static final int MAX_VALUE_VERY_GOOD = 15;
+    private static final int MIN_VALUE_VERY_GOOD = 13;
+    private static final int MAX_VALUE_GOOD = 12;
+    private static final int MIN_VALUE_GOOD = 10;
+    private static final int MAX_VALUE_SATISFACTORY = 9;
+    private static final int MIN_VALUE_SATISFACTORY = 7;
+    private static final int MAX_VALUE_SUFFICIENT = 6;
+    private static final int MIN_VALUE_SUFFICIENT = 4;
+    private static final int MAX_VALUE_POOR = 3;
+    private static final int MIN_VALUE_POOR = 1;
+
     public SecondaryTwoGrade(int value) {
         super(false, value);
     }
@@ -13,7 +24,7 @@ public class SecondaryTwoGrade extends DefaultGrade {
     }
 
     public SecondaryTwoGrade() {
-        super(false, 15);
+        super(false, MAX_VALUE_VERY_GOOD);
     }
 
     @NonNull
@@ -41,16 +52,20 @@ public class SecondaryTwoGrade extends DefaultGrade {
     @Override
     public Value getRawGradeValue() {
         int valueOfGrade = getValue();
-        if (valueOfGrade <= 15 && valueOfGrade >= 13)
+        if (isInsideRange(valueOfGrade, MAX_VALUE_VERY_GOOD, MIN_VALUE_VERY_GOOD))
             return Value.VERY_GOOD;
-        if (valueOfGrade <= 12 && valueOfGrade >= 10)
+        if (isInsideRange(valueOfGrade, MAX_VALUE_GOOD, MIN_VALUE_GOOD))
             return Value.GOOD;
-        if (valueOfGrade <= 9 && valueOfGrade >= 7)
+        if (isInsideRange(valueOfGrade, MAX_VALUE_SATISFACTORY, MIN_VALUE_SATISFACTORY))
             return Value.SATISFACTORY;
-        if (valueOfGrade <= 6 && valueOfGrade >= 4)
+        if (isInsideRange(valueOfGrade, MAX_VALUE_SUFFICIENT, MIN_VALUE_SUFFICIENT))
             return Value.SUFFICIENT;
-        if (valueOfGrade <= 3 && valueOfGrade >= 1)
+        if (isInsideRange(valueOfGrade, MAX_VALUE_POOR, MIN_VALUE_POOR))
             return Value.POOR;
         return Value.DEFICIENT;
+    }
+
+    private boolean isInsideRange(int value, int max, int min) {
+        return value <= max && value >= min;
     }
 }
