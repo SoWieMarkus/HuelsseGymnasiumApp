@@ -38,7 +38,7 @@ public class SettingsActivity extends CreateItemActivity<String> {
 
 
         gradeFormatEnumInputWidget.setList(GradeFormat.class.getEnumConstants());
-        gradeFormatEnumInputWidget.setValue(settings.getGradeFormat());
+        gradeFormatEnumInputWidget.setValue(settings.getGradeFormat() == null ? GradeFormat.NORMAL : settings.getGradeFormat());
         gradeFormatEnumInputWidget.setExpanded(true);
     }
 
