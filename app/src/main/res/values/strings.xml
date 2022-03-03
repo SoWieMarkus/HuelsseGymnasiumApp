@@ -75,4 +75,6 @@
     <string name="activity_create_time_table_room_hint">Room</string>
     <string name="activity_create_time_table_slot_room_argument_name">room</string>
     <string name="time_table_slot_no_room">No room</string>
+    <string name="item_substitution_room">Room:</string>
+    <string name="fragment_substitution_empty_message">No substitution plan</string>
 </resources>

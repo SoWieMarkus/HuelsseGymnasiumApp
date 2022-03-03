@@ -72,4 +72,6 @@
     <string name="activity_create_time_table_room_hint">Raum</string>
     <string name="activity_create_time_table_slot_room_argument_name">Der Raum</string>
     <string name="time_table_slot_no_room">Kein Raum</string>
+    <string name="item_substitution_room">Raum:</string>
+    <string name="fragment_substitution_empty_message">Kein Vertretungsplan</string>
 </resources>
