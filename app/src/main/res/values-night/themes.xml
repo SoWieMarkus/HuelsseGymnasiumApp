@@ -18,6 +18,7 @@
         <item name="icon_color">@color/text_color_main_dark</item>
         <item name="accent_color">@color/color_accent_dark</item>
         <item name="colorSurface">?attr/background_color</item>
+        <item name="line_color">@color/color_line_dark</item>
         <!--item name="cardBackgroundColor">@color/card_view_background_dark</item-->
     </style>
 

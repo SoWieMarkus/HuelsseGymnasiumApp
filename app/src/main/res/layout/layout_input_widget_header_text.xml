@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
@@ -9,17 +10,17 @@
         android:id="@+id/input_widget_text_header_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:textColor="?attr/text_color_main"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/input_widget_text_header_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="TextView"
         android:textColor="?attr/accent_color"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:text="Value" />
 
 </LinearLayout>

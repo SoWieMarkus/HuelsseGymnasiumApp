@@ -19,6 +19,9 @@
     <color name="color_accent_light">#3F51B5</color>
     <color name="color_accent_dark">#03A9F4</color>
 
+    <color name="color_line_light">#E1E1E1</color>
+    <color name="color_line_dark">#393939</color>
+
     <color name="color_grade_value">#3D2D2D</color>
 
 

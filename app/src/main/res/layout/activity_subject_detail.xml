@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <markus.wieland.huelssegymnasiumapp.ui.AverageView
-                android:id="@+id/actvitiy_subject_detail_average"
+                android:id="@+id/activity_subject_detail_average"
                 android:layout_width="wrap_content"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"/>
@@ -49,7 +49,7 @@
                         android:textSize="18sp" />
 
                     <Button
-                        android:id="@+id/actvitiy_subject_detail_add_grade"
+                        android:id="@+id/activity_subject_detail_add_grade"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
 
@@ -57,7 +57,8 @@
                         android:drawableLeft="@drawable/ic_add"
                         android:text="@string/fragment_dashboard_add"
                         android:textAllCaps="false"
-                        android:textColor="?attr/accent_color" />
+                        android:textColor="?attr/accent_color"
+                        tools:ignore="RtlHardcoded" />
                 </LinearLayout>
 
                 <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView
@@ -89,14 +90,15 @@
                         android:textSize="18sp" />
 
                     <Button
-                        android:id="@+id/actvitiy_subject_detail_add_calendar_entries"
+                        android:id="@+id/activity_subject_detail_add_calendar_entries"
                         style="?android:attr/borderlessButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/ic_add"
                         android:text="@string/fragment_dashboard_add"
                         android:textAllCaps="false"
-                        android:textColor="?attr/accent_color" />
+                        android:textColor="?attr/accent_color"
+                        tools:ignore="RtlHardcoded" />
                 </LinearLayout>
 
                 <markus.wieland.huelssegymnasiumapp.ui.StateRecyclerView

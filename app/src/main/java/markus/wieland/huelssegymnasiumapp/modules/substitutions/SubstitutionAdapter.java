@@ -50,13 +50,13 @@ public class SubstitutionAdapter extends DefaultAdapter<Substitution, Substituti
 
         @Override
         public void bindViews() {
-            lesson = findViewById(R.id.item_subsitutions_lesson);
-            teacher = findViewById(R.id.item_subsitutions_teacher);
-            subject = findViewById(R.id.item_subsitutions_subject);
-            room = findViewById(R.id.item_subsitutions_room);
-            info = findViewById(R.id.item_subsitutions_info);
-            course = findViewById(R.id.item_subsitutions_course);
-            background = findViewById(R.id.item_subsitution_background);
+            lesson = findViewById(R.id.item_substitution_lesson);
+            teacher = findViewById(R.id.item_substitution_teacher);
+            subject = findViewById(R.id.item_substitution_subject);
+            room = findViewById(R.id.item_substitution_room);
+            info = findViewById(R.id.item_substitution_info);
+            course = findViewById(R.id.item_substitution_course);
+            background = findViewById(R.id.item_substitution_background);
             roomContainer = findViewById(R.id.item_substitution_room_container);
         }
 

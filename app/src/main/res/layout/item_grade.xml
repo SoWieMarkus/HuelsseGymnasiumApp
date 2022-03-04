@@ -21,8 +21,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:background="?attr/selectableItemBackground"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -38,7 +38,7 @@
                     android:elevation="8dp"
                     android:gravity="center"
                     android:textColor="@color/color_grade_value"
-                    android:text="15" />
+                    tools:text="15" />
             </LinearLayout>
 
             <LinearLayout
@@ -53,14 +53,14 @@
                     android:id="@+id/item_grade_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="@string/input_widget_enum_title" />
 
                 <TextView
                     android:id="@+id/item_grade_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    tools:text="@string/input_widget_calendar_title" />
             </LinearLayout>
 
         </LinearLayout>

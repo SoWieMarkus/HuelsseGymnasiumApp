@@ -88,9 +88,9 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
         calendarViewModel = ViewModelProviders.of(this).get(CalendarViewModel.class);
         recyclerViewGrades = findViewById(R.id.activity_subject_detail_grades);
         recyclerViewCalendarEntries = findViewById(R.id.activity_subject_detail_calendar_entries);
-        addGrade = findViewById(R.id.actvitiy_subject_detail_add_grade);
-        addCalendarEntry = findViewById(R.id.actvitiy_subject_detail_add_calendar_entries);
-        averageView = findViewById(R.id.actvitiy_subject_detail_average);
+        addGrade = findViewById(R.id.activity_subject_detail_add_grade);
+        addCalendarEntry = findViewById(R.id.activity_subject_detail_add_calendar_entries);
+        averageView = findViewById(R.id.activity_subject_detail_average);
     }
 
     @Override

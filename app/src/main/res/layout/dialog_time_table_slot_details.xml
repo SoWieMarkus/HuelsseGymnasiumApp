@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="32dp"
-    android:background="@null">
+    android:background="@null"
+    android:padding="32dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -33,46 +33,42 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:padding="12dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/dialog_time_table_slot_details_period"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:text="@string/input_widget_time_period_title" />
 
-                    <TextView
-                        android:id="@+id/dialog_time_table_slot_details_period"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
+                <TextView
+                    android:id="@+id/dialog_time_table_slot_details_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    tools:text="@string/activity_create_subject_name" />
 
-                    <TextView
-                        android:id="@+id/dialog_time_table_slot_details_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/dialog_time_table_slot_details_teacher"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textSize="14sp"
+                    tools:text="@string/activity_create_subject_teacher" />
 
-                    <TextView
-                        android:id="@+id/dialog_time_table_slot_details_teacher"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textSize="14sp" />
+                <TextView
+                    android:id="@+id/dialog_time_table_slot_details_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="@string/activity_create_time_table_room_hint" />
 
-                    <TextView
-                        android:id="@+id/dialog_time_table_slot_details_room"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
 
             </LinearLayout>
 
@@ -104,7 +100,8 @@
                 android:gravity="start|center_vertical"
                 android:text="@string/context_menu_edit"
                 android:textAllCaps="false"
-                android:textColor="?attr/text_color_main" />
+                android:textColor="?attr/text_color_main"
+                tools:ignore="RtlHardcoded" />
 
             <Button
                 android:id="@+id/dialog_time_table_slot_details_delete"
@@ -115,7 +112,8 @@
                 android:gravity="start|center_vertical"
                 android:text="@string/context_menu_delete"
                 android:textAllCaps="false"
-                android:textColor="?attr/text_color_main" />
+                android:textColor="?attr/text_color_main"
+                tools:ignore="RtlHardcoded" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 

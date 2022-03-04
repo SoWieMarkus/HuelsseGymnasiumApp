@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -29,13 +30,13 @@
 
                 <TextView
                     android:id="@+id/item_calendar_date"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="12dp"
+                    android:layout_marginStart="12dp"
                     android:layout_weight="1"
                     android:ellipsize="end"
-                    android:gravity="left"
-                    android:text="TextView" />
+                    android:gravity="start"
+                    tools:text="@string/input_widget_subject_title" />
 
                 <CheckBox
                     android:id="@+id/item_calendar_check_box"
@@ -63,23 +64,23 @@
                     android:id="@+id/item_calendar_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    tools:text="@string/input_widget_enum_title" />
 
                 <TextView
                     android:id="@+id/item_calendar_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="@string/activity_create_calendar_entry_title" />
 
                 <TextView
                     android:id="@+id/item_calendar_with_subject_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:visibility="visible" />
+                    android:visibility="visible"
+                    tools:text="@string/activity_create_calendar_entry_description" />
             </LinearLayout>
 
 

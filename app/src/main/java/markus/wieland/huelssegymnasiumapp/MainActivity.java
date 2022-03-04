@@ -55,6 +55,7 @@ public class MainActivity extends DefaultActivity implements NavigationBarView.O
     @Override
     public void execute() {
         bottomNavigationView.setSelectedItemId(R.id.activity_main_bottom_navigation_dashboard);
+        select(R.id.activity_main_bottom_navigation_dashboard);
 
         Settings settings = new Settings(this);
         if (!settings.doesExist()) {
