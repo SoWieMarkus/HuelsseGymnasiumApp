@@ -147,6 +147,10 @@ public class SubjectDetailActivity extends DefaultActivity implements Observer<S
     }
     @Override
     public void onChanged(SubjectWithGradesAndCalendar subjectWithGradesAndCalendar) {
+        if (subjectWithGradesAndCalendar == null) {
+            finish();
+            return;
+        }
         subject = subjectWithGradesAndCalendar.getSubject();
         recyclerViewGrades.getAdapter().setGradeFormat(settings.getGradeFormat());
         Objects.requireNonNull(getSupportActionBar()).setTitle(subjectWithGradesAndCalendar.getSubject().getName());
