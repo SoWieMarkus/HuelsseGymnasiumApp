@@ -18,5 +18,5 @@ Detailed changes:
 - Internet permission required.
 - Menu with new icon
 - now course attribute
-
+- other app name
 
