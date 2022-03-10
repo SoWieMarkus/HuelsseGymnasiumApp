@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:gravity="center">
 
-
     <TextView
         android:id="@+id/time_table_divider_view_time"
         android:layout_width="wrap_content"
@@ -20,7 +19,8 @@
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:layout_weight="1"
-        android:alpha="0.2"
+        android:alpha="0.8"
         android:background="@color/time_table_background_view_color"
         android:orientation="vertical" />
+
 </LinearLayout>
