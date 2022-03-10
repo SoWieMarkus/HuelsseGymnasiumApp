@@ -1,6 +1,7 @@
 package markus.wieland.huelssegymnasiumapp.ui.time_table;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,15 +19,17 @@ public class TimeTableSlotView extends LinearLayout {
     public void setTimeTableSlot(TimeTableSlotWithSubject timeTableSlotWithSubject) {
         if (timeTableSlotWithSubject.getSubject() == null) return;
         setBackgroundColor(timeTableSlotWithSubject.getSubject().getColor());
-        TextView abbreviation = new TextView(getContext());
-        TextView room = new TextView(getContext());
-        abbreviation.setGravity(Gravity.CENTER);
-        room.setGravity(Gravity.CENTER);
 
-        abbreviation.setText(timeTableSlotWithSubject.getSubject().getAbbreviation());
-        room.setText(timeTableSlotWithSubject.getTimeTableSlot().roomToString(getContext()));
-        addView(abbreviation);
-        addView(room);
+        addTextView(timeTableSlotWithSubject.getSubject().getAbbreviation());
+        addTextView(timeTableSlotWithSubject.getTimeTableSlot().roomToString(getContext()));
+    }
+
+    private void addTextView(String text) {
+        TextView textView = new TextView(getContext());
+        textView.setGravity(Gravity.CENTER);
+        textView.setTextColor(Color.WHITE);
+        textView.setText(text);
+        addView(textView);
     }
 
 }
